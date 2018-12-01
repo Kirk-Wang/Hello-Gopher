@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/say"
+	_ "github.com/Kirk-Wang/Hello-Go/bar"
+	_ "github.com/Kirk-Wang/Hello-Go/say"
 )
 
 func main() {
-	fmt.Println(say.Hello())
+	fmt.Println("Hello Main")
 }

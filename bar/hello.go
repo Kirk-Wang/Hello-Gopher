@@ -1,13 +1,13 @@
-package say
+package bar
 
 import (
 	"fmt"
 )
 
 func init() {
-	fmt.Println("say init")
+	fmt.Println("bar init")
 }
 
 func Hello() string {
-	return "Hello say"
+	return "Hello bar"
 }

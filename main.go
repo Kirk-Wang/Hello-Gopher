@@ -36,10 +36,10 @@ func main() {
 	// 	fmt.Println(v)
 	// }
 
-	fmt.Println("printArray(arr1)")
+	fmt.Println("printArray (arr1)")
 	printArray(&arr1)
 
-	fmt.Println("printArray(arr3)")
+	fmt.Println("printArray (arr3)")
 	printArray(&arr3)
 
 	fmt.Println("arr1 and arr3")

@@ -4,7 +4,7 @@ import "fmt"
 
 var (
 	aa = 3
-	ss = "kkkkk"
+	ss = "kirk"
 	bb = true
 )
 

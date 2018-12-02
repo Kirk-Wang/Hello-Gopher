@@ -31,7 +31,7 @@ func printFile(filename string) {
 
 func forever() {
 	for {
-		fmt.Println("abc")
+		fmt.Println("kirk")
 	}
 }
 
@@ -43,5 +43,5 @@ func main() {
 		convertToBin(0),
 	)
 
-	printFile("abc.txt")
+	printFile("kirk.txt")
 }

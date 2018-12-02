@@ -42,6 +42,6 @@ func main() {
 	fmt.Println("printArray(arr3)")
 	printArray(&arr3)
 
-	fmt.Println("arr1 and arr3")
+	fmt.Println("arr1 & arr3")
 	fmt.Println(arr1, arr3)
 }

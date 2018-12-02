@@ -82,7 +82,7 @@ func main() {
 				float64(a), float64(b)))
 		}, 3, 4))
 
-	fmt.Println(sum(1, 2, 3, 4, 5))
+	fmt.Println(sum(1, 2, 3, 4, 5, 6))
 
 	a, b := 3, 4
 	// swap(&a, &b)

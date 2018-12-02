@@ -23,7 +23,7 @@ func grade(score int) string {
 }
 
 func main() {
-	const filename = "abc.txt"
+	const filename = "kirk.txt"
 	// contents, err := ioutil.ReadFile(filename)
 	// if err != nil {
 	// 	fmt.Println(err)

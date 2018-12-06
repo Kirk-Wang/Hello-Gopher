@@ -21,3 +21,7 @@ go1.11.2
 ### Go 面向接口
 
 ![Go 面向接口](./images/Go4.png)
+
+### Go 函数式编程
+
+![Go 函数式编程](./images/Go5.png)

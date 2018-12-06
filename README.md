@@ -1,4 +1,6 @@
-# Hello-Go
+# Hello-Gopher
+
+![Gopher](https://golang.org/doc/gopher/frontpage.png)
 
 Go Programming Language 扫盲
 

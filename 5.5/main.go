@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/5.4/mock"
-	"github.com/Kirk-Wang/Hello-Go/5.4/real"
+	"github.com/Kirk-Wang/Hello-Go/5.5/mock"
+	"github.com/Kirk-Wang/Hello-Go/5.5/real"
 	"time"
 )
 
@@ -74,8 +74,9 @@ func main() {
 }
 
 func inspect(r Retriever) {
-	fmt.Printf("%T %v\n", r, r)
-	fmt.Println("Type switch:")
+	fmt.Println("Inspecting", r)
+	fmt.Printf(" > %T %v\n", r, r)
+	fmt.Println(" > Type switch:")
 	switch v := r.(type) {
 	case *mock.Retriever:
 		fmt.Println("Contents:", v.Contents)

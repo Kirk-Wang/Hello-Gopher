@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/5.2/mock"
-	"github.com/Kirk-Wang/Hello-Go/5.2/real"
+	"github.com/Kirk-Wang/Hello-Go/5.3/mock"
+	"github.com/Kirk-Wang/Hello-Go/5.3/real"
 	"time"
 )
 

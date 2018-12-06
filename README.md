@@ -15,3 +15,7 @@ go1.11.2
 ### Go 面向“对象”
 
 ![Go 面向“对象”](./images/Go3.png)
+
+### Go 面向接口
+
+![Go 面向接口](./images/Go4.png)

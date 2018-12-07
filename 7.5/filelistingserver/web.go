@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Go/7.3/filelistingserver/filelisting"
+	"github.com/Kirk-Wang/Hello-Go/7.5/filelistingserver/filelisting"
 	"log"
 	"net/http"
 	"os"
@@ -11,13 +11,26 @@ type appHandler func(writer http.ResponseWriter, request *http.Request) error
 
 func errWrapper(handler appHandler) func(http.ResponseWriter, *http.Request) {
 	return func(writer http.ResponseWriter, request *http.Request) {
+		// 我们自己 defer
+		defer func() {
+			if r := recover(); r != nil {
+				log.Printf("Panic: %v", r)
+				http.Error(writer,
+					http.StatusText(http.StatusInternalServerError),
+					http.StatusInternalServerError)
+			}
+		}()
 		err := handler(writer, request)
 		if err != nil {
-			// log.W("Error handling request: %s", err.Error())
 			log.Printf("Error handling request: %s", err.Error())
-			// log.Warn("Error handling request: %s", err.Error())
-			// Warning := log.New(os.Stdout, "Warning:", log.Ldate|log.Ltime|log.Lshortfile)
-			// Warning.Printf("Error handling request: %s", err.Error())
+
+			// 如果是给用户看的错误类型
+			// 用 type Assering 的东西，取得它真正的 type
+			if userErr, ok := err.(userError); ok {
+				http.Error(writer, userErr.Message(), http.StatusBadRequest)
+				return
+			}
+
 			code := http.StatusOK
 			switch {
 			// 错误类型的判断
@@ -36,8 +49,13 @@ func errWrapper(handler appHandler) func(http.ResponseWriter, *http.Request) {
 	}
 }
 
+type userError interface {
+	error            // 给系统看
+	Message() string //给用户看
+}
+
 func main() {
-	http.HandleFunc("/list/", errWrapper(filelisting.HandleFileList))
+	http.HandleFunc("/", errWrapper(filelisting.HandleFileList))
 
 	err := http.ListenAndServe(":8888", nil)
 	if err != nil {

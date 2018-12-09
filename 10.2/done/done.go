@@ -2,36 +2,49 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"sync"
 )
 
-func worker(id int, c chan int) {
-	for n := range c {
-		fmt.Printf("Worker %d received %d\n", id, n)
+func doWork(id int, w worker) {
+	for n := range w.in {
+		fmt.Printf("Worker %d received %c\n", id, n)
+		w.done()
 	}
 }
 
-func createWorker(id int) chan<- int {
-	c := make(chan int)
-	go worker(id, c)
-	return c
+type worker struct {
+	in   chan int
+	done func()
+}
+
+func createWorker(id int, wg *sync.WaitGroup) worker {
+	w := worker{
+		in: make(chan int),
+		// 包裹一下，避免传来传去
+		done: func() {
+			wg.Done()
+		},
+	}
+	go doWork(id, w)
+	return w
 }
 
 func chanDemo() {
-	var channels [10]chan<- int
+	var wg sync.WaitGroup
+
+	var workers [10]worker
 	for i := 0; i < 10; i++ {
-		channels[i] = createWorker(i)
+		workers[i] = createWorker(i, &wg)
 	}
 
-	for i := 0; i < 10; i++ {
-		channels[i] <- 'a' + i
+	wg.Add(20)
+	for i, worker := range workers {
+		worker.in <- 'a' + i
 	}
-
-	for i := 0; i < 10; i++ {
-		channels[i] <- 'A' + i
+	for i, worker := range workers {
+		worker.in <- 'A' + i
 	}
-
-	time.Sleep(time.Millisecond) // 避免来不及打印
+	wg.Wait()
 }
 
 func main() {

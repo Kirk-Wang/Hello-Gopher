@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Gopher/6.3/tree"
+	"github.com/Kirk-Wang/Hello-Gopher/10.3/tree"
 )
 
 // 组合的方式
@@ -40,4 +40,16 @@ func main() {
 		nodeCount++
 	})
 	fmt.Println("Node count:", nodeCount)
+
+	c := root.TraverseWithChannel()
+	maxNode := 0
+	// 去收我们 channel 里面的值
+	// 源源不断的去获取节点
+	// 显得更加顺序一点，无需传个函数进去
+	for node := range c {
+		if node.Value > maxNode {
+			maxNode = node.Value
+		}
+	}
+	fmt.Println("Max node value:", maxNode)
 }

@@ -37,3 +37,7 @@ go1.11.2
 ### Goroutine
 
 ![Goroutine](./images/Go8.png)
+
+### Channel
+
+![Channel](./images/Go9.png)

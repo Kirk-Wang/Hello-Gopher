@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/5.2/mock"
-	"github.com/Kirk-Wang/Hello-Go/5.2/real"
+	"github.com/Kirk-Wang/Hello-Gopher/5.2/mock"
+	"github.com/Kirk-Wang/Hello-Gopher/5.2/real"
 )
 
 type Retriever interface {

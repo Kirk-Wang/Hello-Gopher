@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"strings"
-	// _ "github.com/Kirk-Wang/Hello-Go/bar"
-	// _ "github.com/Kirk-Wang/Hello-Go/say"
+	// _ "github.com/Kirk-Wang/Hello-Gopher/bar"
+	// _ "github.com/Kirk-Wang/Hello-Gopher/say"
 )
 
 // var foo string

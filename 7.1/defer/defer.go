@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/7.1/fib"
+	"github.com/Kirk-Wang/Hello-Gopher/7.1/fib"
 	"os"
 )
 

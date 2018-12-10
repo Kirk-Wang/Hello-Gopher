@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/7.2/fib"
+	"github.com/Kirk-Wang/Hello-Gopher/7.2/fib"
 	"os"
 )
 

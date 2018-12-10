@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Go/4.2"
+	"github.com/Kirk-Wang/Hello-Gopher/4.2"
 )
 
 func main() {

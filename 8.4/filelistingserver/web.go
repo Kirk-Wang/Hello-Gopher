@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Go/8.4/filelistingserver/filelisting"
+	"github.com/Kirk-Wang/Hello-Gopher/8.4/filelistingserver/filelisting"
 	"log"
 	"net/http"
 	"os"

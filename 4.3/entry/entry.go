@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Go/4.2"
+	"github.com/Kirk-Wang/Hello-Gopher/4.2"
 )
 
 // 组合的方式

@@ -41,3 +41,7 @@ go1.11.2
 ### Channel
 
 ![Channel](./images/Go9.png)
+
+### http及其他标准库
+
+![http及其他标准库](./images/Go10.png)

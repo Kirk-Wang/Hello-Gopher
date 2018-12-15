@@ -1,4 +1,4 @@
-# Hello-Gopherpher
+# Gopher
 
 ![Gopher](https://golang.org/doc/gopher/frontpage.png)
 

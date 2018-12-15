@@ -11,19 +11,21 @@ var ageRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([\d]+)岁</div>`
 var heightRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([\d]+)cm</div>`)
 var weightRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([\d]+)kg</div>`)
 
-var incomeRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>(月收入:[^<]+)</div>`)
+var incomeRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>月收入:([^<]+)</div>`)
 
 // var genderRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>月收入:[^<]+</div>`)
 var carRe = regexp.MustCompile(`<div class="m-btn pink"[^>]*>([^<]+车)</div>`)
 var educationRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([^<]+)</div></div>`)
-var hokouRe = regexp.MustCompile(`<div class="m-btn pink"[^>]*>(籍贯:[^<]+)</div>`)
+var hokouRe = regexp.MustCompile(`<div class="m-btn pink"[^>]*>籍贯:([^<]+)</div>`)
 var houseRe = regexp.MustCompile(`<div class="m-btn pink"[^>]*>([^<]+房)</div>`)
 var marriageRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([^<]+)</div><div class="m-btn purple"[^>]*>[\d]+岁</div>`)
 var occupationRe = regexp.MustCompile(`月收入:[^<]+</div><div class="m-btn purple"[^>]*>([^<]+)</div>`)
-var xinzuoRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([^<]+座[^<]+)</div>`)
+var xinzuoRe = regexp.MustCompile(`<div class="m-btn purple"[^>]*>([^<]+座)[^<]+</div>`)
 
-func ParseProfile(contents []byte) engine.ParseResult {
+func ParseProfile(contents []byte, name string, gender string) engine.ParseResult {
 	profile := model.Profile{}
+	profile.Name = name
+	profile.Gender = gender
 
 	age, err := strconv.Atoi(extractString(contents, ageRe))
 	if err == nil {

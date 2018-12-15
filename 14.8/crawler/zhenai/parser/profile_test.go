@@ -12,7 +12,7 @@ func TestParseProfile(t *testing.T) {
 		panic(err)
 	}
 
-	result := ParseProfile(contents)
+	result := ParseProfile(contents, "初心", "女士")
 
 	if len(result.Items) != 1 {
 		t.Errorf("Items should contain 1 element; but was %v", result.Items)
@@ -30,8 +30,8 @@ func TestParseProfile(t *testing.T) {
 		Marriage:   "未婚",
 		Education:  "高中及以下",
 		Occupation: "医疗管理",
-		Hokou:      "籍贯:重庆",
-		Xinzuo:     "射手座(11.22-12.21)",
+		Hokou:      "重庆",
+		Xinzuo:     "射手座",
 		House:      "租房",
 		Car:        "未买车",
 	}

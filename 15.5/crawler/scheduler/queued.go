@@ -7,11 +7,13 @@ import (
 type QueuedScheduler struct {
 	requestChan chan engine.Request
 	// channel 套 channel, 100 个 worker, 每个都有自己的 channel
+	// 把(chan engine.Request) 看成一个类型
 	workerChan chan chan engine.Request
 }
 
-func (s *QueuedScheduler) ConfigureMasterWorkerChan(c chan engine.Request) {
-	// s.workerChan = c
+func (s *QueuedScheduler) WorkerChan() chan engine.Request {
+	// 每个 worker 有自己的 channel
+	return make(chan engine.Request)
 }
 
 // 有一个 worker ready了，可以负责去接受 request 了
@@ -29,11 +31,6 @@ func (s *QueuedScheduler) Run() {
 	s.workerChan = make(chan chan engine.Request)
 	s.requestChan = make(chan engine.Request)
 	go func() {
-		// 两件独立的事情，不可能同时去收，用 select
-		// for {
-		// 	r := <-s.requestChan
-		// 	w := <-s.workerChan
-		// }
 		var requestQ []engine.Request
 		var workerQ []chan engine.Request
 		for {

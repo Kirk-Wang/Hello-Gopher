@@ -5,27 +5,30 @@ import (
 )
 
 type ConcurrentEngine struct {
-	// scheduler 哪里来？肚子里放一个就可以了
 	Scheduler   Scheduler
 	WorkerCount int
 }
 
-// 使用者来定义，你去实现
 type Scheduler interface {
+	ReadyNotifier
 	Submit(Request)
-	ConfigureMasterWorkerChan(chan Request)
-	WorkerReady(chan Request)
+	WorkerChan() chan Request
 	Run()
 }
 
-// 自己也最好变成指针类型的接收者
+type ReadyNotifier interface {
+	WorkerReady(chan Request)
+}
+
 func (e *ConcurrentEngine) Run(seeds ...Request) {
 	out := make(chan ParseResult)
 	// 送进去
 	e.Scheduler.Run()
 
 	for i := 0; i < e.WorkerCount; i++ {
-		createWorker(out, e.Scheduler)
+		// 问调度器要 worker channel
+		// 至于每人一个，还是共用一个, engine 不关心
+		createWorker(e.Scheduler.WorkerChan(), out, e.Scheduler)
 	}
 
 	// 将 Rquest 送入调度
@@ -48,14 +51,10 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 	}
 }
 
-func createWorker(out chan ParseResult, s Scheduler) {
-	// 每个 channel 是自己的
-	in := make(chan Request)
+func createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
 	go func() {
 		for {
-			// tell scheduler i'm ready
-			// 可以通过这个 channel 做任务了
-			s.WorkerReady(in)
+			ready.WorkerReady(in)
 			request := <-in
 			result, err := worker(request)
 			if err != nil {

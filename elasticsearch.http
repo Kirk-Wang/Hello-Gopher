@@ -1,0 +1,77 @@
+
+### test
+GET  http://localhost:9200 HTTP/1.1
+content-type: application/json
+
+### 添加一条记录(PUT)
+
+PUT http://localhost:9200/gopher/course/1 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "golang",
+    "instructor": "ccmouse"
+}
+
+### 添加一条记录(POST)
+
+POST http://localhost:9200/gopher/course/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "interview",
+    "instructor": "ccmouse"
+}
+
+### 修改一条记录(POST)
+
+POST http://localhost:9200/gopher/course/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "interview",
+    "instructor": "ccmouse",
+    "url": "https://coding.xmooc.com/class/132.html"
+}
+
+### 没有ID，添加一条记录(必须用POST)
+
+POST http://localhost:9200/gopher/course HTTP/1.1
+content-type: application/json
+
+{
+    "name": "golang_pipeline",
+    "instructor": "ccmouse",
+    "url": "https://www.xmooc.com/learn/927"
+}
+
+### 看下这条记录
+
+GET http://localhost:9200/gopher/course/2 HTTP/1.1
+content-type: application/json
+
+### 搜索
+
+GET http://localhost:9200/gopher/_search HTTP/1.1
+content-type: application/json
+
+### 搜索(条件1)不用纠结字段名
+
+GET http://localhost:9200/gopher/_search?pretty&q=golang HTTP/1.1
+content-type: application/json
+
+### 搜索(条件2)
+
+GET http://localhost:9200/gopher/_search?q=ccmouse HTTP/1.1
+content-type: application/json
+
+### 全文搜索(条件3)
+
+GET http://localhost:9200/gopher/_search?q=132 HTTP/1.1
+content-type: application/json
+
+### _mapping
+
+GET http://localhost:9200/gopher/_mapping HTTP/1.1
+content-type: application/json
+

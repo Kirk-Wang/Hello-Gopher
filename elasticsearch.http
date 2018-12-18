@@ -55,17 +55,17 @@ content-type: application/json
 GET http://localhost:9200/gopher/_search HTTP/1.1
 content-type: application/json
 
-### 搜索(条件1)不用纠结字段名
+### 搜索
 
 GET http://localhost:9200/gopher/_search?pretty&q=golang HTTP/1.1
 content-type: application/json
 
-### 搜索(条件2)
+### 搜索
 
 GET http://localhost:9200/gopher/_search?q=ccmouse HTTP/1.1
 content-type: application/json
 
-### 全文搜索(条件3)
+### 搜索
 
 GET http://localhost:9200/gopher/_search?q=132 HTTP/1.1
 content-type: application/json
@@ -77,5 +77,10 @@ content-type: application/json
 
 ### 本项目搜索
 
-GET http://localhost:9200/dating_profile/_search HTTP/1.1
+GET http://localhost:9200/dating_profile/_search?q=闭上眼睛 HTTP/1.1
+content-type: application/json
+
+### 本项目搜索2
+
+GET http://localhost:9200/dating_profile/_search?pretty=&size=100&q=Gender:男士 House:已购房 Car:已买车 Age:<30 HTTP/1.1
 content-type: application/json

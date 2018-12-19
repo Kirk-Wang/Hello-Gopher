@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/16.8/crawler/fetcher"
 	"log"
 )
 
@@ -32,15 +31,4 @@ func (e SimpleEngine) Run(seeds ...Request) {
 			log.Printf("Got item %v", item)
 		}
 	}
-}
-
-func worker(r Request) (ParseResult, error) {
-	// log.Printf("Fetching %s", r.Url)
-	// 对于每一个 request 进行 fetch
-	body, err := fetcher.Fetch(r.Url)
-	if err != nil {
-		log.Printf("Fetcher: error fetching url %s: %v", r.Url, err)
-		return ParseResult{}, err
-	}
-	return r.ParserFunc(body), nil
 }

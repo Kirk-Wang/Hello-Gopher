@@ -8,8 +8,13 @@ import (
 	"log"
 )
 
-func ItemSaver() chan engine.Item {
-	// 创建一个可以传递任意类型的 channel
+func ItemSaver(index string) (chan engine.Item, error) {
+	client, err := elastic.NewClient(
+		// Must turn off sniff in docker
+		elastic.SetSniff(false))
+	if err != nil {
+		return nil, err
+	}
 	out := make(chan engine.Item)
 	go func() {
 		itemCount := 0
@@ -18,37 +23,30 @@ func ItemSaver() chan engine.Item {
 			log.Printf("Item Saver: got item #%d: %v", itemCount, item)
 			itemCount++
 
-			err := save(item)
+			err := save(client, index, item)
 			if err != nil {
 				log.Printf("Item Saver: error saving item %v: %v", item, err)
 			}
 		}
 	}()
-	return out
+	return out, nil
 }
 
-func save(item engine.Item) error {
-	client, err := elastic.NewClient(
-		// Must turn off sniff in docker
-		elastic.SetSniff(false))
-
-	if err != nil {
-		return err
-	}
+func save(client *elastic.Client, index string, item engine.Item) error {
 
 	if item.Type == "" {
 		return errors.New("must supply Type")
 	}
 
 	indexService := client.Index().
-		Index("dating_profile").
+		Index(index).
 		Type(item.Type).
 		BodyJson(item)
 	if item.Id != "" {
 		indexService.Id(item.Id)
 	}
 
-	_, err = indexService.
+	_, err := indexService.
 		Do(context.Background())
 
 	if err != nil {

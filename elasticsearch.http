@@ -77,7 +77,7 @@ content-type: application/json
 
 ### 本项目搜索
 
-GET http://localhost:9200/dating_test/_search HTTP/1.1
+GET http://localhost:9200/test1/_search HTTP/1.1
 content-type: application/json
 
 ### 本项目搜索2

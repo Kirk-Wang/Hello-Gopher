@@ -99,7 +99,7 @@ go1.11.2
 
 ![分布式初探](./images/Go16.png)
 
-### 基础总结
+### 总结
 
 ![总结](./images/Go17.png)
 
@@ -108,6 +108,17 @@ go1.11.2
 ## 基于 Go 语言构建企业级的 RESTful API 服务
 
 
+### 高可用 API 构建
+
+![总结](./images/RESTful/api-1.png)
+
+### RESTful API
+
+![总结](./images/RESTful/api-2.png)
+
+### API流程和代码结构
+
+![总结](./images/RESTful/api-3.png)
 
 
 

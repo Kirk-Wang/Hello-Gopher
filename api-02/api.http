@@ -1,0 +1,17 @@
+
+
+### /sd/health 健康状况
+
+GET  http://localhost:8080/sd/health HTTP/1.1
+
+### /sd/disk 服务器硬盘
+
+GET  http://localhost:8080/sd/disk HTTP/1.1
+
+### /sd/cpu 服务器CPU
+
+GET  http://localhost:8080/sd/cpu HTTP/1.1
+
+### /sd/ram 服务器内存使用量
+
+GET  http://localhost:8080/sd/ram HTTP/1.1

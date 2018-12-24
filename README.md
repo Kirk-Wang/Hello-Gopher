@@ -110,16 +110,27 @@ go1.11.2
 
 ### 高可用 API 构建
 
-![总结](./images/RESTful/api-1.png)
+![高可用 API 构建](./images/RESTful/api-1.png)
 
 ### RESTful API
 
-![总结](./images/RESTful/api-2.png)
+![RESTful API](./images/RESTful/api-2.png)
 
 ### API流程和代码结构
 
-![总结](./images/RESTful/api-3.png)
+![API流程和代码结构](./images/RESTful/api-3.png)
 
+### 启动一个最简单的 RESTful API 服务器
+
+![启动一个最简单的RESTful API 服务器](./images/RESTful/api-4.png)
+
+### 配置文件读取
+
+![配置文件读取](./images/RESTful/api-5.png)
+
+### 记录和管理 API 日志
+
+![记录和管理 API 日志](./images/RESTful/api-6.png)
 
 
 

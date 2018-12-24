@@ -6,6 +6,7 @@ require (
 	github.com/gin-gonic/gin v1.3.0
 	github.com/golang/example v0.0.0-20170904185048-46695d81d1fa
 	github.com/golang/protobuf v1.2.0 // indirect
+	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/olivere/elastic v6.2.14+incompatible

@@ -132,5 +132,25 @@ go1.11.2
 
 ![记录和管理 API 日志](./images/RESTful/api-6.png)
 
+### 安装 MySQL 并初始化表
 
+![安装 MySQL 并初始化表](./images/RESTful/api-7.png)
+
+运行MySQL
+
+```sh
+docker run --name mysql -v ~/dockerdata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 --restart=always  mysql:5.6
+
+docker cp api-03/db.sql e60fcab227d4:/tmp/
+
+docker exec -ti mysql bash
+
+mysql -uroot -p123456
+
+source  /tmp/db.sql
+```
+
+### 初始化 MySQL 数据库并建立连接
+
+![初始化 MySQL 数据库并建立连接](./images/RESTful/api-8.png)
 

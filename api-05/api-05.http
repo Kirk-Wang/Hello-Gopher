@@ -1,0 +1,33 @@
+
+### 因为没有传入任何参数，所以返回 errno.ErrBind 错误。
+ 
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+### 因为没有传入 password，所以返回 fmt.Errorf("password is empty") 错误，该错误信息不是定制的错误类型，errno.DecodeErr(err) 解析时会解析为默认的 errno.InternalServerError 错误，所以返回结果中 code 为 10001，message 为 err.Error()。
+
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "username": "admin"
+}
+
+### 因为没有传入 username，所以返回 errno.ErrUserNotFound 错误信息，并通过 Add() 函数在 message 信息后追加了 This is add message. 信息。
+ 
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "password":"admin"
+}
+
+### normal
+
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "username": "admin",
+    "password":"admin"
+}

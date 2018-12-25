@@ -1,0 +1,46 @@
+
+### 创建用户
+
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "username": "kong",
+    "password":"kong123"
+}
+
+
+### 查询用户列表
+
+GET  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "offset": 0,
+    "limit": 20
+}
+
+### 获取用户详细信息
+
+GET  http://127.0.0.1:8080/v1/user/kong HTTP/1.1
+content-type: application/json
+
+### 更新用户
+
+PUT  http://127.0.0.1:8080/v1/user/2 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "kong",
+    "password":"kongmodify"
+}
+
+### 获取 kong 用户信息
+
+GET  http://127.0.0.1:8080/v1/user/kong HTTP/1.1
+content-type: application/json
+
+### 删除用户
+
+DELETE http://127.0.0.1:8080/v1/user/3 HTTP/1.1
+content-type: application/json

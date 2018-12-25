@@ -1,0 +1,10 @@
+
+### 查询用户列表
+
+GET  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "offset": 0,
+    "limit": 20
+}

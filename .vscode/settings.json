@@ -1,0 +1,8 @@
+{
+  "rest-client.certificates": {
+    "127.0.0.1:8081": {
+      "cert": "/Users/zoot/github/Hello-Gopher/api-10/conf/server.crt",
+      "key": "/Users/zoot/github/Hello-Gopher/api-10/conf/server.key"
+    }
+  }
+}

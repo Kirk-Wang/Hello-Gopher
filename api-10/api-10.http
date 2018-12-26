@@ -1,0 +1,7 @@
+
+### 请求时不携带 CA 证书和私钥
+
+GET https://127.0.0.1:8081/v1/user HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDU4MTExNTAsImlkIjowLCJuYmYiOjE1NDU4MTExNTAsInVzZXJuYW1lIjoiYWRtaW4ifQ.bPHnUwfvdrCsLqQN6kRFdOzkrvv0L8zyfLhJC7vY25Q
+

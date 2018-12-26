@@ -154,3 +154,11 @@ source  /tmp/db.sql
 
 ![初始化 MySQL 数据库并建立连接](./images/RESTful/api-8.png)
 
+
+API Server 添加 HTTPS 支持
+
+生成私钥文件（server.key）和自签发的数字证书（server.crt）
+
+```sh
+openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days 3650 -subj "/C=DE/ST=NRW/L=Earth/O=Random Company/OU=IT/CN=127.0.0.1/emailAddress=xxxxx@qq.com"
+```

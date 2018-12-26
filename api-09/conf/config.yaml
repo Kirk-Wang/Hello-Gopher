@@ -7,7 +7,7 @@ jwt_secret: Rtg8BPKNEf2mB4mgvKONGPZZQSaJWNLijxR42qRgq0iBb5
 log:
   writers: file,stdout
   logger_level: DEBUG
-  logger_file: api-09/log/apiserver.log
+  logger_file: log/apiserver.log
   log_format_text: false
   rollingPolicy: size
   log_rotate_date: 1

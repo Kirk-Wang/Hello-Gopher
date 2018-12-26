@@ -6,7 +6,7 @@ max_ping_count: 10           # pingServer函数try的次数
 log:
   writers: file,stdout
   logger_level: DEBUG
-  logger_file: api-03/log/apiserver.log
+  logger_file: log/apiserver.log
   log_format_text: false
   rollingPolicy: size
   log_rotate_date: 1

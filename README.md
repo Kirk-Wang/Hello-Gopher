@@ -154,6 +154,29 @@ source  /tmp/db.sql
 
 ![初始化 MySQL 数据库并建立连接](./images/RESTful/api-8.png)
 
+### 自定义业务错误信息
+
+![自定义业务错误信息](./images/RESTful/api-9.png)
+
+### 读取和返回 HTTP 请求
+
+![读取和返回 HTTP 请求](./images/RESTful/api-10.png)
+
+### 用户业务逻辑处理
+
+![用户业务逻辑处理](./images/RESTful/api-11.png)
+
+### HTTP 调用添加自定义处理逻辑
+
+![HTTP 调用添加自定义处理逻辑](./images/RESTful/api-12.png)
+
+### API 身份验证
+
+![API 身份验证](./images/RESTful/api-13.png)
+
+### 用 HTTPS 加密 API 请求
+
+![用 HTTPS 加密 API 请求](./images/RESTful/api-14.png)
 
 API Server 添加 HTTPS 支持
 
@@ -162,3 +185,11 @@ API Server 添加 HTTPS 支持
 ```sh
 openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days 3650 -subj "/C=DE/ST=NRW/L=Earth/O=Random Company/OU=IT/CN=127.0.0.1/emailAddress=xxxxx@qq.com"
 ```
+
+### 用 Makefile 管理 API 项目
+
+![用 Makefile 管理 API 项目](./images/RESTful/api-15.png)
+
+### 给 API 命令增加版本功能
+
+![给 API 命令增加版本功能](./images/RESTful/api-16.png)

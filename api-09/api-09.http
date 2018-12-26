@@ -1,0 +1,31 @@
+
+### 用户登录
+
+POST  http://127.0.0.1:8080/login HTTP/1.1
+content-type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+### 请求时如果不携带签发的 token，会禁止请求
+
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "username":"user1",
+    "password":"user1234"
+}
+
+### 请求时携带 token
+
+POST  http://127.0.0.1:8080/v1/user HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDU4MTExNTAsImlkIjowLCJuYmYiOjE1NDU4MTExNTAsInVzZXJuYW1lIjoiYWRtaW4ifQ.bPHnUwfvdrCsLqQN6kRFdOzkrvv0L8zyfLhJC7vY25Q
+
+{
+    "username":"user1",
+    "password":"user1234"
+}

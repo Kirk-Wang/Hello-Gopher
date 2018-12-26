@@ -1,0 +1,11 @@
+{"level":"INFO","timestamp":"2018-12-26 15:47:54.694","file":"api-09/main.go:59","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-26 15:47:54.697","file":"api-09/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-26 15:50:35.159","file":"middleware/logging.go:84","msg":"134.971ms     | 127.0.0.1    | POST /login | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2018-12-26 15:51:59.854","file":"middleware/logging.go:84","msg":"128.499ms     | 127.0.0.1    | POST /login | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2018-12-26 15:57:17.089","file":"middleware/logging.go:84","msg":"115µs         | 127.0.0.1    | POST /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2018-12-26 15:57:51.492","file":"middleware/logging.go:84","msg":"138µs         | 127.0.0.1    | POST /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2018-12-26 15:58:35.645","file":"middleware/logging.go:84","msg":"158µs         | 127.0.0.1    | POST /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2018-12-26 15:58:37.186","file":"middleware/logging.go:84","msg":"129µs         | 127.0.0.1    | POST /v1/user | {code: 20103, message: The token was invalid.}"}
+{"level":"INFO","timestamp":"2018-12-26 15:59:10.491","file":"middleware/logging.go:84","msg":"139.21ms      | 127.0.0.1    | POST /login | {code: 0, message: OK}"}
+{"level":"INFO","timestamp":"2018-12-26 15:59:21.192","file":"user/create.go:16","msg":"User Create function called.","data":{"X-Request-Id":"7bedb825-9126-48dc-b0fa-b292e5c100b9"}}
+{"level":"INFO","timestamp":"2018-12-26 15:59:21.363","file":"middleware/logging.go:84","msg":"171.532ms     | 127.0.0.1    | POST /v1/user | {code: 0, message: OK}"}

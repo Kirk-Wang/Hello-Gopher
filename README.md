@@ -193,3 +193,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### 给 API 命令增加版本功能
 
 ![给 API 命令增加版本功能](./images/RESTful/api-16.png)
+
+### 给 API 增加启动脚本
+
+![给 API 增加启动脚本](./images/RESTful/api-17.png)

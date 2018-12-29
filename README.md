@@ -197,3 +197,11 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### 给 API 增加启动脚本
 
 ![给 API 增加启动脚本](./images/RESTful/api-17.png)
+
+### 基于 Nginx 的 API 部署方案
+
+![基于 Nginx 的 API 部署方案](./images/RESTful/api-18.png)
+
+### API 高可用方案
+
+![API 高可用方案](./images/RESTful/api-19.png)

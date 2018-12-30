@@ -209,3 +209,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### go test 测试你的代码
 
 ![go test 测试你的代码](./images/RESTful/api-20.png)
+
+### API 性能分析
+
+![API 性能分析](./images/RESTful/api-21.png)

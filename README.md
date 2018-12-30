@@ -205,3 +205,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### API 高可用方案
 
 ![API 高可用方案](./images/RESTful/api-19.png)
+
+### go test 测试你的代码
+
+![go test 测试你的代码](./images/RESTful/api-20.png)

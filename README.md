@@ -213,3 +213,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### API 性能分析
 
 ![API 性能分析](./images/RESTful/api-21.png)
+
+### 生成 Swagger 在线文档
+
+![生成 Swagger 在线文档](./images/RESTful/api-22.png)

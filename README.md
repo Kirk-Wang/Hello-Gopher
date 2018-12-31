@@ -221,3 +221,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### API 性能测试和调优
 
 ![API 性能测试和调优](./images/RESTful/api-23.png)
+
+## IRIS+XORM 实战1
+
+![IRIS XORM 实战1](./images/iris+xorm1.png)

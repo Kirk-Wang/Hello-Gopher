@@ -1,0 +1,12 @@
+
+### 当前总共参与抽奖的用户数
+GET  http://localhost:8080/ HTTP/1.1
+
+### 从名单中随机抽取用户
+GET  http://localhost:8080/lucky HTTP/1.1
+
+### 导入参与名单作为抽奖的用户
+POST http://localhost:8080/import HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+users=user1,user2

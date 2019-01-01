@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	app := bootstrap.New("Superstar database", "一凡Sir")
+	app := bootstrap.New("Superstar database", "Kirk")
 	app.Bootstrap()
 	app.Configure(identity.Configure, routes.Configure)
 	app.Listen(":8081")

@@ -222,6 +222,14 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![API 性能测试和调优](./images/RESTful/api-23.png)
 
-## IRIS+XORM 实战1
+## IRIS+XORM 实战
 
-![IRIS XORM 实战1](./images/iris+xorm1.png)
+![IRIS XORM 实战](./images/iris+xorm1.png)
+
+## 高并发，高性能实战
+
+### 抽奖系统
+
+![抽奖系统](./images/Lottery/lottery-1.png)
+
+

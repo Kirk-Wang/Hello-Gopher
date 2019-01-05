@@ -1,0 +1,6 @@
+
+### test1
+GET  http://localhost:8080/?rate=4,3,2,1,0 HTTP/1.1
+
+### test2
+GET  http://localhost:8080/lucky?uid=1&rate=4,3,2,1,0 HTTP/1.1

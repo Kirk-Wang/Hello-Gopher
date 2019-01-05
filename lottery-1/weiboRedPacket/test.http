@@ -1,0 +1,9 @@
+### 返回全部红包地址
+GET  http://localhost:8080/ HTTP/1.1
+
+### 设置红包总金额，红包个数，返回抢红包的地址
+GET  http://localhost:8080/set?uid=1&money=100000&num=100000 HTTP/1.1
+
+### 抢红包，先到先得，随机得到红包金额
+GET http://localhost:8080/get?uid=1&id=188771651 HTTP/1.1
+

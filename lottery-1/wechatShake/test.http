@@ -1,0 +1,6 @@
+
+### 当前有效奖品种类数量，限量奖品总数量
+GET  http://localhost:8080/ HTTP/1.1
+
+### 抽奖
+GET  http://localhost:8080/lucky HTTP/1.1

@@ -240,4 +240,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![系统设计和架构设计](./images/Lottery/lottery-3.png)
 
+###  项目框架与核心代码
+
+![项目框架与核心代码](./images/Lottery/lottery-4.png)
 

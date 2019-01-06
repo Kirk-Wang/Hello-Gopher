@@ -236,4 +236,8 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![常见抽奖活动](./images/Lottery/lottery-2.png)
 
+### 系统设计和架构设计
+
+![系统设计和架构设计](./images/Lottery/lottery-3.png)
+
 

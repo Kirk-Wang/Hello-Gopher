@@ -244,3 +244,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![项目框架与核心代码](./images/Lottery/lottery-4.png)
 
+###  后台功能开发
+
+![后台功能开发](./images/Lottery/lottery-5.png)
+

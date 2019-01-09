@@ -248,3 +248,6 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![后台功能开发](./images/Lottery/lottery-5.png)
 
+### 基于mysql的抽奖功能开发
+
+![基于mysql的抽奖功能开发](./images/Lottery/lottery-6.png)

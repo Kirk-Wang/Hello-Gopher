@@ -256,3 +256,6 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### GO实现千万级WebSocket消息推送服务
 
 ![GO实现千万级WebSocket消息推送服务](./images/go-websocket.png)
+
+
+## 使用 GoLang 构建构建高性能游戏服务器(这是一个系列，哥们必须写完~~~哈哈哈哈哈哈哈)

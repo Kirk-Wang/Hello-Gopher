@@ -1,7 +1,0 @@
-{"level":"INFO","timestamp":"2018-12-25 14:05:00.526","file":"api-05/main.go:59","msg":"Start to listening the incoming requests on http address: :8080"}
-{"level":"INFO","timestamp":"2018-12-25 14:05:00.530","file":"api-05/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"DEBUG","timestamp":"2018-12-25 14:10:34.592","file":"user/create.go:26","msg":"username is: [admin], password is []"}
-{"level":"DEBUG","timestamp":"2018-12-25 14:12:11.231","file":"user/create.go:26","msg":"username is: [], password is [admin]"}
-{"level":"ERROR","timestamp":"2018-12-25 14:12:11.231","file":"user/create.go:29","msg":"Get an error","data":{"error":"Err - code: 20102, message: The user was not found. This is add message., error: username can not found in db: xx.xx.xx.xx"}}
-{"level":"DEBUG","timestamp":"2018-12-25 14:12:11.231","file":"user/create.go:33","msg":"err type is ErrUserNotFound"}
-{"level":"DEBUG","timestamp":"2018-12-25 14:16:16.650","file":"user/create.go:26","msg":"username is: [admin], password is [admin]"}

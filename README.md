@@ -226,8 +226,6 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![IRIS XORM 实战](./images/iris+xorm1.png)
 
-## Golang Cloud Native
-
 ## 高并发，高性能实战
 
 ### 抽奖系统
@@ -254,10 +252,9 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![基于mysql的抽奖功能开发](./images/Lottery/lottery-6.png)
 
-
 ### GO实现千万级WebSocket消息推送服务
 
 ![GO实现千万级WebSocket消息推送服务](./images/go-websocket.png)
 
+## 使用 GoLang 构建高性能游戏服务器
 
-## 使用 GoLang 构建高性能游戏服务器(这是一个系列，哥们必须写完~~~哈哈哈哈哈哈哈)

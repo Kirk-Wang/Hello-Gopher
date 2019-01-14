@@ -256,5 +256,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 
 ![GO实现千万级WebSocket消息推送服务](./images/go-websocket.png)
 
-## 使用 GoLang 构建高性能游戏服务器
+## 使用 GoLang 构建高性能网络游戏服务器
+
+![使用 GoLang 构建高性能网络游戏服务器](./images/nano/nano-1.png)
 

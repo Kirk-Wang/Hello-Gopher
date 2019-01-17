@@ -1,6 +1,8 @@
 package pipeline
 
 import (
+	"encoding/binary"
+	"io"
 	"sort"
 )
 
@@ -65,6 +67,33 @@ func Merge(in1, in2 <-chan int) <-chan int {
 			} else {
 				out <- v2
 				v2, ok2 = <-in2
+			}
+		}
+		close(out)
+	}()
+	return out
+}
+
+func ReaderSource(reader io.Reader) <-chan int {
+	//int 的大小根据系统来的
+	//64位机就是64位
+	out := make(chan int)
+	go func() {
+		// reader 送的是 bytes
+		buffer := make([]byte, 8)
+		for {
+			// n 是读了多少个字节
+			// err 是不是有错误，EOF就是有错误
+			n, err := reader.Read(buffer)
+			if n > 0 {
+				v := int(
+					// binary 操作，来拿进来
+					binary.BigEndian.Uint16(buffer),
+				)
+				out <- v
+			}
+			if err != nil {
+				break
 			}
 		}
 		close(out)

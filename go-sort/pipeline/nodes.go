@@ -3,6 +3,7 @@ package pipeline
 import (
 	"encoding/binary"
 	"io"
+	"math/rand"
 	"sort"
 )
 
@@ -74,29 +75,64 @@ func Merge(in1, in2 <-chan int) <-chan int {
 	return out
 }
 
-func ReaderSource(reader io.Reader) <-chan int {
+// chunkSize 不能一直读，要分块
+func ReaderSource(reader io.Reader, chunkSize int) <-chan int {
 	//int 的大小根据系统来的
 	//64位机就是64位
 	out := make(chan int)
 	go func() {
 		// reader 送的是 bytes
 		buffer := make([]byte, 8)
+		bytesRead := 0
 		for {
 			// n 是读了多少个字节
 			// err 是不是有错误，EOF就是有错误
 			n, err := reader.Read(buffer)
+			bytesRead += n
 			if n > 0 {
 				v := int(
 					// binary 操作，来拿进来
-					binary.BigEndian.Uint16(buffer),
+					binary.BigEndian.Uint64(buffer),
 				)
 				out <- v
 			}
-			if err != nil {
+			if err != nil || (chunkSize != -1 && bytesRead >= chunkSize) {
 				break
 			}
 		}
 		close(out)
 	}()
 	return out
+}
+
+func WirterSink(writer io.Writer, in <-chan int) {
+	for v := range in {
+		buffer := make([]byte, 8)
+		binary.BigEndian.PutUint64(buffer, uint64(v))
+		writer.Write(buffer)
+	}
+}
+
+func RandomSource(count int) <-chan int {
+	out := make(chan int)
+	go func() {
+		for i := 0; i < count; i++ {
+			out <- rand.Int()
+		}
+		close(out)
+	}()
+	return out
+}
+
+func MergeN(inputs ...<-chan int) <-chan int {
+	if len(inputs) == 1 {
+		return inputs[0]
+	}
+	// 把这么多 inputs 分成两半
+	m := len(inputs) / 2
+	// merge inputs[0...m) and inputs [m..end)
+	return Merge(
+		MergeN(inputs[:m]...),
+		MergeN(inputs[m:]...),
+	)
 }

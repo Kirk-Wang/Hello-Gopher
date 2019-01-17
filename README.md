@@ -6,6 +6,17 @@ Go Programming Language 扫盲
 
 go1.11.2
 
+### linux 机器上使用 top 命令
+
+* p 键 - 按 cpu 使用率排序
+* m 键 - 按内存使用量排序
+
+### Mac 下 top 命令
+
+* 先输入 o，然后输入 cpu 则按 cpu 使用量排序，输入 rsize 则按内存使用量排序。
+
+* 记不清了，可以在 top 的界面上按 ?，在弹出的帮助界面中即可看到。
+
 ### Go 基础语法脑图回顾
 
 ![Go 基础语法脑图回顾](./images/Go1.png)

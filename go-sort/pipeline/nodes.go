@@ -2,10 +2,18 @@ package pipeline
 
 import (
 	"encoding/binary"
+	"fmt"
 	"io"
 	"math/rand"
 	"sort"
+	"time"
 )
+
+var startTime time.Time
+
+func Init() {
+	startTime = time.Now()
+}
 
 // 可变长参数
 // 对于用的人来说，只能拿东西
@@ -24,16 +32,17 @@ func ArraySource(a ...int) <-chan int {
 // return的 <-chan int 是一个输出，相对于使用它的人来说，只能从它收东西（只出不进)
 // InMemSort只能发东西
 func InMemSort(in <-chan int) <-chan int {
-	out := make(chan int)
+	out := make(chan int, 1024)
 	go func() {
 		// Read into memory
 		a := []int{}
 		for v := range in {
 			a = append(a, v)
 		}
-
+		fmt.Println("Read done:", time.Now().Sub(startTime))
 		// Sort
 		sort.Ints(a)
+		fmt.Println("InMemSort done:", time.Now().Sub(startTime))
 
 		// Output
 		for _, v := range a {
@@ -45,7 +54,7 @@ func InMemSort(in <-chan int) <-chan int {
 }
 
 func Merge(in1, in2 <-chan int) <-chan int {
-	out := make(chan int)
+	out := make(chan int, 1024)
 	go func() {
 		// 1.同时从两个 chanel 去获得数据
 		// 2.获得的数据不一定有
@@ -71,6 +80,7 @@ func Merge(in1, in2 <-chan int) <-chan int {
 			}
 		}
 		close(out)
+		fmt.Println("Merge done:", time.Now().Sub(startTime))
 	}()
 	return out
 }
@@ -79,7 +89,8 @@ func Merge(in1, in2 <-chan int) <-chan int {
 func ReaderSource(reader io.Reader, chunkSize int) <-chan int {
 	//int 的大小根据系统来的
 	//64位机就是64位
-	out := make(chan int)
+	// out := make(chan int)
+	out := make(chan int, 1024) // 优化
 	go func() {
 		// reader 送的是 bytes
 		buffer := make([]byte, 8)

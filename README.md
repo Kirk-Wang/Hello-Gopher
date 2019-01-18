@@ -6,6 +6,10 @@ Go Programming Language 扫盲
 
 go1.11.2
 
+## 软件开发人员硬基础
+
+目的：注重**基础知识**和**思维方式**
+
 ### linux 机器上使用 top 命令
 
 * p 键 - 按 cpu 使用率排序
@@ -236,6 +240,7 @@ openssl req -new -nodes -x509 -out conf/server.crt -keyout conf/server.key -days
 ### API 性能测试和调优
 
 ![API 性能测试和调优](./images/RESTful/api-23.png)
+
 
 ## IRIS+XORM 实战
 

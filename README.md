@@ -101,8 +101,28 @@ ls /Users/zoot/.gvm/pkgsets/go1.11.2/global/pkg/mod/github.com/
 
 * 使用 go module
   * 将项目 vendor 转移到 go module
+  ```sh
+  # 启用 go module
+  export GO111MODULE=on
+  # copying requirements from vendor/vendor.json
+  go mod init github.com/gin-contrib/expvar
+  # 砍掉
+  rm -rf vendor
+  # download & test
+  go test -v . 
+  # /Users/zoot/.gvm/pkgsets/go1.11.2/global
+  echo $GOPATH
+  # 相关的包都下载到了这里
+  ls /Users/zoot/.gvm/pkgsets/go1.11.2/global/pkg/mod/github.com/ 
+  # 用指定版本
+  go get -u github.com/gin-gonic/gin@v1.3.0
+  ```
   * 新项目使用 go module
+  ```sh
+  go mod tidy
+  ```
 * 使用 Travis 整合 go module
+  * [govendor 和 go mod 同时支持](https://github.com/gin-gonic/gin/blob/master/.travis.yml)
 
 
 #### 本地开发，调试

@@ -97,9 +97,12 @@ echo $GOPATH
 ls /Users/zoot/.gvm/pkgsets/go1.11.2/global/pkg/mod/github.com/
 # 相关的包都下载到了这里
 
-
 ```
 
+* 使用 go module
+  * 将项目 vendor 转移到 go module
+  * 新项目使用 go module
+* 使用 Travis 整合 go module
 
 
 #### 本地开发，调试

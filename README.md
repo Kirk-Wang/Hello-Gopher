@@ -10,6 +10,15 @@ Go Programming Language 扫盲(go1.11.2)
 
 所读版本：1.8.6
 
+#### 先跑起来
+
+[SQLite Database Browser](https://github.com/sqlitebrowser/sqlitebrowser)
+
+下载 [SQLite](https://www.sqlite.org/download.html)，我的是 Mac，大家对应着下载。
+
+我的是 Mac, 已经自带了。
+
+
 
 
 ### (Go 相关基础) 脑图

@@ -122,7 +122,7 @@ ls /Users/zoot/.gvm/pkgsets/go1.11.2/global/pkg/mod/github.com/
   go mod tidy
   ```
 * 使用 Travis 整合 go module
-  * [govendor 和 go mod 同时支持](https://github.com/gin-gonic/gin/blob/master/.travis.yml)
+  * [govendor 和 go mod 同时支持--Gin 的 travis ](https://github.com/gin-gonic/gin/blob/master/.travis.yml)
 
 
 #### 本地开发，调试

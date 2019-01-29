@@ -23,7 +23,7 @@ go1.11.2
 
 ### 网络排序
 
-![网络排序](./images/sort.png)
+[网络排序](./images/sort.png)
 
 ### Go 基础语法脑图回顾
 

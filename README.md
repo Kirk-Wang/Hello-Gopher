@@ -4,7 +4,7 @@
 
 Go Programming Language 扫盲(go1.11.2)
 
-### 读 Pipe（一本好书🤦‍♀️）
+### 读 Pipe（一本好书🤦‍♀️，可以学到生产级别的CRUD🤣）
 
 [Pipe](https://github.com/b3log/pipe) 是一款小而美的 Go 博客平台。作者写的代码十分优雅，值得借鉴。
 
@@ -60,7 +60,59 @@ docker-compose down # 销毁
 
 4. 进入 [http://localhost:5897](http://localhost:5897)
 
+5. 可以先使用本地账号初始化
 
+
+### go module(go1.11)
+
+统一包管理工具，开发时不需要关心 GoPath，任何一个目录都可以进行开发。
+
+这里有两篇文章，大家可以扫盲一下：
+* [golang包管理解决之道——go modules初探](https://www.cnblogs.com/apocelipes/p/9534885.html)
+* [再探go modules：使用与细节](https://www.cnblogs.com/apocelipes/p/10295096.html)
+
+当前 pipe 项目，采用是 go1.10.x 的版本进行迭代，所以用了 vendor folder 来解决项目用到的第三方的package。vendor 用来解决不同项目用到不同版本的同一个 package。[govendor](https://github.com/kardianos/govendor) 工具。
+
+在 go1.11 中 `GO111MODULE` 默认是 `auto`(disabled)，需要`export GO111MODULE=on`。
+
+*现在我们需要将 vender.json 转移到 go mod*
+```sh
+export GO111MODULE=on # 启用 go module
+
+# creating new go.mod: module github.com/b3log/pipe
+# copying requirements from vendor/vendor.json
+go mod init github.com/b3log/pipe
+
+go clean -i -x -modcache # 先清掉所有的东西
+
+rm -rf ./vendor # 砍掉 vendor
+
+go mod download
+
+go build -i -v # build 一下
+
+echo $GOPATH
+# /Users/zoot/.gvm/pkgsets/go1.11.2/global
+
+ls /Users/zoot/.gvm/pkgsets/go1.11.2/global/pkg/mod/github.com/
+# 相关的包都下载到了这里
+
+
+```
+
+
+
+#### 本地开发，调试
+
+1. 我本机开发环境
+```sh
+# vscode
+# go version go1.11.2 darwin/amd64
+```
+
+
+
+----
 
 ### (Go 相关基础) 脑图
 

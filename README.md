@@ -135,25 +135,24 @@ ls /Users/zoot/.gvm/pkgsets/go1.11.2/global/pkg/mod/github.com/
 
 #### Traefik & Docker
 
+[Traefik](https://docs.traefik.io/)
+
 [用 Traefik 搭配 Docker 快速架設服務](https://blog.wu-boy.com/2019/01/deploy-service-using-traefik-and-docker/#more-7193)
 
-* *Traefik VS. HAProxy,Nginx,Caddy*
+项目：[drone-golang-example](https://github.com/go-training/drone-golang-example)
 
-* *如何快速在同一台机器上假设两个服务*
+* Traefik VS. HAProxy,Nginx,Caddy
 
-* *如何搭配 Drone 自动化更新服务*
+* 如何快速在同一台机器上假设两个服务
 
-* *自动化部署*
+* 如何搭配 Drone 自动化更新服务
+
+* 自动化部署
   * 编译 Binary
   * 上传 Docker Image
   * ssh 远端机器
     * 下载最新 Image
     * 重新启动服务
-
-
-
-
-
 ----
 
 ### (Go 相关基础) 脑图

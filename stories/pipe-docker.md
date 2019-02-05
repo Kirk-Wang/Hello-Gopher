@@ -1,4 +1,4 @@
-#### 利用 Docker，先让它快速跑起来
+### 利用 Docker，先让它快速跑起来
 
 下载 [SQLite](https://www.sqlite.org/download.html)，我的是 Mac，大家对应着下载。
 

@@ -10,14 +10,7 @@ Go Programming Language 扫盲(go1.11.2)
 
 * [利用 Docker，先让它快速跑起来](./stories/pipe-docker.md)
 * [go module](./stories/go-module.md)
-
-#### 本地开发，调试
-
-1. 我本机开发环境
-```sh
-# vscode
-# go version go1.11.2 darwin/amd64
-```
+* [本地开发，调试](./stories/pipe-debug.md)
 
 #### Traefik & Docker
 

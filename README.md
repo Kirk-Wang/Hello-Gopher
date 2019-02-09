@@ -5,7 +5,6 @@
 Go Programming Language 扫盲(go1.11.2)
 
 ### 基础知识 & 编程能力
-
 ### 读 Pipe（一本好书🤦‍♀️，可以学到生产级别的CRUD🤣）
 
 [Pipe](https://github.com/b3log/pipe) 是一款小而美的 Go 博客平台。作者写的代码十分优雅，值得借鉴。所读版本：1.8.6。

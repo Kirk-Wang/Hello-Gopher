@@ -46,6 +46,9 @@ Go Programming Language 扫盲(go1.11.2)
 * [Go 面向接口](./images/Go4.png)
 * [Go 函数式编程](./images/Go5.png)
 * [Go 错误处理和资源管理](./images/Go6.png)
+    * CACHT ALL THE ERRORS
+        * defer 调用
+            * 确保调用在函数结束时发生
 * [Go 测试与性能调优](./images/Go7.png)
 * [Goroutine](./images/Go8.png)
 * [Channel](./images/Go9.png)

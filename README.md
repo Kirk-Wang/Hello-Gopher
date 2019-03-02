@@ -57,6 +57,7 @@ Go Programming Language 扫盲(go1.11.2)
             * PrintHeader/PrintFooter
         * 错误处理的概念
             * `error` 就是一个 `interface`，我们可以自己去实现它的接口
+        * 如何实现统一的错误处理逻辑
 * [Go 测试与性能调优](./images/Go7.png)
 * [Goroutine](./images/Go8.png)
 * [Channel](./images/Go9.png)

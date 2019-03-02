@@ -58,6 +58,11 @@ Go Programming Language 扫盲(go1.11.2)
         * 错误处理的概念
             * `error` 就是一个 `interface`，我们可以自己去实现它的接口
         * 如何实现统一的错误处理逻辑
+            * errWrapper
+        * panic & recover
+            * 停止当前函数执行
+            * 一直向上返回，执行每一层的 defer
+            * 如果没有遇见 recover，程序退出
 * [Go 测试与性能调优](./images/Go7.png)
 * [Goroutine](./images/Go8.png)
 * [Channel](./images/Go9.png)

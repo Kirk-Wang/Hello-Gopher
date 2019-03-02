@@ -51,6 +51,10 @@ Go Programming Language 扫盲(go1.11.2)
             * 确保调用在函数结束时发生
             * 参数在 defer 语句时计算
             * defer 列表为后进先出
+        * 何时使用 defer 调用
+            * Open/Close
+            * Lock/Unlock
+            * PrintHeader/PrintFooter
 * [Go 测试与性能调优](./images/Go7.png)
 * [Goroutine](./images/Go8.png)
 * [Channel](./images/Go9.png)

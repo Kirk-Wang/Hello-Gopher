@@ -118,6 +118,12 @@ Go Programming Language 扫盲(go1.11.2)
 * [GO实现千万级WebSocket消息推送服务](./images/go-websocket.png)
 * [使用 GoLang 构建高性能网络游戏服务器](./images/nano/nano-1.png)
 
+### 红包 ❤️ 高并发
+
+需求分析->概要设计->详细设计->开发->测试->部署->运维 
+
+
+
 ## Other
 
 ### 软件开发人员硬基础

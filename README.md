@@ -31,6 +31,15 @@ Go Programming Language 扫盲(go1.11.2)
     * TLS (Thread Local Storage)：线程独立的内存
 * 存储
     * 寄存器 > 缓存 > 内存 > 硬盘
+* 寻址空间
+    * 32位 -> 4G
+    * 64位 -> ~10^19 Bytes
+    * 64位JVM -> 可使用更大内存，需重新编译
+
+寻址 int n = *p; -> MOV EAX,[EBX]
+
+指针p --> 逻辑内存，进程独立 2^32 或 2^64 ---> 物理内存（分页，虚拟内存）---> 寄存器
+
 ### Pipe
 
 [Pipe](https://github.com/b3log/pipe) 是一款小而美的 Go 博客平台。作者写的代码十分优雅，值得借鉴。所读版本：1.8.6。

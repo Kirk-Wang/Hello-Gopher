@@ -8,7 +8,7 @@ Go Programming Language 扫盲(go1.11.2)
 
 [CodeJam](https://codingcompetitions.withgoogle.com/codejam)
 
-一道题：
+### 一道题：
 * [Beautiful Numbers](https://code.google.com/codejam/contest/5264487/dashboard#s=p1)
     * 1, 11, 111 .... 是 beautiful 的
     * 3 -> 2进制 -> 11
@@ -21,8 +21,14 @@ Go Programming Language 扫盲(go1.11.2)
 
 #### 操作系统
 
-* 进程 VS 线程？
-    * 
+* 进程(隔离)
+    * 线程
+    * 内存（逻辑内存）
+    * 文件/网络句柄
+* 线程(真正运行)
+    * 栈（调用堆栈）,从主线程的入口 main 函数调用，每次调用把所有的参数和返回地址压到栈里面
+    * PC (program counter)：下一条执行指令地址，放在内存
+    * TLS (Thread Local Storage)
 
 ### 读 Pipe（一本好书🤦‍♀️，可以学到生产级别的CRUD🤣）
 

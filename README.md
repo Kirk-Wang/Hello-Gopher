@@ -6,7 +6,7 @@ Go Programming Language 扫盲(go1.11.2)
 
 ### 基础知识 & 编程能力
 
-[codejam](https://codingcompetitions.withgoogle.com/codejam)
+[CodeJam](https://codingcompetitions.withgoogle.com/codejam)
 
 一道题：
 * [Beautiful Numbers](https://code.google.com/codejam/contest/5264487/dashboard#s=p1)

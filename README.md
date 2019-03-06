@@ -5,6 +5,17 @@
 Go Programming Language 扫盲(go1.11.2)
 
 ### 基础知识 & 编程能力
+
+[codejam](https://codingcompetitions.withgoogle.com/codejam)
+
+一道题：
+* [Beautiful Numbers](https://code.google.com/codejam/contest/5264487/dashboard#s=p1)
+    * 1, 11, 111 .... 是 beautiful 的
+    * 3 -> 2进制 -> 11
+    * 13 -> 3进制 -> 111 (√)
+    * 13 -> 12进制 -> 11 (X)
+
+
 ### 读 Pipe（一本好书🤦‍♀️，可以学到生产级别的CRUD🤣）
 
 [Pipe](https://github.com/b3log/pipe) 是一款小而美的 Go 博客平台。作者写的代码十分优雅，值得借鉴。所读版本：1.8.6。

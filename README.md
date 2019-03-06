@@ -62,7 +62,8 @@ Go Programming Language 扫盲(go1.11.2)
         * 发送 & Ack
     * 丢 Ack (一定是按照顺序 Ack )
         * 超时重传
-
+* 题：
+    [阿里巴巴有相距1500km的机房A和B，现有100GB数据需要通过...](https://www.nowcoder.com/questionTerminal/97a4bed9cf644832bbb8dec72afccfa8)
 ### Pipe
 
 [Pipe](https://github.com/b3log/pipe) 是一款小而美的 Go 博客平台。作者写的代码十分优雅，值得借鉴。所读版本：1.8.6。

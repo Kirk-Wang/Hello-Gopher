@@ -29,7 +29,8 @@ Go Programming Language 扫盲(go1.11.2)
     * 栈（调用堆栈）,从主线程的入口 main 函数调用，每次调用把所有的参数和返回地址压到栈里面
     * PC (program counter)：下一条执行指令地址，放在内存
     * TLS (Thread Local Storage)：线程独立的内存
-
+* 存储
+    * 寄存器 > 缓存 > 内存 > 硬盘
 ### Pipe
 
 [Pipe](https://github.com/b3log/pipe) 是一款小而美的 Go 博客平台。作者写的代码十分优雅，值得借鉴。所读版本：1.8.6。

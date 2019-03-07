@@ -46,6 +46,17 @@ Databases：In MongoDB, **databases hold collections of documents.**
 ![Collection](https://docs.mongodb.com/manual/_images/crud-annotated-collection.bakedsvg.svg)
 
 
+### [Capped Collections](https://docs.mongodb.com/manual/core/capped-collections/) 
+上线集合
+
+```sh
+var mydb = db.createCollection("mytest")
+printjson(mydb);
+# {"ok":1}
+```
+
+
 ### [Documents](https://docs.mongodb.com/manual/core/document/)
 
 ![Document Structure](https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg)
+

@@ -127,7 +127,6 @@
 * [基于mysql的抽奖功能开发](./images/Lottery/lottery-6.png)
 * [GO实现千万级WebSocket消息推送服务](./images/go-websocket.png)
 * [使用 GoLang 构建高性能网络游戏服务器](./images/nano/nano-1.png)
-
 * [红包高并发业务](./RED.md)
 
 ## Other

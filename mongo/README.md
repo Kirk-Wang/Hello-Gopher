@@ -49,7 +49,7 @@ Databases：In MongoDB, **databases hold collections of documents.**
 
 
 ### [Capped Collections](https://docs.mongodb.com/manual/core/capped-collections/) 
-上限集合，想象成一个固定的循环队列
+上限集合，想象成一个固定的循环队列的模式
 
 一个集合，它可以做到 size 的上限和 document 个数的上限
 
@@ -73,6 +73,9 @@ printjson(list)
 
 **可以查看 [db.createCollection()](https://docs.mongodb.com/manual/reference/method/db.createCollection/#db.createCollection)，使用代码创建**
 
+```sh
+db.createCollection("mylog", { capped: true, size: 5242880, max: 5000 })
+```
 
 ### [Documents](https://docs.mongodb.com/manual/core/document/)
 

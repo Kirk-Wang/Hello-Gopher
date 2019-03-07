@@ -8,6 +8,11 @@
 
 [MongoDB 笔记](./mongo)
 
+
+# Code Jam
+
+<img src="https://codingcompetitions.withgoogle.com/static/codejam-about-1-1067.jpg" width="200px">
+
 ### 基础知识
 
 [CodeJam](https://codingcompetitions.withgoogle.com/codejam)

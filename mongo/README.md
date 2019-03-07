@@ -57,7 +57,7 @@ printjson(mydb);
 # {"ok":1}
 ```
 
-[create_capped_collection](./images/create_capped_collection.png)
+![create_capped_collection](./images/create_capped_collection.png)
 
 
 ### [Documents](https://docs.mongodb.com/manual/core/document/)

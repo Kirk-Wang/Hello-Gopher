@@ -71,6 +71,8 @@ printjson(list)
 
 ![insert_capped_collection](./images/insert_capped_collection.png)
 
+**可以查看 [db.createCollection()](https://docs.mongodb.com/manual/reference/method/db.createCollection/#db.createCollection)，使用代码创建**
+
 
 ### [Documents](https://docs.mongodb.com/manual/core/document/)
 

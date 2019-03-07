@@ -47,13 +47,17 @@ Databases：In MongoDB, **databases hold collections of documents.**
 
 
 ### [Capped Collections](https://docs.mongodb.com/manual/core/capped-collections/) 
-上线集合
+上限集合，想象成一个固定的循环队列
+
+一个集合，它可以做到 size 的上限和 document 个数的上限
 
 ```sh
 var mydb = db.createCollection("mytest")
 printjson(mydb);
 # {"ok":1}
 ```
+
+[create_capped_collection](./images/create_capped_collection.png)
 
 
 ### [Documents](https://docs.mongodb.com/manual/core/document/)

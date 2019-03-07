@@ -1,5 +1,5 @@
 
-### 使用 Docker 一秒安装 Mongodb
+### 使用 Docker 一秒本地搭建 Mongodb  & mongo-express 环境
 
 编辑 docker-compose.yml
 ```sh
@@ -28,3 +28,9 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: 123456
 ```
+
+启动
+```sh
+docker-compose up -d
+```
+

@@ -61,6 +61,16 @@ printjson(mydb);
 
 ![create_capped_collection](./images/create_capped_collection.png)
 
+```sh
+for (var i=0;i<10;i++) {
+  db.logs.insert({name: i})
+}
+var list = db.logs.find().toArray();
+printjson(list)
+```
+
+![insert_capped_collection](./images/insert_capped_collection.png)
+
 
 ### [Documents](https://docs.mongodb.com/manual/core/document/)
 

@@ -36,7 +36,9 @@ services:
 docker-compose up -d
 ```
 
-进入 mongo-express，[http://localhost:8081](http://localhost:8081)，对 database 进行一系列的操作
+进入 mongo-express，[http://localhost:8081](http://localhost:8081)，对 database 进行一系列的操作（安全，无需提供远程访问）
+
+[Robomongo](https://github.com/Studio3T/robomongo)，外部管理。(可视化的操作配合官方手册，学起来事半功倍)
 
 
 ### [Databases and Collections](https://docs.mongodb.com/manual/core/databases-and-collections/)

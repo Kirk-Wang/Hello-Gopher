@@ -35,3 +35,6 @@ services:
 ```sh
 docker-compose up -d
 ```
+
+进入 mongo-express，[http://localhost:8081](http://localhost:8081)，对 database 进行一系列的操作
+

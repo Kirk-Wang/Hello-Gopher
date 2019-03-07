@@ -1,5 +1,5 @@
 
-# [Introduction to MongoDB](https://docs.mongodb.com/manual/introduction/)
+### [Introduction to MongoDB](https://docs.mongodb.com/manual/introduction/)
 
 ### 使用 Docker 一秒本地搭建 Mongodb  & mongo-express 环境
 
@@ -37,4 +37,12 @@ docker-compose up -d
 ```
 
 进入 mongo-express，[http://localhost:8081](http://localhost:8081)，对 database 进行一系列的操作
+
+
+### [Databases and Collections](https://docs.mongodb.com/manual/core/databases-and-collections/)
+
+Databases：In MongoDB, databases hold collections of documents.
+
+![Collection](https://docs.mongodb.com/manual/_images/crud-annotated-collection.bakedsvg.svg)
+
 

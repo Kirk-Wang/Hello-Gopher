@@ -41,8 +41,11 @@ docker-compose up -d
 
 ### [Databases and Collections](https://docs.mongodb.com/manual/core/databases-and-collections/)
 
-Databases：In MongoDB, databases hold collections of documents.
+Databases：In MongoDB, **databases hold collections of documents.**
 
 ![Collection](https://docs.mongodb.com/manual/_images/crud-annotated-collection.bakedsvg.svg)
 
 
+### [Documents](https://docs.mongodb.com/manual/core/document/)
+
+![Document Structure](https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg)

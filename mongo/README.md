@@ -86,3 +86,6 @@ db.createCollection("mylog", { capped: true, size: 5242880, max: 5000 })
 
 ![Document Structure](https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg)
 
+### [BSON Types](https://docs.mongodb.com/manual/reference/bson-types/)
+
+

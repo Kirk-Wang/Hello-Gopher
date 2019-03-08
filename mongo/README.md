@@ -121,3 +121,14 @@ Returns a new ObjectId value. The 12-byte ObjectId value consists of:
 
 The mongo shell is an interactive JavaScript interface to MongoDB. 
 
+它包裹了一个 Javascript V8 引擎
+
+```sh
+mongo -u root -p 123456
+show dbs
+db
+use microtest
+show collections
+load("/root/demo.js") # 直接加载一个 js 文件去执行多条对数据库的操作
+```
+

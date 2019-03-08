@@ -99,3 +99,7 @@ db.mycollection.insert({name:/d+/}) # 插入正则
 db.mycollection.insert({name:function(){}})  # 插入javascript
 ```
 
+**ObjectID**
+
+无索引的情况下，我们的数据叫做heap。有了主键索引，那么就是一个BTree。
+

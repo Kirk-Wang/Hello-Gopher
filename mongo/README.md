@@ -173,5 +173,8 @@ db.help() # 要善用 help
 根据文档操练，给一个 SQL 语句怎么去转换为 Mongodb 的操作
 
 * [Create and Alter](https://docs.mongodb.com/manual/reference/sql-comparison/#create-and-alter)
-
+* [Insert](https://docs.mongodb.com/manual/reference/sql-comparison/#insert)
+* [Select](https://docs.mongodb.com/manual/reference/sql-comparison/#select)
+* [Update Records](https://docs.mongodb.com/manual/reference/sql-comparison/#update-records)
+* [Delete Records](https://docs.mongodb.com/manual/reference/sql-comparison/#delete-records)
 

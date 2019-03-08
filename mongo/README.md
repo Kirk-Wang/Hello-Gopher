@@ -88,4 +88,11 @@ db.createCollection("mylog", { capped: true, size: 5242880, max: 5000 })
 
 ### [BSON Types](https://docs.mongodb.com/manual/reference/bson-types/)
 
+[$type](https://docs.mongodb.com/manual/reference/operator/query/type/#op._S_type)  应用之查询 `Undefined` 类型
+
+```sh
+printjson(db.mycollection.find({name:undefined}).toArray()); # 报错，cannot compare to undefined
+printjson(db.mycollection.find({name:{$type:6}}).toArray()); # OK
+printjson(db.mycollection.find({name:{$type: "undefined"}}).toArray()); # OK
+```
 

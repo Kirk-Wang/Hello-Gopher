@@ -188,3 +188,5 @@ db.help() # 要善用 help
   * $and $not $nor $or
 * [Element Query Operators](https://docs.mongodb.com/manual/reference/operator/query-element/)
   * $exists $type
+* [Evaluation Query Operators](https://docs.mongodb.com/manual/reference/operator/query-evaluation/)
+  * $expr $jsonSchema $mod

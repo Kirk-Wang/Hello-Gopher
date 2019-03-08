@@ -99,7 +99,19 @@ db.mycollection.insert({name:/d+/}) # 插入正则
 db.mycollection.insert({name:function(){}})  # 插入javascript
 ```
 
-**ObjectID**
+**[ObjectId()](https://docs.mongodb.com/manual/reference/method/ObjectId/index.html)**
 
 无索引的情况下，我们的数据叫做heap。有了主键索引，那么就是一个BTree。
+
+```sh
+ObjectId() # 每次执行，它都会变
+# ObjectId("5c8261d3147ffc951921e62a") 
+```
+
+Returns a new ObjectId value. The 12-byte ObjectId value consists of:
+* a 4-byte value representing the seconds since the Unix epoch,
+* a 5-byte random value, and
+* a 3-byte counter, starting with a random value.
+
+通过上面的这种方式来将 ObjectId 做到全局唯一。
 

@@ -129,6 +129,6 @@ show dbs
 db
 use microtest
 show collections
-load("/root/demo.js") # 直接加载一个 js 文件去执行多条对数据库的操作
+load("/root/demo.js") # 直接加载一个 js 文件去执行多条对数据库的操作，写非常复杂的语句
 ```
 

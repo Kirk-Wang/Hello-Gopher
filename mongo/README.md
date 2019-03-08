@@ -123,12 +123,40 @@ The mongo shell is an interactive JavaScript interface to MongoDB.
 
 它包裹了一个 Javascript V8 引擎
 
+什么命令都可以不学，进人 shell 先打 help 
+
 ```sh
 mongo -u root -p 123456
+help
+#	db.help()                    help on db methods
+#	db.mycoll.help()             help on collection methods
+#	sh.help()                    sharding helpers
+#	rs.help()                    replica set helpers
+#	help admin                   administrative help
+#	help connect                 connecting to a db help
+#	help keys                    key shortcuts
+#	help misc                    misc things to know
+#	help mr                      mapreduce
+
+#	show dbs                     show database names
+#	show collections             show collections in current database
+#	show users                   show users in current database
+#	show profile                 show most recent system.profile entries with time >= 1ms
+#	show logs                    show the accessible logger names
+#	show log [name]              prints out the last segment of log in memory, 'global' is default
+#	use <db_name>                set current database
+#	db.foo.find()                list objects in collection foo
+#	db.foo.find( { a : 1 } )     list objects in foo where a == 1
+#	it                           result of the last line evaluated; use to further iterate
+#	DBQuery.shellBatchSize = x   set default number of items to display on shell
+#	exit                         quit the mongo shell
+
 show dbs
 db
 use microtest
 show collections
 load("/root/demo.js") # 直接加载一个 js 文件去执行多条对数据库的操作，写非常复杂的语句
+cls # 清屏
+db.help() # 要善用 help
 ```
 

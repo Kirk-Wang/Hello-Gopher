@@ -94,5 +94,8 @@ db.createCollection("mylog", { capped: true, size: 5242880, max: 5000 })
 printjson(db.mycollection.find({name:undefined}).toArray()); # 报错，cannot compare to undefined
 printjson(db.mycollection.find({name:{$type:6}}).toArray()); # OK
 printjson(db.mycollection.find({name:{$type: "undefined"}}).toArray()); # OK
+
+db.mycollection.insert({name:/d+/}) # 插入正则
+db.mycollection.insert({name:function(){}})  # 插入javascript
 ```
 

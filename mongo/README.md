@@ -169,3 +169,5 @@ db.help() # 要善用 help
 ### [SQL to MongoDB Mapping Chart](https://docs.mongodb.com/manual/reference/sql-comparison/)
 
 注意它们之间相关概念对照
+
+[Create and Alter](https://docs.mongodb.com/manual/reference/sql-comparison/#create-and-alter)

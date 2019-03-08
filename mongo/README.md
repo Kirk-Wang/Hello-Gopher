@@ -88,6 +88,8 @@ db.createCollection("mylog", { capped: true, size: 5242880, max: 5000 })
 
 ### [BSON Types](https://docs.mongodb.com/manual/reference/bson-types/)
 
+Double, String, Object, Array, Binary data, Undefined, ObjectId, Boolean, Date, Null, Regular Expression, DBPointer, JavaScript, Symbol, JavaScript (with scope)	, 32-bit integer, Timestamp, 64-bit integer, Decimal128, Min key, Max key
+
 [$type](https://docs.mongodb.com/manual/reference/operator/query/type/#op._S_type)  应用之查询 `Undefined` 类型
 
 ```sh
@@ -102,8 +104,6 @@ db.mycollection.insert({name:function(){}})  # 插入javascript
 **[ObjectId()](https://docs.mongodb.com/manual/reference/method/ObjectId/index.html)**
 
 无索引的情况下，我们的数据叫做heap。有了主键索引，那么就是一个BTree。
-
-Double, String, Object, Array, Binary data, Undefined, ObjectId, Boolean, Date, Null, Regular Expression, DBPointer, JavaScript, Symbol, JavaScript (with scope)	, 32-bit integer, Timestamp, 64-bit integer, Decimal128, Min key, Max key
 
 ```sh
 ObjectId() # 每次执行，它都会变

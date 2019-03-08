@@ -186,3 +186,5 @@ db.help() # 要善用 help
   * $eq $gt $gte $in $lt $lte $ne $nin (8)
 * [Logical Query Operators](https://docs.mongodb.com/manual/reference/operator/query-logical/)
   * $and $not $nor $or
+* [Element Query Operators](https://docs.mongodb.com/manual/reference/operator/query-element/)
+  * $exists $type

@@ -170,4 +170,8 @@ db.help() # 要善用 help
 
 注意它们之间相关概念对照
 
-[Create and Alter](https://docs.mongodb.com/manual/reference/sql-comparison/#create-and-alter)
+根据文档操练，给一个 SQL 语句怎么去转换为 Mongodb 的操作
+
+* [Create and Alter](https://docs.mongodb.com/manual/reference/sql-comparison/#create-and-alter)
+
+

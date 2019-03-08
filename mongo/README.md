@@ -184,3 +184,5 @@ db.help() # 要善用 help
 
 * [Comparison Query Operators](https://docs.mongodb.com/manual/reference/operator/query-comparison/)
   * $eq $gt $gte $in $lt $lte $ne $nin (8)
+* [Logical Query Operators](https://docs.mongodb.com/manual/reference/operator/query-logical/)
+  * $and $not $nor $or

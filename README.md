@@ -4,14 +4,13 @@
 
 # MongoDB
 
-<img src="https://www.mongodb.com/assets/images/index/header-img.png" width="200px">
+<img src="https://github.com/mongodb/mongo-go-driver/blob/master/etc/assets/mongo-gopher.png" width="200px">
 
 [MongoDB 笔记](./mongo)
 
-
 # Code Jam
 
-<img src="https://codingcompetitions.withgoogle.com/static/codejam-about-1-1067.jpg" width="200px">
+<img src="https://community.topcoder-dev.com/i/events/google2006/codejamLogo.gif" width="200px">
 
 [基础知识](./basic)
 

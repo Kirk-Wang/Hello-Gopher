@@ -155,7 +155,13 @@ show dbs
 db
 use microtest
 show collections
-load("/root/demo.js") # 直接加载一个 js 文件去执行多条对数据库的操作，写非常复杂的语句
+load("/root/demo.js") # 直接加载一个 js 文件写非常复杂的语句
+# var mongo=new Mongo("192.168.161.136:27017")
+# var db=mongo.getDB("datamip")
+# var collection=db.getCollection("person")
+# var list = collection.find().toArray();
+# printjson(list);
+
 cls # 清屏
 db.help() # 要善用 help
 ```

@@ -117,3 +117,7 @@ Returns a new ObjectId value. The 12-byte ObjectId value consists of:
 
 通过上面的这种方式来将 ObjectId 做到全局唯一。
 
+### [The mongo Shell](https://docs.mongodb.com/manual/mongo/#the-mongo-shell)
+
+The mongo shell is an interactive JavaScript interface to MongoDB. 
+

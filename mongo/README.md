@@ -195,4 +195,4 @@ db.help() # 要善用 help
 * [Field Update Operators](https://docs.mongodb.com/manual/reference/operator/update-field/)
   * $currentDate $inc $min $max $mul $rename $set $setOnInsert $unset
 * [Array Update Operators](https://docs.mongodb.com/manual/reference/operator/update-array/)
-  * $ $[] $[<identifier>]	 $addToSet $pop $pull $push $pullAll
+  * $ $[] $[<identifier>]	 $addToSet $pop $pull $push $pullAll $each $position $slice $sort

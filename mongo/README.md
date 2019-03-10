@@ -183,7 +183,7 @@ db.help() # 要善用 help
 运算符相关
 
 * [Comparison Query Operators](https://docs.mongodb.com/manual/reference/operator/query-comparison/)
-  * $eq $gt $gte $in $lt $lte $ne $nin (8)
+  * $eq $gt $gte $in $lt $lte $ne $nin
 * [Logical Query Operators](https://docs.mongodb.com/manual/reference/operator/query-logical/)
   * $and $not $nor $or
 * [Element Query Operators](https://docs.mongodb.com/manual/reference/operator/query-element/)

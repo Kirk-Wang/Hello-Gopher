@@ -190,3 +190,5 @@ db.help() # 要善用 help
   * $exists $type
 * [Evaluation Query Operators](https://docs.mongodb.com/manual/reference/operator/query-evaluation/)
   * $expr $jsonSchema $mod $regex $text $where
+* [Array Query Operators](https://docs.mongodb.com/manual/reference/operator/query-array/)
+  * $all $elemMatch $size

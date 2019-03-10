@@ -180,21 +180,6 @@ db.help() # 要善用 help
 
 ### [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 
-运算符相关
+### [MongoDB CRUD Operations¶](https://docs.mongodb.com/manual/crud/)
 
-* [Comparison Query Operators](https://docs.mongodb.com/manual/reference/operator/query-comparison/)
-  * $eq $gt $gte $in $lt $lte $ne $nin
-* [Logical Query Operators](https://docs.mongodb.com/manual/reference/operator/query-logical/)
-  * $and $not $nor $or
-* [Element Query Operators](https://docs.mongodb.com/manual/reference/operator/query-element/)
-  * $exists $type
-* [Evaluation Query Operators](https://docs.mongodb.com/manual/reference/operator/query-evaluation/)
-  * $expr $jsonSchema $mod $regex $text $where
-* [Array Query Operators](https://docs.mongodb.com/manual/reference/operator/query-array/)
-  * $all $elemMatch $size
-* [Field Update Operators](https://docs.mongodb.com/manual/reference/operator/update-field/)
-  * $currentDate $inc $min $max $mul $rename $set $setOnInsert $unset
-* [Array Update Operators](https://docs.mongodb.com/manual/reference/operator/update-array/)
-  * $ $[] $[<identifier>]	 $addToSet $pop $pull $push $pullAll $each $position $slice $sort
-* [Bitwise Update Operator](https://docs.mongodb.com/manual/reference/operator/update-bitwise/)
-  * $bit
+ 

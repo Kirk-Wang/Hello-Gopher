@@ -194,3 +194,5 @@ db.help() # 要善用 help
   * $all $elemMatch $size
 * [Field Update Operators](https://docs.mongodb.com/manual/reference/operator/update-field/)
   * $currentDate $inc $min $max $mul $rename $set $setOnInsert $unset
+* [Array Update Operators](https://docs.mongodb.com/manual/reference/operator/update-array/)
+  * $ $[] $[<identifier>]	 $addToSet $pop $pull $push $pullAll

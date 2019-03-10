@@ -180,6 +180,5 @@ db.help() # 要善用 help
 
 ### [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 
-### [MongoDB CRUD Operations¶](https://docs.mongodb.com/manual/crud/)
+### [MongoDB CRUD Operations](https://docs.mongodb.com/manual/crud/)
 
- 

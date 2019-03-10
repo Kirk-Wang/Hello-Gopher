@@ -196,3 +196,5 @@ db.help() # 要善用 help
   * $currentDate $inc $min $max $mul $rename $set $setOnInsert $unset
 * [Array Update Operators](https://docs.mongodb.com/manual/reference/operator/update-array/)
   * $ $[] $[<identifier>]	 $addToSet $pop $pull $push $pullAll $each $position $slice $sort
+* [Bitwise Update Operator](https://docs.mongodb.com/manual/reference/operator/update-bitwise/)
+  * $bit

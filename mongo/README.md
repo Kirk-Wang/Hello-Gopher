@@ -191,3 +191,5 @@ db.help() # 要善用 help
 ![Delete Operations](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-deleteMany.bakedsvg.svg)
 
 ### [Indexes](https://docs.mongodb.com/manual/indexes/)
+
+![](https://docs.mongodb.com/manual/_images/index-for-sort.bakedsvg.svg)

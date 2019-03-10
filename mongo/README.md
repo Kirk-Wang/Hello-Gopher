@@ -182,3 +182,10 @@ db.help() # 要善用 help
 
 ### [MongoDB CRUD Operations](https://docs.mongodb.com/manual/crud/)
 
+![Create Operations](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-insertOne.bakedsvg.svg)
+
+![Read Operations](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-find.bakedsvg.svg)
+
+![Update Operations](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-updateMany.bakedsvg.svg)
+
+![Delete Operations](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-deleteMany.bakedsvg.svg)

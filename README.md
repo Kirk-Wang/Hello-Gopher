@@ -7,12 +7,7 @@
 <img src="https://github.com/mongodb/mongo-go-driver/blob/master/etc/assets/mongo-gopher.png" width="200px">
 
 * [MongoDB 快速上手笔记](./mongo)
-* [MongoDB 数据查询与聚合分析](./mongo/2.md)
-    * input -> 查询过滤 -> 清洗去重 -> 聚合分组 -> output
-    * MongoDB 条件查询
-    * 映射 Project 与过滤
-    * 去除重复 Distinct
-    * 分组统计 Group
+
 # Code Jam
 
 <img src="https://community.topcoder-dev.com/i/events/google2006/codejamLogo.gif" width="200px">

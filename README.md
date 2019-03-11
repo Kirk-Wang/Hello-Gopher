@@ -6,7 +6,7 @@
 
 <img src="https://github.com/mongodb/mongo-go-driver/blob/master/etc/assets/mongo-gopher.png" width="200px">
 
-[MongoDB 快速上手笔记](./mongo)
+* [MongoDB 快速上手笔记](./mongo)
 
 # Code Jam
 

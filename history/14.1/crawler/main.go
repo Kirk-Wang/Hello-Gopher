@@ -3,14 +3,18 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"golang.org/x/net/html/charset"
-	"golang.org/x/text/encoding"
-	"golang.org/x/text/transform"
 	"io"
 	"io/ioutil"
 	"net/http"
+
+	"golang.org/x/net/html/charset"
+	"golang.org/x/text/encoding"
+	"golang.org/x/text/transform"
 )
 
+/*
+ * 目标：获取并打印所有城市第一页用户的详细信息
+ */
 func main() {
 	resp, err := http.Get("http://www.zhenai.com/zhenghun")
 	if err != nil {

@@ -8,14 +8,7 @@ import (
 )
 
 func main() {
-	request, err := http.NewRequest(
-		http.MethodGet,
-		"https://www.zhenai.com/zhenghun",
-		nil)
-	request.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36")
-
-	client := http.Client{}
-	resp, err := client.Do(request)
+	resp, err := http.Get("https://www.zhenai.com/zhenghun")
 
 	if err != nil {
 		panic(err)

@@ -14,15 +14,15 @@ import (
 )
 
 func Fetch(url string) ([]byte, error) {
-	// request, err := http.NewRequest(
-	// 	http.MethodGet,
-	// 	url,
-	// 	nil)
+	request, err := http.NewRequest(
+		http.MethodGet,
+		url,
+		nil)
 
-	// request.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36")
-	// client := http.Client{}
-	// resp, err := client.Do(request)
-	resp, err := http.Get(url)
+	request.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36")
+	client := http.Client{}
+	resp, err := client.Do(request)
+	// resp, err := http.Get(url)
 	if err != nil {
 		return nil, err
 	}

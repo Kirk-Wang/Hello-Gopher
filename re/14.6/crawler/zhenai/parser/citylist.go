@@ -14,7 +14,7 @@ func ParseCityList(contents []byte) engine.ParseResult {
 	matches := re.FindAllSubmatch(contents, -1)
 
 	result := engine.ParseResult{}
-	limit := 3
+	// limit := 1
 	for _, m := range matches {
 		result.Items = append(result.Items, "City "+string(m[1]))
 
@@ -22,10 +22,10 @@ func ParseCityList(contents []byte) engine.ParseResult {
 			Url:        strings.Replace(string(m[2]), "m.", "www.", 1),
 			ParserFunc: ParseCity})
 
-		limit--
-		if limit == 0 {
-			break
-		}
+		// limit--
+		// if limit == 0 {
+		// 	break
+		// }
 	}
 	return result
 }

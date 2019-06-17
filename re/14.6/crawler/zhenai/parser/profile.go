@@ -9,14 +9,17 @@ import (
 )
 
 // "basicInfo":["未婚","28岁","射手座(11.22-12.21)","173cm","工作地:阿坝茂县","月收入:3-5千","高中及以下"]
-var basicInfoRe = regexp.MustCompile(`"basicInfo":([^\]]+])`)
-var fieldRe = regexp.MustCompile(`[^\[",\]]+`)
+var basicInfoRe = regexp.MustCompile(`"basicInfo":\[([^\]]+)`)
+var fieldRe = regexp.MustCompile(`[^",]+`)
 var genderRe = regexp.MustCompile(`"genderString":"([^"]+)"`)
 
 func ParseProfile(contents []byte, name string) engine.ParseResult {
 	profile := model.Profile{}
 
 	basicInfo := basicInfoRe.FindSubmatch(contents)
+	if len(basicInfo) == 0 {
+		return engine.ParseResult{}
+	}
 	basicFields := fieldRe.FindAll(basicInfo[1], -1)
 	gender := genderRe.FindSubmatch(contents)
 

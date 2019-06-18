@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Kirk-Wang/Hello-Gopher/re/14.7/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/re/14.7/crawler/presist"
 	"github.com/Kirk-Wang/Hello-Gopher/re/14.7/crawler/scheduler"
 	"github.com/Kirk-Wang/Hello-Gopher/re/14.7/crawler/zhenai/parser"
 )
@@ -11,6 +12,7 @@ func main() {
 		Scheduler: &scheduler.QueuedScheduler{},
 		// Scheduler:   &scheduler.SimpleScheduler{},
 		WorkerCount: 100,
+		ItemChan:    presist.ItemSaver(),
 	}
 
 	e.Run(engine.Request{

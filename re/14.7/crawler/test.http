@@ -1,0 +1,25 @@
+GET http://localhost:9200
+
+### 插入一条记录
+POST http://localhost:9200/imooc/course/1
+Content-Type: application/json
+
+{
+  "name": "golang",
+  "instructor": "ccmouse"
+}
+
+### 插入一条记录
+POST http://localhost:9200/imooc/course/2
+Content-Type: application/json
+
+{
+  "name": "interview",
+  "instructor": "ccmouse"
+}
+
+### 查询一条记录
+GET http://localhost:9200/imooc/course/2
+
+### 搜索
+GET http://localhost:9200/imooc/course/_search

@@ -1,6 +1,10 @@
 package engine
 
-import "log"
+import (
+	"log"
+
+	"github.com/Kirk-Wang/Hello-Gopher/re/14.7/crawler/model"
+)
 
 type ConcurrentEngine struct {
 	Scheduler   Scheduler
@@ -31,16 +35,23 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 		e.Scheduler.Submit(r)
 	}
 
-	itemCount := 0
+	profileCount := 0
 	for {
 		result := <-out
 
 		for _, item := range result.Items {
-			itemCount++
-			log.Printf("Got item #%d: %v", itemCount, item)
+			if _, ok := item.(model.Profile); ok {
+				log.Printf("Got profile #%d: %v", profileCount, item)
+				profileCount++
+			}
 		}
 
+		// URL dedup
+
 		for _, request := range result.Requests {
+			if isDuplicate(request.Url) {
+				continue
+			}
 			e.Scheduler.Submit(request)
 		}
 	}
@@ -61,4 +72,14 @@ func createWorker(
 			out <- parseResult
 		}
 	}()
+}
+
+var visitedUrls = make(map[string]bool)
+
+func isDuplicate(url string) bool {
+	if visitedUrls[url] {
+		return true
+	}
+	visitedUrls[url] = true
+	return false
 }

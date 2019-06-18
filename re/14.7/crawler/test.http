@@ -30,3 +30,6 @@ GET http://localhost:9200/imooc/course/_mapping
 ### 条件搜索
 GET http://localhost:9200/imooc/course/_search?q=golang
 
+### _search
+GET http://localhost:9200/dating_profile/zhenai/_search
+

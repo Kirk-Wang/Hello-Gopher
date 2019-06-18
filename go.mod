@@ -11,6 +11,7 @@ require (
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20181225140029-79872a7b2769 // indirect
+	github.com/fortytw2/leaktest v1.3.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/gavv/monotime v0.0.0-20171021193802-6f8212e8d10d // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
@@ -24,6 +25,7 @@ require (
 	github.com/go-xorm/cmd/xorm v0.0.0-20181109005937-173b5248cedf // indirect
 	github.com/go-xorm/xorm v0.0.0-20180925133144-7a9249de3324
 	github.com/golang/example v0.0.0-20170904185048-46695d81d1fa
+	github.com/google/go-cmp v0.3.0 // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/gorilla/securecookie v1.1.1
 	github.com/gorilla/websocket v1.4.0 // indirect
@@ -44,7 +46,7 @@ require (
 	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
 	github.com/moul/http2curl v1.0.0 // indirect
-	github.com/olivere/elastic v6.2.14+incompatible
+	github.com/olivere/elastic v6.2.19+incompatible
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/satori/go.uuid v1.2.0
 	github.com/sergi/go-diff v1.0.0 // indirect

@@ -2,8 +2,6 @@ package engine
 
 import (
 	"log"
-
-	"github.com/Kirk-Wang/Hello-Gopher/re/14.7/crawler/model"
 )
 
 type ConcurrentEngine struct {
@@ -35,15 +33,13 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 		e.Scheduler.Submit(r)
 	}
 
-	profileCount := 0
+	itemCount := 0
 	for {
 		result := <-out
 
 		for _, item := range result.Items {
-			if _, ok := item.(model.Profile); ok {
-				log.Printf("Got profile #%d: %v", profileCount, item)
-				profileCount++
-			}
+			log.Printf("Got profile #%d: %v", itemCount, item)
+			itemCount++
 		}
 
 		// URL dedup

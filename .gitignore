@@ -13,3 +13,4 @@
 
 .DS_Store
 fib2.txt
+*.log

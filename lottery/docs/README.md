@@ -116,6 +116,10 @@ wrk -t10 -c10 -d5 http://localhost:8080/lucky
 # -t: 线程数
 # -c: 连接数
 # -d: 持续时间
+
+wc -l lottery_demo.log # 查看文件有多少行
+
+echo "" > lottery_demo.log # 清空下数据
 ```
 
-检测性能和并发安全问题
+检测性能和并发安全问题(超卖问题！！！)--> 简单解决-》sync.Mutex

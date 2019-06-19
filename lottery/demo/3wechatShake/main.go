@@ -5,6 +5,7 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"sync"
 	"time"
 
 	"github.com/kataras/iris/mvc"
@@ -44,6 +45,7 @@ var logger *log.Logger
 
 // 奖品列表
 var giftList []*gift
+var mu sync.Mutex
 
 type lotteryController struct {
 	Ctx iris.Context
@@ -51,7 +53,7 @@ type lotteryController struct {
 
 // 初始化日志
 func initLog() {
-	f, _ := os.Create("/var/log/lottery_demo.log")
+	f, _ := os.Create("lottery_demo.log")
 	// 需要一个日期以及一个毫秒数
 	logger = log.New(f, "", log.Ldate|log.Lmicroseconds)
 }
@@ -67,10 +69,10 @@ func initGift() {
 		gtype:    giftTypeRealLarge,
 		data:     "",
 		datalist: nil,
-		total:    2,
-		left:     2,
+		total:    200,
+		left:     200,
 		inuse:    true,
-		rate:     1,
+		rate:     10000,
 		rateMin:  0,
 		rateMax:  0,
 	}
@@ -85,7 +87,7 @@ func initGift() {
 		datalist: nil,
 		total:    5,
 		left:     5,
-		inuse:    true,
+		inuse:    false,
 		rate:     10,
 		rateMin:  0,
 		rateMax:  0,
@@ -101,7 +103,7 @@ func initGift() {
 		datalist: nil,
 		total:    50,
 		left:     50,
-		inuse:    true,
+		inuse:    false,
 		rate:     500,
 		rateMin:  0,
 		rateMax:  0,
@@ -117,7 +119,7 @@ func initGift() {
 		datalist: []string{"c01", "c02", "c03", "c04", "c05"},
 		total:    5,
 		left:     5,
-		inuse:    true,
+		inuse:    false,
 		rate:     100,
 		rateMin:  0,
 		rateMax:  0,
@@ -133,7 +135,7 @@ func initGift() {
 		datalist: nil,
 		total:    5,
 		left:     5,
-		inuse:    true,
+		inuse:    false,
 		rate:     5000,
 		rateMin:  0,
 		rateMax:  0,
@@ -187,6 +189,8 @@ func (c *lotteryController) Get() string {
 
 // 抽奖 GET http://localhost:8080/lucky
 func (c *lotteryController) GetLucky() map[string]interface{} {
+	mu.Lock()
+	defer mu.Unlock()
 	code := int(luckyCode())
 	ok := false
 	result := make(map[string]interface{})

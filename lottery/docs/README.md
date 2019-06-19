@@ -108,3 +108,12 @@ Stop Code Run
 `/lucky` 只有一个抽奖接口
 
 定义枚举：奖品类型，枚举值 iota 从 0 开始
+
+压力测试
+
+```sh
+wrk -t10 -c10 -d5 http://localhost:8080/lucky
+# -t: 线程数
+# -c: 连接数
+# -d: 持续时间
+```

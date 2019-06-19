@@ -1,0 +1,11 @@
+### 查询 当前总共参与抽奖的用户数
+GET http://localhost:8080
+
+### 导入用户
+POST http://localhost:8080/import
+Content-Type: application/x-www-form-urlencoded
+
+users=user1,user2
+
+### 抽奖
+GET http://localhost:8080/lucky

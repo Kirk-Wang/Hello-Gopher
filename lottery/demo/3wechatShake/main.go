@@ -185,6 +185,7 @@ func (c *lotteryController) Get() string {
 	return fmt.Sprintf("当前有效奖品种类数量：%d,限量奖品总数量=%d的\n", count, total)
 }
 
+// 抽奖 GET http://localhost:8080/lucky
 func (c *lotteryController) GetLucky() map[string]interface{} {
 	code := int(luckyCode())
 	ok := false

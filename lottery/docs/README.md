@@ -3,6 +3,10 @@
 ### demo 运行
 
 VSCode + Code Runer 扩展
+```sh
+Run Code
+Stop Code Run
+```
 
 ### 抽奖系统的业务难点
  

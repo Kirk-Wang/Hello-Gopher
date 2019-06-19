@@ -212,6 +212,17 @@ func (c *lotteryController) GetLucky() map[string]interface{} {
 			case giftTypeRealLarge:
 				ok, sendData = sendRealLarge(data)
 			}
+			if ok {
+				// 中奖后，成功得到奖品
+				// 生成中奖纪录
+				saveLuckyData(code, data.id, data.name, data.link, sendData, data.left)
+				result["success"] = ok
+				result["id"] = data.id
+				result["name"] = data.name
+				result["link"] = data.link
+				result["data"] = sendData
+				break
+			}
 		}
 	}
 
@@ -286,4 +297,10 @@ func sendRealLarge(data *gift) (bool, string) {
 	} else {
 		return false, "奖品已发完"
 	}
+}
+
+// 纪录用户的获奖信息
+func saveLuckyData(code, id int, name, link, sendData string, left int) {
+	logger.Printf("lucky, code=%d, gift=%d, name=%s, link=%s, data=%s, left=%d \n",
+		code, id, name, link, sendData, left)
 }

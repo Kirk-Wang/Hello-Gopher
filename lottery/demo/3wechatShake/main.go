@@ -115,11 +115,28 @@ func initGift() {
 		total:    5,
 		left:     5,
 		inuse:    true,
-		rate:     5000,
+		rate:     2000,
 		rateMin:  0,
 		rateMax:  0,
 	}
 	giftList[3] = &g4
+	g5 := gift{
+		id:       5,
+		name:     "金币",
+		pic:      "",
+		link:     "",
+		gtype:    giftTypeCoin,
+		data:     "10金币",
+		datalist: nil,
+		total:    5,
+		left:     5,
+		inuse:    true,
+		rate:     5000,
+		rateMin:  0,
+		rateMax:  0,
+	}
+	giftList[4] = &g5
+	// 数据整理，中奖区间数据
 }
 
 func newApp() *iris.Application {

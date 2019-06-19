@@ -77,15 +77,15 @@ Stop Code Run
     - wg.Add(1)
     - wg.Done()
     - wg.Wait()
-  - var mu sync.Mutex
-    - mu = sync.Mutex{} (main)
-      - `/import` & `/lucky`
-      - mu.Lock()
-      - defer mu.Unlock()
-    - 所有的并发都会在同一个共享变量读写的地方进行排队，而不是各自进行读写
-
+  
 用互斥锁解决并发安全问题
 
+* import "sync"
+- var mu sync.Mutex 
+- mu = sync.Mutex{}
 
+在 `/import` & `/lucky` 加上 `mu.Lock()` & `defer mu.Unlock()`
+
+所有的并发都会在同一个共享变量读写的地方进行排队，而不是各自进行读写
 
 

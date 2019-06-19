@@ -82,6 +82,7 @@ Stop Code Run
       - `/import` & `/lucky`
       - mu.Lock()
       - defer mu.Unlock()
+    - 所有的并发都会在同一个共享变量读写的地方进行排队，而不是各自进行读写
 
 用互斥锁解决并发安全问题
 

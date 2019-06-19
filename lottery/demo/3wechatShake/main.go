@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"math/rand"
 	"os"
+	"time"
 
 	"github.com/kataras/iris/mvc"
 
@@ -137,6 +140,20 @@ func initGift() {
 	}
 	giftList[4] = &g5
 	// 数据整理，中奖区间数据
+	rateStart := 0
+	for _, data := range giftList {
+		if !data.inuse {
+			continue
+		}
+		data.rateMin = rateStart
+		data.rateMax = rateStart + data.rate
+		if data.rateMax >= rateMax {
+			data.rateMax = rateMax
+			rateStart = 0
+		} else {
+			rateStart += data.rate
+		}
+	}
 }
 
 func newApp() *iris.Application {
@@ -144,10 +161,129 @@ func newApp() *iris.Application {
 	mvc.New(app.Party("/")).Handle(&lotteryController{})
 
 	initLog()
+	initGift()
 
 	return app
 }
 
 func main() {
+	app := newApp()
+	app.Run(iris.Addr(":8080"))
+}
 
+// 奖品数量的信息 GET http://localhost:8080/
+func (c *lotteryController) Get() string {
+	count := 0
+	total := 0
+	for _, data := range giftList {
+		if data.inuse &&
+			(data.total == 0 || (data.total > 0 && data.left > 0)) {
+			count++
+			total += data.left
+		}
+	}
+	return fmt.Sprintf("当前有效奖品种类数量：%d,限量奖品总数量=%d的\n", count, total)
+}
+
+func (c *lotteryController) GetLucky() map[string]interface{} {
+	code := int(luckyCode())
+	ok := false
+	result := make(map[string]interface{})
+	result["success"] = ok
+
+	for _, data := range giftList {
+		// 没被使用和库存不足的统统干掉
+		if !data.inuse && (data.total > 0 && data.left <= 0) {
+			continue
+		}
+		if code >= data.rateMin && code < data.rateMax {
+			// 中奖了,抽奖编码在奖品编码范围内
+			// 开始发奖
+			sendData := ""
+			switch data.gtype {
+			case giftTypeCoin:
+				ok, sendData = sendCoin(data)
+			case giftTypeCoupon:
+				ok, sendData = sendCoupon(data)
+			case giftTypeCouponFix:
+				ok, sendData = sendCouponFix(data)
+			case giftTypeRealSamll:
+				ok, sendData = sendRealSamll(data)
+			case giftTypeRealLarge:
+				ok, sendData = sendRealLarge(data)
+			}
+		}
+	}
+
+	return result
+}
+
+func luckyCode() int32 {
+	seed := time.Now().UnixNano()
+	code := rand.New(rand.NewSource(seed)).Int31n(rateMax)
+	return code
+}
+
+func sendCoin(data *gift) (bool, string) {
+	if data.total == 0 {
+		// 数量无限
+		return true, data.data
+	} else if data.left > 0 {
+		// 还有剩余
+		data.left = data.left - 1
+		return true, data.data
+	} else {
+		return false, "奖品已发完"
+	}
+}
+
+// 不同值的优惠券
+func sendCoupon(data *gift) (bool, string) {
+	if data.left > 0 {
+		// 还有剩余(index)
+		left := data.left - 1
+		data.left = left
+		return true, data.datalist[left]
+	} else {
+		return false, "奖品已发完"
+	}
+}
+
+func sendCouponFix(data *gift) (bool, string) {
+	if data.total == 0 {
+		// 数量无限
+		return true, data.data
+	} else if data.left > 0 {
+		// 还有剩余
+		data.left = data.left - 1
+		return true, data.data
+	} else {
+		return false, "奖品已发完"
+	}
+}
+
+func sendRealSamll(data *gift) (bool, string) {
+	if data.total == 0 {
+		// 数量无限
+		return true, data.data
+	} else if data.left > 0 {
+		// 还有剩余
+		data.left = data.left - 1
+		return true, data.data
+	} else {
+		return false, "奖品已发完"
+	}
+}
+
+func sendRealLarge(data *gift) (bool, string) {
+	if data.total == 0 {
+		// 数量无限
+		return true, data.data
+	} else if data.left > 0 {
+		// 还有剩余
+		data.left = data.left - 1
+		return true, data.data
+	} else {
+		return false, "奖品已发完"
+	}
 }

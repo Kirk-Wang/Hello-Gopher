@@ -65,7 +65,26 @@ Stop Code Run
 ### 6 种抽奖活动来一遍
 
 年会抽奖程序-annualMeeting
+
 * 需求：导入全公司员工名单，`每次随机抽取出来一个人`
 * 未知：有一等奖，二等奖，也有领导`临时`增加的产品
 * 年会抽奖不涉及并发，但抽奖程序还是要考虑并发安全性问题
+
+编写web单元测试和并发安全问题
+
+* import "sync"
+  - wg := sync.WaitGroup{}
+    - wg.Add(1)
+    - wg.Done()
+    - wg.Wait()
+  - var mu sync.Mutex
+    - mu = sync.Mutex{} (main)
+      - `/import` & `/lucky`
+      - mu.Lock()
+      - defer mu.Unlock()
+
+用互斥锁解决并发安全问题
+
+
+
 

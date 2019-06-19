@@ -129,5 +129,11 @@ echo "" > lottery_demo.log # 清空下数据
 * 奖品是虚拟的5个福字，没有数量限制
 * 先识别图片，确定福字的获得概率
 * 不存在线程安全问题
-* 概率来自于图片扫描
+* 概率来自于图片扫描，动态的设置
+
+```sh
+wrk -t10 -c10 -d5 http://localhost:8080/lucky?uid=1&rate=4,3,2,1,0
+wc -l lottery_demo.log
+echo "" > lottery_demo.log
+```
 

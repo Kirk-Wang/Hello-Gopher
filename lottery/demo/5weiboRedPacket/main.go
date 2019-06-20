@@ -12,24 +12,25 @@ import (
 // 红包列表
 var packageList map[uint32][]uint
 
-type lotteryContrller struct {
+type lotteryController struct {
 	Ctx iris.Context
 }
 
 func newApp() *iris.Application {
 	app := iris.New()
-	mvc.New(app.Party("/")).Handle(&lotteryContrller{})
+	mvc.New(app.Party("/")).Handle(&lotteryController{})
 	return app
 }
 
 func main() {
 	app := newApp()
+	packageList = make(map[uint32][]uint)
 	app.Run(iris.Addr(":8080"))
 }
 
 // 返回全部红包地址
 // http://localhost:8080/
-func (c *lotteryContrller) Get() map[uint32][2]int {
+func (c *lotteryController) Get() map[uint32][2]int {
 	rs := make(map[uint32][2]int)
 	for id, list := range packageList {
 		var money int
@@ -43,7 +44,7 @@ func (c *lotteryContrller) Get() map[uint32][2]int {
 
 // 发红包
 // http://localhost:8080/set?uid=1&money=100&num=100
-func (c *lotteryContrller) GetSet() string {
+func (c *lotteryController) GetSet() string {
 	uid, errUid := c.Ctx.URLParamInt("uid")
 	money, errMoney := c.Ctx.URLParamFloat64("money")
 	num, errNum := c.Ctx.URLParamInt("num")
@@ -60,6 +61,14 @@ func (c *lotteryContrller) GetSet() string {
 	// 金额分配算法
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	rMax := 0.55 // 最大红包占比(随机分配的最大值)
+	// 让 rMax 均匀一点
+	if num > 1000 {
+		rMax = 0.01
+	} else if num >= 100 {
+		rMax = 0.1
+	} else if num >= 10 {
+		rMax = 0.3
+	}
 	list := make([]uint, num)
 	leftMoney := moneyTotal // 剩余的金额
 	leftNum := num          // 剩余的红包数
@@ -94,7 +103,8 @@ func (c *lotteryContrller) GetSet() string {
 	return fmt.Sprintf("/get?id=%d&uid=%d&num=%d", id, uid, num)
 }
 
-func (c *lotteryContrller) GetSet() string {
+// http://localhost:8080/get?uid=1&id=1
+func (c *lotteryController) GetGet() string {
 	uid, errUid := c.Ctx.URLParamInt("uid")
 	id, errId := c.Ctx.URLParamInt("id")
 	if errUid != nil || errId != nil {

@@ -143,3 +143,13 @@ echo "" > lottery_demo.log
 * 红包的集合，红包内红包数量的读写都存在并发安全性问题
 * 优化，将红包集合进行散列，减小单个集合的大小
 
+```sh
+#设置红包
+http://localhost:8080/set?uid=1&money=100&num=100
+#抢红包
+http://localhost:8080/get?uid=1&id=1
+#并发压力测试
+wrk -t10 -c10 -d5 http://localhost:8080/set?uid=1&money=100&num=100
+```
+
+均衡问题 & sync.Map

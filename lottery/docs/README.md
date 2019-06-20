@@ -151,5 +151,16 @@ http://localhost:8080/get?uid=1&id=1
 #并发压力测试
 wrk -t10 -c10 -d5 http://localhost:8080/set?uid=1&money=100&num=100
 ```
+均衡问题
+* 调整下 rMax
 
-均衡问题 & sync.Map
+sync.Map 
+
+* 线程安全
+* 性能会有些许问题
+    * 但大量并发的读，写很少的话，也不会特别的明显
+
+chan 方式解决并发安全问题
+
+
+

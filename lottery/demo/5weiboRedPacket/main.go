@@ -41,6 +41,8 @@ func (c *lotteryContrller) Get() map[uint32][2]int {
 	return rs
 }
 
+// 发红包
+// http://localhost:8080/set?uid=1&money=100&num=100
 func (c *lotteryContrller) GetSet() string {
 	uid, errUid := c.Ctx.URLParamInt("uid")
 	money, errMoney := c.Ctx.URLParamFloat64("money")

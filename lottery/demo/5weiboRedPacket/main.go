@@ -93,3 +93,39 @@ func (c *lotteryContrller) GetSet() string {
 	// 返回抢红包的URL
 	return fmt.Sprintf("/get?id=%d&uid=%d&num=%d", id, uid, num)
 }
+
+func (c *lotteryContrller) GetSet() string {
+	uid, errUid := c.Ctx.URLParamInt("uid")
+	id, errId := c.Ctx.URLParamInt("id")
+	if errUid != nil || errId != nil {
+		return fmt.Sprintf("")
+	}
+	if uid < 1 || id < 1 {
+		return fmt.Sprintf("")
+	}
+	list, ok := packageList[uint32(id)]
+
+	if !ok || len(list) < 1 {
+		return fmt.Sprintf("红包不存在，id=%d\n", id)
+	}
+	// 分配一个随机数
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	i := r.Intn(len(list))
+	money := list[i]
+	// 更新红包列表中的信息
+	if len(list) > 1 {
+		if i == len(list)-1 {
+			// 弹出去最后一个
+			packageList[uint32(id)] = list[:i]
+		} else if i == 0 {
+			// 弹出第一个
+			packageList[uint32(id)] = list[1:]
+		} else {
+			// 弹出中间一个
+			packageList[uint32(id)] = append(list[:i], list[i+1:]...)
+		}
+	} else {
+		delete(packageList, uint32(id))
+	}
+	return fmt.Sprintf("恭喜你抢到一个红包，金额为：%d\n", money)
+}

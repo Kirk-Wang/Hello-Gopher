@@ -151,7 +151,7 @@ http://localhost:8080/get?uid=1&id=1
 #并发压力测试
 wrk -t10 -c10 -d5 http://localhost:8080/set?uid=1&money=100&num=100
 
-wrk -t10 -c10 -d5 http://localhost:8080/get?uid=1&id=88047989
+wrk -t10 -c10 -d5 http://localhost:8080/get?uid=1&id=918254297
 ```
 均衡问题
 * 调整下 rMax

@@ -310,22 +310,21 @@ wrk -t10 -c10 -d5 http://localhost:8080/prize
 
 xorm-cmd 工具的使用
 
+[详细使用方式](https://github.com/go-xorm/cmd)
+
+```sh
+go get github.com/go-xorm/cmd/xorm
+```
+
 * 数据库连接
 ```sh
-root:root@tcp(127.0.0.1:3306)/lottery?charset=utf8
+root:123456@tcp(127.0.0.1:3306)/lottery?charset=utf8
 ```
-
-* 首先要进入到当前项目的目录下，主要是后面的命令最后一个参数中用到的模版存放在当前项目的目录下
+* mysql，我当前本机
 ```sh
-cd $GOPATH/src/github.com/go-xorm/cmd/xorm
+xorm reverse mysql root:123456@tcp(127.0.0.1:3306)/lottery?charset=utf8 $GOPATH/pkg/mod/github.com/go-xorm/cmd/xorm@v0.0.0-20190426080617-f87981e709a1/templates/goxorm
 ```
 
-* mysql
-```sh
-xorm reverse mysql root:@/xorm_test?charset=utf8 templates/goxorm
-```
-
-[详细使用方式](https://github.com/go-xorm/cmd)
 
 
 

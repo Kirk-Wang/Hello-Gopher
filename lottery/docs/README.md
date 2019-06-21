@@ -332,6 +332,7 @@ dao 面向数据库，services 面向数据服务
 
 * services的基础方法，Get, GetAll, CountAll, Search, Delete, Update, Create
 
+* 特殊方法，如：根据 ip 查找 GetById, 根据用户和日期查找 Search(uid, day int) 等
 
 
 

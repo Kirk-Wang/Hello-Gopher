@@ -306,7 +306,26 @@ wrk -t10 -c10 -d5 http://localhost:8080/prize
 * web 目录，如：controllers,public, views等
 * 系统主程序 main.go 文件
 
+### 数据模型的生成
 
+xorm-cmd 工具的使用
+
+* 数据库连接
+```sh
+root:root@tcp(127.0.0.1:3306)/lottery?charset=utf8
+```
+
+* 首先要进入到当前项目的目录下，主要是后面的命令最后一个参数中用到的模版存放在当前项目的目录下
+```sh
+cd $GOPATH/src/github.com/go-xorm/cmd/xorm
+```
+
+* mysql
+```sh
+xorm reverse mysql root:@/xorm_test?charset=utf8 templates/goxorm
+```
+
+[详细使用方式](https://github.com/go-xorm/cmd)
 
 
 

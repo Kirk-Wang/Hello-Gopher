@@ -164,5 +164,17 @@ sync.Map
 
 chan 方式解决并发安全问题
 
+#### 抽奖大转盘-wheel
 
+* 抽奖前，用户已知全部奖品信息
+* 后端设置各个奖品的`中奖概率和数量限制`
+* 更新奖品库存的时候存在并发安全性问题
+    * sync.Mutex
+    * atomic.AddInt32()
+
+```sh
+wc -l lottery_demo.log
+echo "" > lottery_demo.log
+wrk -t100 -c100 -d5 http://localhost:8080/prize
+```
 

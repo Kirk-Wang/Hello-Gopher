@@ -1,8 +1,6 @@
 module github.com/Kirk-Wang/Hello-Gopher
 
 require (
-	cloud.google.com/go v0.34.0 // indirect
-	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/Joker/jade v1.0.0 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
 	github.com/ajg/form v0.0.0-20160822230020-523a5da1a92f // indirect
@@ -14,7 +12,6 @@ require (
 	github.com/fortytw2/leaktest v1.3.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/gavv/monotime v0.0.0-20171021193802-6f8212e8d10d // indirect
-	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/gin-contrib/pprof v0.0.0-20181223171755-ea03ef73484d
 	github.com/gin-gonic/gin v1.3.0
 	github.com/go-openapi/jsonreference v0.18.0 // indirect
@@ -22,11 +19,10 @@ require (
 	github.com/go-playground/locales v0.12.1 // indirect
 	github.com/go-playground/universal-translator v0.16.0 // indirect
 	github.com/go-sql-driver/mysql v1.4.1
-	github.com/go-xorm/cmd/xorm v0.0.0-20181109005937-173b5248cedf // indirect
+	github.com/go-xorm/cmd/xorm v0.0.0-20190426080617-f87981e709a1 // indirect
 	github.com/go-xorm/xorm v0.0.0-20180925133144-7a9249de3324
 	github.com/golang/example v0.0.0-20170904185048-46695d81d1fa
 	github.com/google/go-cmp v0.3.0 // indirect
-	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/gorilla/securecookie v1.1.1
 	github.com/gorilla/websocket v1.4.0 // indirect
 	github.com/imkira/go-interpol v1.1.0 // indirect
@@ -49,7 +45,6 @@ require (
 	github.com/olivere/elastic v6.2.19+incompatible
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/satori/go.uuid v1.2.0
-	github.com/sergi/go-diff v1.0.0 // indirect
 	github.com/shirou/gopsutil v2.18.11+incompatible
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.3
@@ -66,9 +61,8 @@ require (
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
-	golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9
-	golang.org/x/net v0.0.0-20181220203305-927f97764cc3
-	golang.org/x/text v0.3.0
-	golang.org/x/tools v0.0.0-20181221235234-d00ac6d27372 // indirect
+	golang.org/x/crypto v0.0.0-20190313024323-a1f597ede03a
+	golang.org/x/net v0.0.0-20190213061140-3a22650c66bd
+	golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2
 	gopkg.in/go-playground/validator.v9 v9.24.0
 )

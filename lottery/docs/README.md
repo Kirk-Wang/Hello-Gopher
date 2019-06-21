@@ -325,6 +325,15 @@ root:123456@tcp(127.0.0.1:3306)/lottery?charset=utf8
 xorm reverse mysql root:123456@tcp(127.0.0.1:3306)/lottery?charset=utf8 $GOPATH/pkg/mod/github.com/go-xorm/cmd/xorm@v0.0.0-20190426080617-f87981e709a1/templates/goxorm
 ```
 
+### 核心的 dao 和 services 类
+
+dao 面向数据库，services 面向数据服务
+* dao的基础方法，Get, GetAll, CountAll, Search, Delete, Update, Create
+
+* services的基础方法，Get, GetAll, CountAll, Search, Delete, Update, Create
+
+
+
 
 
 

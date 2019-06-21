@@ -298,8 +298,13 @@ wrk -t10 -c10 -d5 http://localhost:8080/prize
 * 架构设计，分层架构设计，网络：负载均衡层/应用层/存储层;
     - 应用：业务代码/框架代码/存储服务
 
+### 项目框架的搭建
 
+创建项目目录
 
+* 公共的目录，如：bootstrap,comm,conf,dao等
+* web 目录，如：controllers,public, views等
+* 系统主程序 main.go 文件
 
 
 

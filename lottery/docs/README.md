@@ -175,6 +175,9 @@ chan 方式解决并发安全问题
 ```sh
 wc -l lottery_demo.log
 echo "" > lottery_demo.log
-wrk -t100 -c100 -d5 http://localhost:8080/prize
+# total=100000 left=100000
+# 压测5秒钟
+wrk -t10 -c10 -d5 http://localhost:8080/prize
+# 看一下 `left` + `request` =? `total`
 ```
 

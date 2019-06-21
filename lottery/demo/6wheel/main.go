@@ -48,9 +48,9 @@ func newApp() *iris.Application {
 		"三等奖，iPhone一部",
 		"", // 没有中奖
 	}
-	left := int32(1000)
+	left := int32(100000)
 	rateList = []Prate{
-		Prate{Rate: 100, Total: 1000, CodeA: 0, CodeB: 9999, Left: &left},
+		Prate{Rate: 100, Total: 100000, CodeA: 0, CodeB: 9999, Left: &left},
 		// Prate{Rate: 1, Total: 1, CodeA: 0, CodeB: 0, Left: 1},
 		// Prate{Rate: 2, Total: 2, CodeA: 1, CodeB: 2, Left: 2},
 		// Prate{Rate: 5, Total: 10, CodeA: 3, CodeB: 5, Left: 10},
@@ -78,6 +78,10 @@ func (c *lotteryController) Get() string {
 
 func (c *lotteryController) GetDebug() string {
 	return fmt.Sprintf("获奖概率：%v\n", rateList)
+}
+
+func (c *lotteryController) GetLeft() string {
+	return fmt.Sprintf("验证：总数：%d, 剩余数：%d，请求数：%d\n", 100000, *rateList[0].Left, 100000-*rateList[0].Left)
 }
 
 func (c *lotteryController) GetPrize() string {
@@ -112,10 +116,11 @@ func (c *lotteryController) GetPrize() string {
 		return myprize
 	} else if *prizeRate.Left > 0 {
 		// 有限量
-		// prizeRate.Left--
+		// *prizeRate.Left--
+		// left := *prizeRate.Left
 		left := atomic.AddInt32(prizeRate.Left, -1)
 		if left >= 0 {
-			logger.Printf("%s,%d", myprize, prizeRate.Left)
+			logger.Printf("%s", myprize)
 			return myprize
 		}
 	}

@@ -340,7 +340,25 @@ dao 面向数据库，services 面向数据服务
 * web/controllers控制器业务逻辑
 * web/public静态资源文件
 
+### 用户登录和退出
 
-   
+基于 Cookie 的用户状态
+
+* ObjLoginuser 登录用户对象
+* 登录用户对象与Cookie的读写
+* Cookie的安全校验值，不能被篡改
+
+### 后台功能开发
+
+奖品管理
+
+* views: 奖品列表页，奖品信息编辑页
+* 数据保存，删除，恢复功能
+* admin_gift 业务逻辑控制器
+
+优惠券管理
+
+* views: 优惠券列表页
+* 导入优惠券，删除、恢复功能
 
 

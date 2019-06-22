@@ -431,13 +431,13 @@ IP 黑名单管理
         * Do("HINCRBY", key, ip, 1)
          ```json
             {
-                "day_ips_1": {
+                "day_ips_0": {
                     "ip1": 1,
                     "ip3": 1
                 }
             }
             {
-                "day_ips_2": {
+                "day_ips_1": {
                     "ip2": 2,
                     "ip4": 2
                 }

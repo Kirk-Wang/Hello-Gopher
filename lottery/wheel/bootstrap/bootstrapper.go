@@ -1,6 +1,7 @@
 package	bootstrap
 
 import (
+	"time"
 	"github.com/kataras/iris/middleware/logger"
 	"github.com/kataras/iris/middleware/recover"
 	"github.com/kataras/iris"
@@ -20,7 +21,7 @@ func New(appName, appOwner string, cfgs ...Configurator) *Bootstrapper{
 		Application: iris.New(),
 		AppName: appName,
 		AppOwner: appOwner,
-		AppSpawDate: time.Now()
+		AppSpawDate: time.Now(),
 	}
 
 	for _, cfg  := range cfgs {

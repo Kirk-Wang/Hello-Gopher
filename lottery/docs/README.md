@@ -367,3 +367,4 @@ dao 面向数据库，services 面向数据服务
 
 * views:中奖纪录列表页
 * 删除，恢复，设置作弊功能
+* admin_result业务逻辑控制器

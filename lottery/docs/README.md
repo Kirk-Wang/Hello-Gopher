@@ -337,6 +337,7 @@ dao 面向数据库，services 面向数据服务
 ### 利用 iris 建立 web 站点
 
 * bootsrapper 启动项，comm 公用方法
+    * 注意单例的构建与 `sync.Mutex`
 * web/controllers控制器业务逻辑
 * web/public静态资源文件
 

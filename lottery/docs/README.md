@@ -334,7 +334,11 @@ dao 面向数据库，services 面向数据服务
 
 * 特殊方法，如：根据 ip 查找 GetById, 根据用户和日期查找 Search(uid, day int) 等
 
+### 利用 iris 建立 web 站点
 
+* bootsrapper 启动项，comm 公用方法
+* web/controllers控制器业务逻辑
+* web/public静态资源文件
 
 
    

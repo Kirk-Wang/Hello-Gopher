@@ -483,3 +483,4 @@ IP 黑名单管理
 
 - 增加 3 个方法，getAllByCache,setAllByCache,updateByCache
 - 修改读取方法，增加 useCache bool 参数
+- 修改数据的时候，清空缓存，下次读取的时候自动更新最新数据

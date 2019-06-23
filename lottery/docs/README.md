@@ -490,3 +490,10 @@ IP 黑名单管理
 - 增加3个方法，getByCache,setByCache,updateByCache
 - 修改Get,Update方法，增加对缓存方法的调用
 - 修改数据的时候，清空缓存，下次读取的时候自动更新最新数据
+
+IP 黑名单数据的缓存，hash 结构，blackip_service
+
+- 增加3个方法，getByCache,setByCache,updateByCache
+- 修改 GetById, Update 方法，增加对缓存方法的调用
+- 修改数据的时候，清空缓存，下次读取的时候自动更新最新数据
+

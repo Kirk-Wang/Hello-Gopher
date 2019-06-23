@@ -510,5 +510,9 @@ IP 今日抽奖次数，hash 中的计数器，utils/ip_day_lucky
 - resetGroupUserList 每天凌晨计数器归零
 - userFrameSize 优化，将 hash 结构散列为多段数据，让每个 hash 小点
 
+奖品池的全量缓存，hash 中的计数器，utils/prizedata
+
+- 
+
 
 

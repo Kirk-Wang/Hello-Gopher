@@ -484,3 +484,9 @@ IP 黑名单管理
 - 增加 3 个方法，getAllByCache,setAllByCache,updateByCache
 - 修改读取方法，增加 useCache bool 参数
 - 修改数据的时候，清空缓存，下次读取的时候自动更新最新数据
+
+单个用户数据的缓存，hash 结构，user_service
+
+- 增加3个方法，getByCache,setByCache,updateByCache
+- 修改Get,Update方法，增加对缓存方法的调用
+- 修改数据的时候，清空缓存，下次读取的时候自动更新最新数据

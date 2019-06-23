@@ -76,3 +76,13 @@
 - 应用层 (Application)
 - 领域层 (Domain)
 - 基础设施层 (Infrastructure)
+
+物理分层
+
+- 用户接口 (User Interface)
+- 应用服务层接口（Service Interface）
+- 核心层 (Core)
+  * 应用服务实现层
+  * 领域层
+  * 数据访问层
+- 基础设施层

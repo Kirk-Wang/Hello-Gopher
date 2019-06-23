@@ -497,3 +497,9 @@ IP 黑名单数据的缓存，hash 结构，blackip_service
 - 修改 GetById, Update 方法，增加对缓存方法的调用
 - 修改数据的时候，清空缓存，下次读取的时候自动更新最新数据
 
+IP 今日抽奖次数，hash 中的计数器，utils/ip_day_lucky
+
+- IncrlpLuckyNum 原子性递增 IP 今日的抽奖次数
+- resetGroupIpList 每天凌晨计数器归零
+- ipFrameSize 优化，将 hash 结构散列为多段数据，让每个 has 小点
+

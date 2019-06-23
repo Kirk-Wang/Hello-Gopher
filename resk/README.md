@@ -86,3 +86,32 @@
   * 领域层 (Domain)
   * 数据访问层 (Repository/Dao)
 - 基础设施层 (Infrastructure)
+
+红包资金账户模块-代码架构设计
+
+- User Interface
+  - AccountApi
+- Application
+  - AccountService(interface)
+  - accountService
+- Domain
+  - accountDomain
+- Infrastructure
+  - AccountDao
+  - AccountLogDao
+  - IdGenerator
+
+红包模块代码架构设计
+
+- User Interface
+  - EnvelopeApi
+- Application
+  - EnvelopeService(interface)
+  - envelopeService
+- Domain
+  - envelopeDomain
+- Infrastructure
+  - GoodsDao
+  - ItemDao
+  - IdGenerator
+

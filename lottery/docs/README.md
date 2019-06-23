@@ -516,5 +516,11 @@ IP 今日抽奖次数，hash 中的计数器，utils/ip_day_lucky
 - 增加私有方法 prizeServGift 从奖品池扣减奖品的库存数量
 - PrizeGift 从奖品池发奖
 
+优惠券的全量缓存，set 集合，utils/prizedata
+
+- 增加公开方法 ImportCacheCodes, RecacheCodes,GetCacheCodeNum
+- 增加私有方法，prizeServCodeDiff 从 redis 缓存中拿到一个券
+- 优惠券的管理后台的调整，调整导入和增加重新整理优惠券的功能
+
 
 

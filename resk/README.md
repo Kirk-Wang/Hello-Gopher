@@ -69,3 +69,10 @@
 - 表现层
 - 业务逻辑层
 - 数据持久层
+
+逻辑分层结构
+
+- 用户接口：人机交互 (User Interface)
+- 应用层 (Application)
+- 领域层 (Domain)
+- 基础设施层 (Infrastructure)

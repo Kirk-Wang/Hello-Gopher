@@ -478,3 +478,8 @@ IP 黑名单管理
 - 返回结果的数据结构需要保持一致
 
 ### 优化-使用 redis 缓存
+
+奖品数据全量缓存，JSON 序列化为 string 结构，gift_service
+
+- 增加 3 个方法，getAllByCache,setAllByCache,updateByCache
+- 修改读取方法，增加 useCache bool 参数

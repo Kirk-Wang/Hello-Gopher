@@ -508,5 +508,7 @@ IP 今日抽奖次数，hash 中的计数器，utils/ip_day_lucky
 - IncrUserLuckyNum 原子性递增用户今日的抽奖次数
     * InitUserLuckyNum 从数据库初始化缓存数据
 - resetGroupUserList 每天凌晨计数器归零
-- userFrameSize 优化，将 hash 结构散列为多段数据，让每个 has 小点
+- userFrameSize 优化，将 hash 结构散列为多段数据，让每个 hash 小点
+
+
 

@@ -512,7 +512,9 @@ IP 今日抽奖次数，hash 中的计数器，utils/ip_day_lucky
 
 奖品池的全量缓存，hash 中的计数器，utils/prizedata
 
-- 
+- 增加公开方法 GetGiftPoolNum 从奖品池验证奖品库存数量
+- 增加私有方法 prizeServGift 从奖品池扣减奖品的库存数量
+- PrizeGift 从奖品池发奖
 
 
 

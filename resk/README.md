@@ -82,7 +82,7 @@
 - 用户接口 (User Interface)
 - 应用服务层接口（Service Interface）
 - 核心层 (Core)
-  * 应用服务实现层
-  * 领域层
-  * 数据访问层
-- 基础设施层
+  * 应用服务实现层 (Sevice Impl)
+  * 领域层 (Domain)
+  * 数据访问层 (Repository/Dao)
+- 基础设施层 (Infrastructure)

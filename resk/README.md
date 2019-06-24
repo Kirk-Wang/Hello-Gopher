@@ -219,3 +219,10 @@ go.mod 文件用 go mod 命令来创建和维护
 - 使用 `go mod tidy` 来更新依赖模块
 - 使用 `go get` 命令来下载和更新依赖包
 
+#### replace 子指令
+
+解决网络访问不了 golang.org/x 等谷歌的扩展包
+
+- 用新的包去替换老的包
+- 格式：replace 包路径[版本] => 包路径 版本
+- golang.org/x/sys => github.com/golang/sys

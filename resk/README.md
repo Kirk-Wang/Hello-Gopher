@@ -312,6 +312,7 @@ Golang 中枚举通过定义常数来实现
 - 支持 unmarshal
 - props 配置客户端工具库加持+INI格式
 - INI 文件由节、键、值组成
+- INI 格式三要素：节、参数(key/value)、注释
 
 
 

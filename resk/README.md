@@ -373,6 +373,13 @@ sql.Open 的使用方法
     - parseTime：程序是否自动解析时间字段
     - loc: `local` 表示使用操作系统时区
 
+sql.DB 主要功能
+
+- db.Exec/ExecContext() 执行查询而不返回数据
+- db.Query/QueryContext() 执行查询并返回结果
+- db.QueryRow/QueryRowContext()
+  - 执行查询并最多只返回1行数据
+
 
 
 

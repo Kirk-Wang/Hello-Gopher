@@ -294,6 +294,8 @@ Golang 中枚举通过定义常数来实现
 - 按格式：properties、json、xml、ini、yaml、toml 等
 - 按用途：程序和应用级别
   - 配置文件命名规范：`前缀+[-_]+功能`
+  - 程序级别，可以不分组，比如：boot.ini, config.ini
+  - 应用级别分组：比如 app-mysql.properties
 
 
 

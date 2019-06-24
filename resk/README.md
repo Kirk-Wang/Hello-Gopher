@@ -320,6 +320,10 @@ Golang 中枚举通过定义常数来实现
 - props 配置客户端使用完整的 key 来解释
 - 完整的 key 由 Section 和参数 key 组成，`.` 分割
 
+```go
+import "https://github.com/tietang/props"
+```
+
 
 
 

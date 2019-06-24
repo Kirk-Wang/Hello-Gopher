@@ -303,6 +303,14 @@ Golang 中枚举通过定义常数来实现
 **分布式配置管理中心**
 
 
+#### 配置设计
+
+**props 是统一的配置工具库**
+- 各种配置源抽象或转换为 key/value 结构
+- 支持 prop, ini, zk, consul, etcd, nacos
+- 支持 unmarshal
+
+
 
 
 

@@ -226,3 +226,19 @@ go.mod 文件用 go mod 命令来创建和维护
 - 用新的包去替换老的包
 - 格式：replace 包路径[版本] => 包路径 版本
 - golang.org/x/sys => github.com/golang/sys
+
+```sh
+replace(
+  golang.org/x/sys => github.com/golang/sys latest
+)
+```
+
+#### resk 项目为 module 化流程
+
+1. 移动项目到 GOPATH 工作空间之外
+2. go mod init 创建和初始化 go.mod
+3. go mod tidy 来整理更新已有依赖
+4. 如果存在不能下载的谷歌库，replace 指令替换
+5. go verify 来验证 module
+6. go mod vendor
+  - 复制依赖到 `vendor` 目录，方便源代码定位和查看

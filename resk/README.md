@@ -346,6 +346,12 @@ import "https://github.com/tietang/props"
 - 数据库存取时获取连接，结束时返回到连接池
 - 维护连接资源的数量和质量
 
+#### database/sql包使用
+
+- sql.Open 函数创建 sql.DB
+- sql.DB 是数据库操作的高级抽象，维护了一个连接池
+- sql.DB 会自动创建和释放连接
+
 
 
 

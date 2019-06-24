@@ -172,3 +172,10 @@ core包：应用层实现，领域层、数据访问层所有代码
 - Service实现，Domain、Dao、PO
 
 ### 使用 Go Modules 来管理依赖
+
+go get -> vendor -> go modules
+
+- go get 无版本概念
+- vendor 曲线救国，但任然没有版本化
+- go1.11 modules 开启了版本依赖新历程
+

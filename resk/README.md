@@ -311,7 +311,7 @@ Golang 中枚举通过定义常数来实现
 - 支持 prop, ini, zk, consul, etcd, nacos
 - 支持 unmarshal
 - props 配置客户端工具库加持+INI格式
-
+- INI 文件由节、键、值组成
 
 
 

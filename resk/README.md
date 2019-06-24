@@ -414,7 +414,13 @@ sql.DB 主要功能
 - 日志内容：关键性节点
 - 日志级别：trace,`debug`,`info`,`warn`,`error`,fatal,panic
 
+#### 日志框架
 
+**Logrus 是一个可插拔的、结构化的日志框架**
+
+- 完全兼容 golang 标准库日志模块
+- 六种级别：debug、info、warn、error、fatal 和 panic
+- 支持自定义扩展 hook 和自定义输出格式
 
 
 

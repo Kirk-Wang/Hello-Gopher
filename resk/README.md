@@ -379,6 +379,17 @@ sql.DB 主要功能
 - db.Query/QueryContext() 执行查询并返回结果
 - db.QueryRow/QueryRowContext()
   - 执行查询并最多只返回1行数据
+- db.Prepare/PrepareContext()
+  - 创建一个预编译 Statement 对象
+- db.Begin/BeginTx()
+  - 开启一个事务，返回的Tx事务对象会被绑定到单个连接
+- db.Stats() 返回数据库统计信息
+
+#### dbx数据库扩展工具库
+
+* 基于 `sql.DB` 基础之上构建的高性能数据库工具
+
+
 
 
 

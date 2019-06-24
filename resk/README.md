@@ -277,4 +277,11 @@ Golang 中枚举通过定义常数来实现
 - [string]标记，定义 bool、浮点、整型类型使用字符串编码
 - 临时添加字段：内嵌结构体 合并多个结构体
 
+高性能 JSON 库推荐：jsoniter [json-iterator]
+
+- 快，并且更快
+- 支持 java 和 go
+- 100 兼容 JSON 标准库，一行代码迁移到 `jsoniter`
+- 安装：`go get github.com/json-iterator/go`
+
 

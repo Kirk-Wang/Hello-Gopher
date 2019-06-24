@@ -366,6 +366,9 @@ sql.Open 的使用方法
 - db, err := sql.Open("dirverName", "dataSourceName")
 - driverName: 数据库驱动注册的名称
 - [username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
+- 例：mysql
+  - username:password@tcp(ip:3306)/dbname[?param1=value1&...&paramN=valueN]
+  - username:password@tcp(hostName:3306)/dbname?charset=utf8&parseTime=true&loc=Local
 
 
 

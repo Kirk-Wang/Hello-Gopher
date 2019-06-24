@@ -255,3 +255,11 @@ Golang 中枚举通过定义常数来实现
 
 - 无状态且非持久化，可以使用 iota
 - 有状态或者需要持久化，不能使用 iota
+
+#### 在 Golang 中如何使用 JSON?
+
+标准库内建的 JSON 包
+
+- json.func Marshal(v interface{})([]byte, error)
+- json.Unmarshal(data []byte, v interface{}) error
+- 默认使用的 JSON 字段名称是它的 `Field` 名称

@@ -213,7 +213,9 @@ go.mod 文件用 go mod 命令来创建和维护
   - init, tidy, vendor, verify
   - download, edit, graph, why
 
-使用 `go mod init` 来创建和初始化 go.mod 文件
+#### go mod 命令使用
 
-使用 `go mod tidy` 来更新依赖
+- 使用 `go mod init` 来创建和初始化 go.mod 文件
+- 使用 `go mod tidy` 来更新依赖模块
+- 使用 `go get` 命令来下载和更新依赖包
 

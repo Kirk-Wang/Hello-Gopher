@@ -422,5 +422,13 @@ sql.DB 主要功能
 - 六种级别：debug、info、warn、error、fatal 和 panic
 - 支持自定义扩展 hook 和自定义输出格式
 
+#### LogrusStarter 编码要点
+
+**按照本身的配置和日志输出的编写要点**
+
+- 定义日志输出格式、日志级别
+- 控制台高亮输出、功能 hook 配置
+- 日志文件和滚动配置
+
 
 

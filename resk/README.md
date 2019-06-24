@@ -273,4 +273,6 @@ Golang 中枚举通过定义常数来实现
 结构体中自定义字段名称
 
 - JSON tag key: name,[omitempty,-]
+  * omitempty 忽略空值
 - [string]标记，定义 bool、浮点、整型类型使用字符串编码
+- 临时添加字段：内嵌结构体 合并多个结构体

@@ -24,6 +24,7 @@ require (
 	github.com/golang/example v0.0.0-20170904185048-46695d81d1fa
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/go-cmp v0.3.0 // indirect
+	github.com/gopherjs/gopherjs v0.0.0-20190430165422-3e4dfb77656c // indirect
 	github.com/gorilla/securecookie v1.1.1
 	github.com/gorilla/websocket v1.4.0 // indirect
 	github.com/imkira/go-interpol v1.1.0 // indirect
@@ -49,11 +50,14 @@ require (
 	github.com/satori/go.uuid v1.2.0
 	github.com/shirou/gopsutil v2.18.11+incompatible
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/smartystreets/assertions v1.0.0 // indirect
+	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a // indirect
 	github.com/spf13/pflag v1.0.3
 	github.com/spf13/viper v1.3.1
 	github.com/swaggo/gin-swagger v1.0.0
 	github.com/swaggo/swag v1.4.0
 	github.com/teris-io/shortid v0.0.0-20171029131806-771a37caa5cf
+	github.com/tietang/dbx v1.0.0 // indirect
 	github.com/urfave/cli v1.20.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/willf/pad v0.0.0-20160331131008-b3d780601022
@@ -63,8 +67,11 @@ require (
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
-	golang.org/x/crypto v0.0.0-20190313024323-a1f597ede03a
-	golang.org/x/net v0.0.0-20190213061140-3a22650c66bd
-	golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2
+	golang.org/x/crypto v0.0.0-20190621222207-cc06ce4a13d4
+	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
+	golang.org/x/sys v0.0.0-20190621203818-d432491b9138 // indirect
+	golang.org/x/text v0.3.2
+	golang.org/x/tools v0.0.0-20190621195816-6e04913cbbac // indirect
+	google.golang.org/appengine v1.4.0 // indirect
 	gopkg.in/go-playground/validator.v9 v9.24.0
 )

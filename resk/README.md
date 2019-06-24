@@ -388,6 +388,10 @@ sql.DB 主要功能
 #### dbx数据库扩展工具库
 
 * 基于 `sql.DB` 基础之上构建的高性能数据库工具
+* 安装
+    ```sh
+    go get -u github.com/tietang/dbx
+    ```
 
 
 

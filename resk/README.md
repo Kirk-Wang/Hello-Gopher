@@ -179,3 +179,21 @@ go get -> vendor -> go modules
 - vendor 曲线救国，但任然没有版本化
 - go1.11 modules 开启了版本依赖新历程
 
+### Go modules 简介
+
+通过 GO111MODULE 环境来开启或者关闭，默认是 auto
+
+- off/on/auto：关闭、开启、自动识别
+- 使用 module 后：GOPATH 失去了部分意义
+- 要用 module，第一步将项目从 GOPATH 中移出去
+
+#### go.mod 文件
+
+go.mod 文件来管理依赖，定义模块依赖
+
+- go.mod 文件放在项目根目录
+- go.mod 文件面向行，由指令+参数组成
+- 注释使用//
+- module:定义当前模块和包路径
+
+

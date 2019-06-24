@@ -263,3 +263,9 @@ Golang 中枚举通过定义常数来实现
 - json.func Marshal(v interface{})([]byte, error)
 - json.Unmarshal(data []byte, v interface{}) error
 - 默认使用的 JSON 字段名称是它的 `Field` 名称
+
+不是所有的类型都能序列化
+
+- 支持 string、bool、数字类型、数组和切片、结构体、map
+- Channel、complex、function 类型无法进行 json 序列化
+- 结构体重的循环数据结构，序列化时不会被处理

@@ -269,3 +269,8 @@ Golang 中枚举通过定义常数来实现
 - 支持 string、bool、数字类型、数组和切片、结构体、map
 - Channel、complex、function 类型无法进行 json 序列化
 - 结构体重的循环数据结构，序列化时不会被处理
+
+结构体中自定义字段名称
+
+- JSON tag key: name,[omitempty,-]
+- [string]标记，定义 bool、浮点、整型类型使用字符串编码

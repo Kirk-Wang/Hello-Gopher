@@ -369,6 +369,9 @@ sql.Open 的使用方法
 - 例：mysql
   - username:password@tcp(ip:3306)/dbname[?param1=value1&...&paramN=valueN]
   - username:password@tcp(hostName:3306)/dbname?charset=utf8&parseTime=true&loc=Local
+    - charset: 设置字符串字符集，这个要和数据库中的 schema 保持一致
+    - parseTime：程序是否自动解析时间字段
+    - loc: `local` 表示使用操作系统时区
 
 
 

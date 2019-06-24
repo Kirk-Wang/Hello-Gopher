@@ -313,6 +313,12 @@ Golang 中枚举通过定义常数来实现
 - props 配置客户端工具库加持+INI格式
 - INI 文件由节、键、值组成
 - INI 格式三要素：节、参数(key/value)、注释
+- section:方括号包围，比如：[mysql]
+- 参数：key=value, 有些工具支持冒号分割
+- 注释，使用`;`,有些编辑器和工具支持 `#`
+- Section 作为分组
+- props 配置客户端使用完整的 key 来解释
+- 完整的 key 由 Section 和参数 key 组成，`.` 分割
 
 
 

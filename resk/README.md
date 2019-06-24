@@ -204,4 +204,16 @@ go.mod 文件来管理依赖，定义模块依赖
 - exclude:排除特定模块和版本的使用
 - replace:模块源的替换
 
+#### go mod 命令
+
+go.mod 文件用 go mod 命令来创建和维护
+
+- 命令格式：go mod <命令> [可选参数]
+- 8个子命令
+  - init, tidy, vendor, verify
+  - download, edit, graph, why
+
+使用 `go mod init` 来创建和初始化 go.mod 文件
+
+使用 `go mod tidy` 来更新依赖
 

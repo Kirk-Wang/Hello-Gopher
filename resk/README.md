@@ -352,6 +352,20 @@ import "https://github.com/tietang/props"
 - sql.DB 是数据库操作的高级抽象，维护了一个连接池
 - sql.DB 会自动创建和释放连接
 
+**sql.DB连接池配置方法**
+
+- db.SetMaxIdleConns 保持连接的最大空闲连接数
+  * 默认0，返回到连接池后，会频繁的关闭和创建
+- db.SetMaxOpenConns 最大连接数
+  * 默认0， 无限制
+- SetConnMaxLifetime 闲置连接的最大存活时间
+  * 小于等于0，永远存活
+
+sql.Open 的使用方法
+
+- db, err := sql.Open("dirverName", "dataSourceName")
+- driverName: 数据库驱动注册的名称
+- [username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
 
 
 

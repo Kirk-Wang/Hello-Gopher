@@ -242,3 +242,10 @@ replace(
 5. go verify 来验证 module
 6. go mod vendor
   - 复制依赖到 `vendor` 目录，方便源代码定位和查看
+
+
+#### 在 Golang 中如何设计枚举？
+
+Golang 中枚举通过定义常数来实现
+- 类型别名的形式来声明类型
+- iota来自增和自动赋值

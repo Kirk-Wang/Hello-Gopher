@@ -438,5 +438,19 @@ level := os.Getenv("log.debug")
 
 ### 基础设施资源验证器 starter 编码实践
 
+#### 效验框架的重要性
+
+- 保证数据的正确性和完整性
+- 避免数据校验与业务逻辑耦合太紧
+- 有助于良好的代码设计
+
+#### validator 验证框架
+
+- go get gopkg.in/go-playground/validator.v9
+- 自称100分的验证框架
+- struct 和 field 验证
+  - 嵌套结构体跨 field 和 struct,
+  - 支持深入 Map, Slice and Array
+
 
 

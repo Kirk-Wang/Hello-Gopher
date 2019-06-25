@@ -469,9 +469,15 @@ level := os.Getenv("log.debug")
 
 #### Iris server starter 编写
 
-初始化阶段的主要事情
+**初始化阶段的主要事情：**
 
 - 创建 iris application 实例
 - iris 日志组件的配置和扩展
 - 主要中间件的配置：recover 中间件和自定义日志中间件
 
+**启动阶段的主要事情：**
+
+- 把系统注册的路由信息打印到控制台，方便查看
+- 从配置中读取配置的端口，启动 iris web 服务监听端口
+
+**定义为可阻塞的 starter**

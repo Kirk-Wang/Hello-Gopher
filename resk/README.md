@@ -467,3 +467,11 @@ level := os.Getenv("log.debug")
 - 自定义中间件扩展和丰富的中间件生态
 - 完整且相当好的社区解决方案和全球开发者的支持
 
+#### Iris server starter 编写
+
+初始化阶段的主要事情
+
+- 创建 iris application 实例
+- iris 日志组件的配置和扩展
+- 主要中间件的配置：recover 中间件和自定义日志中间件
+

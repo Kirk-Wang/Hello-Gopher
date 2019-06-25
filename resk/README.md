@@ -451,6 +451,7 @@ level := os.Getenv("log.debug")
 - struct 和 field 验证
   - 嵌套结构体跨 field 和 struct,
   - 支持深入 Map, Slice and Array
+- 支持自定义：字段类型和错误
 
 
 

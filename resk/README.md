@@ -459,4 +459,10 @@ level := os.Getenv("log.debug")
 
 #### 内建的 http server-功能扩展
 
+#### Iris web 框架介绍
+
+- 安装：go get -u github.com/kataras/iris
+- 性能出色，简单且功能齐全非常有特色
+- 漂亮且易用的有表现力的基础 API
+- 自定义中间件扩展和丰富的中间件生态
 

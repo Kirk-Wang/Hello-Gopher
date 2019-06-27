@@ -398,6 +398,10 @@ help
   # 注意： $ne 也会筛选出并不包含查询字段的文档
   db.accounts.find({"_id.type": { $ne: "saving" }})
 
-  db.accounts.find({balance:{ $gt: 500 }})
+  db.accounts.find({balance:{ $gt: 500 }}) # 大于
+
+  # 读取用户名字排在 fred 之前的银行账户文档
+  db.accounts.find({balance:{ $lt: "fred" }}) # 小于
+
 
   ```

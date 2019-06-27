@@ -450,3 +450,7 @@ help
   })
   ```
   当所有筛选条件使用的都是 $eq 操作符时，$or 和 $in 的效果是相同的
+
+  ```sh
+  db.accounts.find( { name: { $in: [ "alice", "charlie" ] } } )
+  ```

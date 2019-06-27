@@ -270,3 +270,39 @@ help
 
   乱序写入时，即使某些文档造成了错误，剩余的正确文档仍然会被写入
 
+  `db.collection.insert()` 创建单个或多个文档
+
+  ```sh
+  > db.accounts.insert({ name: "george", balance: 1000 })
+  WriteResult({ "nInserted" : 1 })
+  ```
+
+  遇到错误
+  ```sh
+  > db.accounts.insert([
+  ...       { _id: "account1", name: "george", balance: 1000 },
+  ...       { name: "henry", balance: 2000 },
+  ...     ])
+  BulkWriteResult({
+        "writeErrors" : [
+                {
+                        "index" : 0,
+                        "code" : 11000,
+                        "errmsg" : "E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \"account1\" }",
+                        "op" : {
+                                "_id" : "account1",
+                                "name" : "george",
+                                "balance" : 1000
+                        }
+                }
+        ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 0,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+  })
+  ```
+

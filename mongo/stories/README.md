@@ -391,17 +391,32 @@ help
 
   db.accounts.find({"_id.type":"saving"}) # 使用复合主键查询
 
+  ```
+
+  比较操作符
+
+  ```sh
   db.accounts.find({name: {$eq: "alice"}}) # 比较运算符(等于)
 
   db.accounts.find({name: {$ne: "alice"}}) # 不等于
   db.accounts.find({balance: {$ne: 100}})
   # 注意： $ne 也会筛选出并不包含查询字段的文档
   db.accounts.find({"_id.type": { $ne: "saving" }})
-
   db.accounts.find({balance:{ $gt: 500 }}) # 大于
 
   # 读取用户名字排在 fred 之前的银行账户文档
   db.accounts.find({balance:{ $lt: "fred" }}) # 小于
+  db.accounts.find({name:{$in:["alice", "charlie"]}}) # 属于 alice 和 charlie 的文档
 
+  db.accounts.find({name:{$nin:["alice", "charlie"]}}) # 不属于
+  db.accounts.find({"_id.type": { $nin: ["saving"] }}) # 注意：和 $ne 一样
+  ```
 
+  逻辑操作符 $not, $and, $or, $nor
+
+  ```sh
+  db.accounts.find({ balance: { $not: { $lt: 500 } } }) # 不小于500
+  # $not 也会筛选出并不包含查询字段的文档
+
+  
   ```

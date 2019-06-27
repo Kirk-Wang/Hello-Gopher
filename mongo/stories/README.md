@@ -388,4 +388,6 @@ help
 
   db.accounts.find({name: "alice"}) # 匹配查询
   db.accounts.find({name: "alice", balance: 100})
+
+  db.accounts.find({"_id.type":"saving"}) # 使用复合主键查询
   ```

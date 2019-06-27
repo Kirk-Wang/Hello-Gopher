@@ -418,5 +418,11 @@ help
   db.accounts.find({ balance: { $not: { $lt: 500 } } }) # 不小于500
   # $not 也会筛选出并不包含查询字段的文档
   db.accounts.find({ "_id.type": { $not: { $eq: "saving" } } })
-
+  # 读取余额大于 100 并且用户姓名排在 fred 之后的银行账户文档
+  db.accounts.find({
+    $and: [
+        {balance: { $gt:100 } },
+        {name: { $gt: "fred"} }
+    ]
+  })
   ```

@@ -454,3 +454,12 @@ help
   ```sh
   db.accounts.find( { name: { $in: [ "alice", "charlie" ] } } )
   ```
+  "读取余额小于100或者大于500的银行账户文档"
+  ```sh
+  db.accounts.find({
+    $or: [
+      { balance: { $lt: 100 } },
+      { balance: { $gt: 500 } }
+    ]
+  })
+  ```

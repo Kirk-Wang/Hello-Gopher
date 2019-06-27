@@ -352,4 +352,14 @@ help
   # 注意：字段顺序调换，同样能写入
   ```
 
+#### 创建文档总结
+
+  * 使用 db.collection.insertOne() 创建单一文档
+  * 使用 db.collection.insertMany() 创建多个文档
+  * 使用 db.collection.insert() 创建单一或多个文档
+  * 创建文档命令返回的结果/错误
+  * 使用 db.collection.save() 创建单一文档
+  * 对象主键 ObjectId
+  * 复合主键
+
 

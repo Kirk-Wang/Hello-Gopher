@@ -170,4 +170,4 @@ help
   ```
   将多个需要创建的文档作为一个数组传入 `db.collection.insertMany()`
 
-  
+  ordered 参数用来决定 mongoDB 是否要按顺序来写入这些文档

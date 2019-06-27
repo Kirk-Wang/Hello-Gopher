@@ -390,4 +390,12 @@ help
   db.accounts.find({name: "alice", balance: 100})
 
   db.accounts.find({"_id.type":"saving"}) # 使用复合主键查询
+
+  db.accounts.find({name: {$eq: "alice"}}) # 比较运算符(等于)
+
+  db.accounts.find({name: {$ne: "alice"}}) # 不等于
+  db.accounts.find({balance: {$ne: 100}})
+  # 注意： $ne 也会筛选出并不包含查询字段的文档
+  db.accounts.find({"_id.type": { $ne: "saving" }})
+
   ```

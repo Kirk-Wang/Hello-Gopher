@@ -154,5 +154,20 @@ help
         "insertedId" : ObjectId("5d148cf3aae4f17ec2d60582")
   }
   ```
+  
+  创建多个文档
+
+  ```sh
+  db.collection.insertMany()
+
+  db.<collection>.insertMany(
+    [<document1>,<document2>,...],
+    {
+      wirteConcern: <document>,
+      ordered: <boolean>
+    }
+  )
+  ```
+  将多个需要创建的文档作为一个数组传入 `db.collection.insertMany()`
 
   

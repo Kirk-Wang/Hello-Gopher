@@ -173,3 +173,5 @@ help
   ordered 参数用来决定 mongoDB 是否要按顺序来写入这些文档
 
   如果将 ordered 参数设置为 false，mongoDB 可以打乱文档的写入顺序，以便优化写入操作的性能
+
+  ordered 参数的默认值为 true

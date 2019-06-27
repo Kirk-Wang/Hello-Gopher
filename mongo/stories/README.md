@@ -502,3 +502,7 @@ help
   ```sh
   db.accounts.find({"_id.type": { $ne: "checking", $exists: true } })
   ```
+  "读取文档主键是字符串的银行账户文档"
+  ```sh
+  db.accounts.find({ _id: { $type: "string" } })
+  ```

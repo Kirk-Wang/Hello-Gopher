@@ -196,3 +196,38 @@ help
         ]
   }
   ```
+
+  如果 db.collection.insertMany() 遇到了错误...
+
+  在顺序写入是遇到了错误
+  ```sh
+  >try{
+    db.accounts.insertMany([
+      { _id: "account1", name: "charlie", balance: 500},
+      { name: "david", balance: 200 }
+    ])
+  }catch(e) {
+    print(e)
+  }
+  BulkWriteError({
+        "writeErrors" : [
+                {
+                        "index" : 0,
+                        "code" : 11000,
+                        "errmsg" : "E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \"account1\" }",
+                        "op" : {
+                                "_id" : "account1",
+                                "name" : "charlie",
+                                "balance" : 500
+                        }
+                }
+        ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 0,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+  })
+  ```

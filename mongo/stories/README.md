@@ -312,3 +312,8 @@ help
   insertOne 和 insertMany 命令不支持 db.collection.explain() 命令
   
   insert 支持 db.collection.explain() 命令
+
+  `db.collection.save()`
+
+  他会调用 `db.collection.insert()`命令，所以返回的结果和它是一样的
+

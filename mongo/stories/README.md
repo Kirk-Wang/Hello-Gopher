@@ -175,3 +175,17 @@ help
   如果将 ordered 参数设置为 false，mongoDB 可以打乱文档的写入顺序，以便优化写入操作的性能
 
   ordered 参数的默认值为 true
+
+  将文档写入 accounts 集合
+  ```sh
+  >db.accounts.insertMany([
+    {
+      name: "charlie",
+      balance: 500
+    },
+    {
+      name: "david",
+      balance: 200
+    }
+  ])
+  ```

@@ -362,4 +362,8 @@ help
   * 对象主键 ObjectId
   * 复合主键
 
+#### 读取文档
 
+  * db.collection.find()
+  * 匹配查询
+  * 查询操作符

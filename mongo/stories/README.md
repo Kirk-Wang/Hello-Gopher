@@ -506,3 +506,11 @@ help
   ```sh
   db.accounts.find({ _id: { $type: "string" } })
   ```
+  "读取文档主键是对象主键或者是复合主键的银行账户文档"
+  ```sh
+  db.accounts.find({
+    _id: {
+      $type: ["objectId", "object"]
+    }
+  })
+  ```

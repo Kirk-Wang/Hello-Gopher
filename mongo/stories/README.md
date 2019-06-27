@@ -492,3 +492,13 @@ help
   ```sh
   db.accounts.find({ "_id.type": { $exists: true } })
   ```
+  回想一下，之前介绍的有些操作符会筛选出不包含查询字段的文档
+
+  "读取账户类型不是支票账户的银行账户文档"
+  ```sh
+  db.accounts.find({ "_id.type": { $ne: "checking" } })
+  ```
+  如果增加一个 $exists 操作符，就可以得到更准确的筛选结果
+  ```sh
+  db.accounts.find({"_id.type": { $ne: "checking", $exists: true } })
+  ```

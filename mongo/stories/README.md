@@ -305,4 +305,10 @@ help
         "upserted" : [ ]
   })
   ```
+  insertOne, insertMany 和 insert 的区别
 
+  三个命令返回的结果文档格式是不一样的
+
+  insertOne 和 insertMany 命令不支持 db.collection.explain() 命令
+  
+  insert 支持 db.collection.explain() 命令

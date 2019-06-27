@@ -122,6 +122,32 @@ help
   accounts
 
   # db.collection.insertOne() 命令会自动创建相应的集合
+
+  # 如果 db.collection.insertOne() 遇到了错误……
+  # 处理抛出的错误
+
+  > try{
+      db.accounts.insertOne({
+        _id: "account1",
+        name: "bob",
+        balance: 50
+      })
+    } catch(e) {
+      print(e)
+    }
+  WriteError({
+        "index" : 0,
+        "code" : 11000,
+        "errmsg" : "E11000 duplicate key error collection: test.accounts index: _id_ dup key: { : \"account1\" }",
+        "op" : {
+                "_id" : "account1",
+                "name" : "bob",
+                "balance" : 50
+        }
+  })
+
+  
+  
   ```
 
   

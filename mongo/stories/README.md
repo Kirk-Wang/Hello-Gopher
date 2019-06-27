@@ -439,3 +439,13 @@ help
   ```sh
   db.accounts.find({ balance: { $gt: 100, $lt: 500 } })
   ```
+
+  "读取属于 alice 或者 charlie 的银行账户文档"
+  ```sh
+  db.accounts.find({
+    $or: [
+      { name: { $eq: "alice" } },
+      { name: { $eq: "charlie" } }
+    ]
+  })
+  ```

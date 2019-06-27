@@ -117,6 +117,11 @@ help
   # 由于我们在 db.collection.insertOne() 命令中并没有提供 writeConcern 文档，
   # 这里显示的是 mongoDB 默认的安全写级别启用状态
   # "insertedId"显示了被写入的文档的_id
+
+  > show collections
+  accounts
+
+  # db.collection.insertOne() 命令会自动创建相应的集合
   ```
 
   

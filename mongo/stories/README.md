@@ -149,7 +149,10 @@ help
   # 自动生成_id
   # 省略创建文档中的 _id 字段
   > db.accounts.insertOne({name: "bob", balance: 50})
-  
+  {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d148cf3aae4f17ec2d60582")
+  }
   ```
 
   

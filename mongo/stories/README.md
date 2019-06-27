@@ -378,3 +378,14 @@ help
   * 只返回部分字段
   * 内嵌文档的投射
   * 数组的投射
+
+  演示：
+
+  ```sh
+  db.accounts.find()
+
+  db.accounts.find().pretty() # 格式化
+
+  db.accounts.find({name: "alice"}) # 匹配查询
+  db.accounts.find({name: "alice", balance: 100})
+  ```

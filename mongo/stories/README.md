@@ -428,7 +428,7 @@ help
 
   # 当筛选条件应用在不同字段上时，可以省略 $and 操作符
   db.accounts.find({
-    {balance: { $gt:100 } },
-    {name: { $gt: "fred"} }
+    balance: { $gt:100 },
+    name: { $gt: "fred"}
   })
   ```

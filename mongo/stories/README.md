@@ -514,3 +514,15 @@ help
     }
   })
   ```
+  "读取用户姓名是null的银行账户文档"
+  ```sh
+  db.accounts.find({
+    name:{
+      $type: "null"
+    }
+  })
+  ```
+  "也可以使用对应的 BSON 类型序号作为 $type 操作符的参数"
+  ```sh
+  db.accounts.find({ _id: { $type: 2 } })
+  ```

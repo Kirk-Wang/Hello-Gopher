@@ -94,6 +94,26 @@ help
   # 简单来说，安全写级别用来判断一次数据库写入操作是否成功
   # 安全写级别越高，丢失数据的风险就越低，然而写入操作的延迟也可能更高
   # 如果不提供 writeConcern 文档，mongoDB 使用默认的安全写级别
+
+  # 准备写入数据库的文档
+
+  {
+    _id: "account1",
+    name: "alice",
+    balance: 100 # 余额
+  }
+
+  # 将文档写入 accounts 集合
+
+  > db.accounts.insertOne({
+  ...     _id: "account1",
+  ...     name: "alice",
+  ...     balance: 100
+  ...   })
+  { "acknowledged" : true, "insertedId" : "account1" }
+
+  # 注意返回结果
+
   ```
 
   

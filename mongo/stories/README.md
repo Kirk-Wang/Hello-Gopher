@@ -526,3 +526,5 @@ help
   ```sh
   db.accounts.find({ _id: { $type: 2 } })
   ```
+
+  数组操作符：$all, $elemMatch

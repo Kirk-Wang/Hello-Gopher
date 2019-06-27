@@ -171,3 +171,5 @@ help
   将多个需要创建的文档作为一个数组传入 `db.collection.insertMany()`
 
   ordered 参数用来决定 mongoDB 是否要按顺序来写入这些文档
+
+  如果将 ordered 参数设置为 false，mongoDB 可以打乱文档的写入顺序，以便优化写入操作的性能

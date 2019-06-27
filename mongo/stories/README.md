@@ -486,3 +486,9 @@ help
     ]
   })
   ```
+  字段操作符 $exists, $type
+
+  "读取包含账户类型字段的银行账户文档"
+  ```sh
+  db.accounts.find({ "_id.type": { $exists: true } })
+  ```

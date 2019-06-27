@@ -188,4 +188,11 @@ help
       balance: 200
     }
   ])
+  {
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5d148f63aae4f17ec2d60583"),
+                ObjectId("5d148f63aae4f17ec2d60584")
+        ]
+  }
   ```

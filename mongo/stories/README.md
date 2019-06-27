@@ -417,6 +417,6 @@ help
   ```sh
   db.accounts.find({ balance: { $not: { $lt: 500 } } }) # 不小于500
   # $not 也会筛选出并不包含查询字段的文档
+  db.accounts.find({ "_id.type": { $not: { $eq: "saving" } } })
 
-  
   ```

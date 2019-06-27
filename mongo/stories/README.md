@@ -66,13 +66,14 @@ help
 
 #### 创建文档
 
-  * db.collection.insert()
-  * db.collection.save()
-  * 创建多个文档
-  
-  进入 shell，实战
+    * db.collection.insert()
+    * db.collection.save()
+    * 创建多个文档
+    
+    进入 shell，实战
 
-  ```sh
-  use test # 使用 test 数据库
-  show collections # 查看 test 数据库中的集合
-  ```
+    ```sh
+    use test # 使用 test 数据库
+    show collections # 查看 test 数据库中的集合
+    ```
+

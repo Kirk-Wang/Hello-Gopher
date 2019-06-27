@@ -13,6 +13,10 @@ docker run --name mymongo -v /mymongo/data:/data/db -d mongo:4
 # --name mymongo --> 容器名字
 # -v /mymongo/data:/data/db --> 挂载数据目录
 # -d --> 后台运行容器
+
+docker ps # 查看 docker 容器状态
+
+docker logs mymongo # 查看数据库服务器日志
 ```
 
 

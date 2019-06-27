@@ -343,6 +343,13 @@ help
   ...     balance: 80
   ...   })
   WriteResult({ "nInserted" : 1 })
+  > db.accounts.insert({
+  ...     _id: { type: "saving", accountNo: "001" },
+  ...     name: "irene",
+  ...     balance: 80
+  ...   })
+  WriteResult({ "nInserted" : 1 })
+  # 注意：字段顺序调换，同样能写入
   ```
 
 

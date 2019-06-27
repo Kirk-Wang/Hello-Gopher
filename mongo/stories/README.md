@@ -317,3 +317,32 @@ help
 
   他会调用 `db.collection.insert()`命令，所以返回的结果和它是一样的
 
+  再来看一下文档主键 _id
+
+  默认的对象主键 objectId
+
+  ```sh
+  > ObjectId()
+  ObjectId("5d1498afc78d64aa5f9e45f0")
+  > ObjectId("5d1498afc78d64aa5f9e45f0")
+  ObjectId("5d1498afc78d64aa5f9e45f0")
+  ```
+  提取 ObjectId 的创建时间
+
+  ```sh
+  > ObjectId("5d1498afc78d64aa5f9e45f0").getTimestamp()
+  ```
+
+  复合主键
+
+  可以使用文档作为文档主键, 复合主键仍然要满足文档主键的唯一性
+  ```sh
+  > db.accounts.insert({
+  ...     _id: { accountNo: "001", type: "saving" },
+  ...     name: "irene",
+  ...     balance: 80
+  ...   })
+  WriteResult({ "nInserted" : 1 })
+  ```
+
+

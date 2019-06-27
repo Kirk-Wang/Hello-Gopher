@@ -463,3 +463,14 @@ help
     ]
   })
   ```
+
+  "读取不属于 alice 和 charlie 且余额不小于 100 的银行账户文档"
+  ```sh
+  db.accounts.find({
+    $nor:[
+      { name: "alice" },
+      { name: "charlie" },
+      { balance: { $lt: 100 } },
+    ]
+  })
+  ```

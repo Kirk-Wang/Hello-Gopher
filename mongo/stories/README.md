@@ -77,4 +77,18 @@ help
   show collections # 查看 test 数据库中的集合
   ```
 
+  开始创建第一个文档
+
+  ```sh
+  db.collection.insertOne()
+
+  db.<collection>.insertOne(
+    <document>,
+    {
+      writeConcern: <document>
+    }
+  )
+  # 这里的 <collection> 要替换成文档将要写入的集合
+  ```
+
   

@@ -553,3 +553,7 @@ help
   ```sh
   db.accounts.find({ contact: { $all: ["China", "Beijing"] } })
   ```
+  "读取联系电话包含22222222和33333333的银行账户文档"
+  ```sh
+  db.accounts.find({ contact: { $all: [ ["22222222","33333333"] ] }})
+  ```

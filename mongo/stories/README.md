@@ -973,10 +973,17 @@ db.accounts.update(
   { name: "karen" },
   { $rename:
       {
-        "contact.3.primaryEmail": "primaryEmail",
+        "contact.3.primaryEmail": "primaryEmail"
       } 
   }
 )
+# 这里会报错
+db.accounts.find({name:"karen"}).pretty()
 ```
+$rename 命令中的旧字段和新字段都不可以指向数组元素
+
+这一点和之前介绍过的 $set 和 $unset 命令不同
+
+$set 和 $unset 命令都可以应用在数组元素上
 
 

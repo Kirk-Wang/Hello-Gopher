@@ -756,3 +756,56 @@ help
   * 运算操作符
   * 文档游标函数
   * 文档投影操作
+
+#### 更新文档
+* db.collection.update()
+* db.collection.findAndModify()
+* db.collection.save()
+* 更新文档操作符
+* 更新多个文档
+
+"将 alice 的账户余额更改为 123"
+```sh
+db.account.update({name:"alice"}, { name:"alice", balance: 123 })
+```
+
+文档主键_id是不可以更改的
+
+更新整篇文档的操作只能应用在单一文档上
+
+"查看 jack 的银行账户"
+```sh
+db.accounts.find({name:"jack"}).pretty()
+```
+
+"更新 jack 的银行账户余额和开户信息"(新增开户信息字段)
+
+```sh
+db.accounts.update(
+  { name: "jack" },
+  { $set:  
+    {
+      balance: 3000,
+      info: {
+        dateOpened: new Date("2016-05-18T16:00:00Z"),
+        branch: "branch1"
+      }
+    } 
+  }
+)
+
+db.accounts.find({name:"jack"}).pretty()
+```
+
+"更新 jack 的银行账户的开户时间"
+```sh
+db.accounts.update(
+  { name: "jack" },
+  { $set: 
+    {
+      "info.dateOpened": new Date("2017-01-01T16:00:00Z"),
+    } 
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```

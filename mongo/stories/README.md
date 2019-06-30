@@ -624,9 +624,12 @@ help
   ```sh
   cursor.hasNext()
   cursor.next()
+
   cursor.forEach()
+
   cursor.limit()
   cursor.skip()
+  
   cursor.count()
   cursor.sort()
   ```

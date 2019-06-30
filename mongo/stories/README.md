@@ -738,3 +738,10 @@ help
     }
   })
   ```
+  共用筛选条件
+  ```sh
+  db.accounts.find(
+    { contract: { $gt: "Alabama" } },
+    { _id: 0, name: 1, "contact.$": 1 }
+  )
+  ```

@@ -809,3 +809,16 @@ db.accounts.update(
 )
 db.accounts.find({name:"jack"}).pretty()
 ```
+
+"更新 jack 的联系电话"
+```sh
+db.accounts.update(
+  { name: "jack" },
+  { $set: 
+    {
+      "contact.0": "66666666",
+    } 
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```

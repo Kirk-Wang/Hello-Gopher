@@ -693,3 +693,6 @@ help
   db.collection.find(<query>, <projection>)
   ```
   可以有选择性的返回文档中部分字段
+  ```sh
+  { field: inclusion }
+  ```

@@ -612,6 +612,9 @@ help
   游历完游标中所有的文档之后，或者在10分钟之后，游标便会自动关闭
 
   可以使用 noCursorTimeout() 函数来保持游标一直有效
+  ```sh
+  var myCursor = db.accounts.find().noCursorTimeout()
+  ```
 
 
 

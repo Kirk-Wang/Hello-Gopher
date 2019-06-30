@@ -891,4 +891,17 @@ db.accounts.update(
 )
 db.accounts.find({name:"jack"}).pretty()
 ```
+删除数组内的字段
+"删除 jack 的联系电话"
+```sh
+db.accounts.update(
+  { name: "jack" },
+  { $unset:
+      {
+        "contact.0": ""
+      } 
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```
 

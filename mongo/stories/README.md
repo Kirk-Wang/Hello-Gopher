@@ -615,7 +615,10 @@ help
   ```sh
   var myCursor = db.accounts.find().noCursorTimeout()
   ```
-
+  在这之后，在不遍历游标的情况下，你需要主动关闭游标
+  ```sh
+  myCursor.close()
+  ```
 
 
 

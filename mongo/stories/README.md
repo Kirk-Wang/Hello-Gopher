@@ -625,11 +625,22 @@ help
   cursor.hasNext()
   cursor.next()
 
+  var myCursor = db.accounts.find({name:"george"})
+  while(myCursor.hasNext()) {
+    printjson(myCursor.next())
+  }
+
   cursor.forEach()
+  var myCursor = db.accounts.find({name:"george"})
+  myCursor.forEach(printjson)
 
   cursor.limit()
+  db.accounts.find({name:"george"}).limit(1)
+  db.accounts.find({name:"george"}).limit(0) # 0 不会有任何效果
+
   cursor.skip()
-  
+  db.accounts.find({name:"george"}).skip(1)
+
   cursor.count()
   cursor.sort()
   ```

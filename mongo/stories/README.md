@@ -986,4 +986,18 @@ $rename 命令中的旧字段和新字段都不可以指向数组元素
 
 $set 和 $unset 命令都可以应用在数组元素上
 
+更新字段值
+
+“更新 david 的账户余额”
+```sh
+db.accounts.find({name:"david"}).pretty()
+db.accounts.update(
+  { name: "david" },
+  { $inc:
+      {
+        balance: -0.5
+      } 
+  }
+)
+```
 

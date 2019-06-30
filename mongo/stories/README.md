@@ -681,6 +681,10 @@ help
   cursor.skip() 在 cursor.limit() 之前执行
   ```sh
   db.accounts.find().limit(5).skip(3) # 会先执行 skip(3)
+  > 5 篇文档
   ```
   cursor.sort() 在 cursor.skip() 和 cursor.limit() 之前执行
+  ```sh
+  db.accounts.find().skip(3).limit(5).sort({balance: -1})
+  ```
 

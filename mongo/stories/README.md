@@ -713,3 +713,28 @@ help
 
   db.accounts.find({}, {name:1, blance: 0, _id: 0}) # 报错
   ```
+  除了文档主键之外，我们不可以在投影文档中混合使用包含和不包含这两种投影操作
+
+  在数组字段上使用投影
+
+  $slice 操作符可以返回数组字段中的部分元素
+  ```sh
+  db.accounts.find({}, {_id:0, name: 1, contract: 1})
+  db.accounts.find({}, {_id:0, name: 1, contract: { $slice: 1} })
+  db.accounts.find({}, {_id:0, name: 1, contract: { $slice: -1} })
+  db.accounts.find({}, {_id:0, name: 1, contract: { $slice: [1, 2]} }) # skip & limit
+
+  ```
+
+  $elemMatch 和 $ 操作符可以返回数组字段中满足筛选条件的第一个元素
+  ```sh
+  db.accounts.find({},{
+    _id: 0,
+    name: 1,
+    contact: {
+      $elemMatch: {
+        $gt: "Alabama"
+      }
+    }
+  })
+  ```

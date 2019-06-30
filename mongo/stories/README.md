@@ -688,3 +688,8 @@ help
   db.accounts.find().skip(3).limit(5).sort({balance: -1})
   ```
 
+  文档投影
+  ```sh
+  db.collection.find(<query>, <projection>)
+  ```
+  可以有选择性的返回文档中部分字段

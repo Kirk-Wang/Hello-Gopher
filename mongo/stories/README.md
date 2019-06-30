@@ -865,3 +865,30 @@ db.accounts.update(
 )
 db.accounts.find({name:"jack"}).pretty()
 ```
+其实$unset命令中的赋值("")对操作结果并没有任何影响
+
+"删除 jack 的银行开户时间"
+```sh
+db.accounts.update(
+  { name: "jack" },
+  {
+    $unset: {
+      "info.dateOpened":"this can be any value",
+    }
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```
+如果$unset命令中的字段根本不存在，那么文档内容将保持不变
+```sh
+db.accounts.update(
+  { name: "jack" },
+  {
+    $unset: {
+      notExist: ""
+    }
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```
+

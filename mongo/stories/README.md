@@ -696,3 +696,14 @@ help
   ```sh
   { field: inclusion }
   ```
+  1 表示返回字段，0表示不返回字段
+
+  "只返回银行账户文档中的用户姓名"
+  ```sh
+  db.accounts.find({}, {name:1})
+  ```
+
+  "只返回银行账户文档中的用户姓名(不包括文档主键)"
+  ```sh
+  db.accounts.find({}, {name:1, _id: 0})
+  ```

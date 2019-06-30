@@ -965,5 +965,18 @@ db.accounts.update(
 )
 db.accounts.find({name:"karen"}).pretty()
 ```
+重命名数组中内嵌文档的字段
+
+"更新karen的联系方式"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $rename:
+      {
+        "contact.3.primaryEmail": "primaryEmail",
+      } 
+  }
+)
+```
 
 

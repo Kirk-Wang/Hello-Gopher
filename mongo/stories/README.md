@@ -678,4 +678,9 @@ help
   ```sh
   db.accounts.find().sort( { balance: -1 } ).limit(1)
   ```
+  cursor.skip() 在 cursor.limit() 之前执行
+  ```sh
+  db.accounts.find().limit(5).skip(3)
+  ```
+  cursor.sort() 在 cursor.skip() 和 cursor.limit() 之前执行
 

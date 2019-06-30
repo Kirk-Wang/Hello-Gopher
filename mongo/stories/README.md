@@ -662,5 +662,15 @@ help
 
   在这种情况下，应该避免应用不提供筛选条件的 cursor.count() 函数，而使用聚合管道来计算文档数量
 
+  cursor.sort(<document>)
 
+  这里的<document>定义了排序的要求{ field: ordering }
+
+  1表示由小及大的正向排序，-1表示逆向排序
+
+  "按照余额从大到小，用户姓名按字母排序的方式排列银行账户文档"
+
+  ```sh
+  db.accounts.find().sort({ balance: -1, name: 1 })
+  ```
 

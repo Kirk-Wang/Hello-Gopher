@@ -588,4 +588,9 @@ help
   db.accounts.find({ name: { $in: [ /^c/, /^j/ ] } })
   ```
 
+  "读取用户姓名包含LIE(不区分大小写)的银行账户文档"
+  ```sh
+  db.accounts.find({name: {$regex:/LIE/,$options:'i'} })
+  ```
+
 

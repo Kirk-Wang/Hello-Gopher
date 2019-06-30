@@ -931,5 +931,25 @@ db.accounts.find({contact:"jack"}).pretty()
 ```
 当 $rename 命令中的新字段存在的时候，$rename 命令会先 $unset 新旧字段，然后$set新字段
 
+重命名内嵌文档的字段
+
+"更新 karen 的银行账户的开户时间和联系方式"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $set: {
+      info: {
+        "dateOpened": new Date("2017-01-01T16:00:00Z"),
+        branch: "branch1"
+      },
+      "contact.3": {
+        primaryEmail: "xxx@gmail.com",
+        secondaryEmail: "yyy@gmail.com"
+      }
+    } 
+  }
+)
+db.accounts.find({name:"karen"}).pretty()
+```
 
 

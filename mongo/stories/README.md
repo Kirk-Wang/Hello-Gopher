@@ -999,5 +999,15 @@ db.accounts.update(
       } 
   }
 )
+db.accounts.find({name:"david"}).pretty()
+db.accounts.update(
+  { name: "david" },
+  { $mul:
+      {
+        balance: 0.5
+      } 
+  }
+)
+db.accounts.find({name:"david"}).pretty()
 ```
 

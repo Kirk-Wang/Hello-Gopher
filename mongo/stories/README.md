@@ -849,3 +849,19 @@ db.accounts.update(
 db.accounts.find({name:"jack"}).pretty()
 ```
 注意：第5个元素将被设置为 null
+
+删除字段
+
+"删除 jack 的银行账户余额和开户地点"
+```sh
+db.accounts.update(
+  { name: "jack" },
+  {
+    $unset: {
+      balance: "",
+      "info.branch":"",
+    }
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```

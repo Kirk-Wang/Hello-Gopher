@@ -848,3 +848,4 @@ db.accounts.update(
 )
 db.accounts.find({name:"jack"}).pretty()
 ```
+注意：第5个元素将被设置为 null

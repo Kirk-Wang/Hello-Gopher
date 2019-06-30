@@ -620,5 +620,16 @@ help
   myCursor.close()
   ```
 
+  游标函数
+  ```sh
+  cursor.hasNext()
+  cursor.next()
+  cursor.forEach()
+  cursor.limit()
+  cursor.skip()
+  cursor.count()
+  cursor.sort()
+  ```
+
 
 

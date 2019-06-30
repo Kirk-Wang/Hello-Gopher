@@ -526,5 +526,26 @@ help
   ```sh
   db.accounts.find({ _id: { $type: 2 } })
   ```
-
+  
   数组操作符：$all, $elemMatch
+
+  "创建包含数组和嵌套数组的文档"
+
+  ```sh
+  db.accounts.insert([
+    {
+      name: "jack",
+      balance: 2000,
+      contact: ["11111111", "Alabama", "US"]
+    },
+    {
+      name: "karen",
+      balance: 2500,
+      contact: [
+        ["22222222","33333333"],
+        "Beijing",
+        "China"
+      ]
+    },
+  ])
+  ```

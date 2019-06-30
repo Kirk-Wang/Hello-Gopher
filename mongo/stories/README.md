@@ -1080,3 +1080,10 @@ db.accounts.update(
 * Date
 * Timestamp
 * Regular Expression (最大)
+
+数组更新操作符
+* $addToSet
+* $pop
+* $pull
+* $pullAll
+* $push

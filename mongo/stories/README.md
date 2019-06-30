@@ -835,3 +835,16 @@ db.accounts.update(
 )
 db.accounts.find({name:"jack"}).pretty()
 ```
+
+"再次添加 jack 的联系方式"(第6个元素)
+```sh
+db.accounts.update(
+  { name: "jack" },
+  { $set: 
+    {
+      "contact.5": "new contact",
+    } 
+  }
+)
+db.accounts.find({name:"jack"}).pretty()
+```

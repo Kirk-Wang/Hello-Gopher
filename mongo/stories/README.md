@@ -593,4 +593,17 @@ help
   db.accounts.find({name: {$regex:/LIE/,$options:'i'} })
   ```
 
+  文档游标
+
+  db.collection.find()返回一个文档集合游标
+
+  在不迭代游标的情况下，只列出前 20 个文档
+  ```sh
+  var myCursor = db.accounts.find();
+  myCursor
+  ```
+  我们也可以直接使用游标下标直接访问文档集合中的某一文档
+
+  
+
 

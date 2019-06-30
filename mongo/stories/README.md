@@ -549,3 +549,7 @@ help
     },
   ])
   ```
+  "读取联系地址位于中国北京的银行账户文档"
+  ```sh
+  db.accounts.find({ contact: { $all: ["China", "Beijing"] } })
+  ```

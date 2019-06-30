@@ -952,4 +952,18 @@ db.accounts.update(
 db.accounts.find({name:"karen"}).pretty()
 ```
 
+"更新账户余额和开户地点字段在文档中的位置"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $rename:
+      {
+        "info.branch": "branch",
+        "balance": "info.balance"
+      } 
+  }
+)
+db.accounts.find({name:"karen"}).pretty()
+```
+
 

@@ -707,3 +707,9 @@ help
   ```sh
   db.accounts.find({}, {name:1, _id: 0})
   ```
+  "不返回银行账户文档中的用户姓名(也不返回文档主键)"
+  ```sh
+  db.accounts.find({}, {name:0, _id: 0})
+
+  db.accounts.find({}, {name:1, blance: 0, _id: 0}) # 报错
+  ```

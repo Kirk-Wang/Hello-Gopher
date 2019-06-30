@@ -929,6 +929,7 @@ db.accounts.update(
 )
 db.accounts.find({contact:"jack"}).pretty()
 ```
+当 $rename 命令中的新字段存在的时候，$rename 命令会先 $unset 新旧字段，然后$set新字段
 
 
 

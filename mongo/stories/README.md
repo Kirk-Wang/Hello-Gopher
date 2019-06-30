@@ -893,7 +893,7 @@ db.accounts.find({name:"jack"}).pretty()
 ```
 删除数组内的字段
 
-"删除 jack 的联系电话"
+"删除 jack 的联系电话"(长度一样，元素的值被重置为 null)
 ```sh
 db.accounts.update(
   { name: "jack" },

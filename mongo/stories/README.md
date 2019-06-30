@@ -644,6 +644,21 @@ help
   cursor.count()
   cursor.sort()
   ```
+  cursor.count(<applySkipLimit>)
+
+  默认情况下，<applySkipLimit> 为 false, 即 cursor.count() 不会考虑cursor.skip() 和 cursor.limit() 的效果
+  ```sh
+  db.accounts.find({name:"george"}).limit(1).count()
+  # 3
+  db.accounts.find({name:"george"}).limit(1).count(true)
+  # 1
+  ```
+  在不提供筛选条件时，cursor.count() 会从集合的元数据 Metadata 中取得结果
+  ```sh
+  db.accounts.find().count()
+  # 13
+  ```
+  当数据库分布式结构较为复杂时，元数据中的文档数量可能不准确
 
 
 

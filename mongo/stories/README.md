@@ -674,3 +674,8 @@ help
   db.accounts.find().sort({ balance: -1, name: 1 })
   ```
 
+  "读取余额最大的银行账户文档"
+  ```sh
+  db.accounts.find().sort( { balance: -1 } ).limit(1)
+  ```
+

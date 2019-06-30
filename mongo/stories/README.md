@@ -1010,4 +1010,5 @@ db.accounts.update(
 )
 db.accounts.find({name:"david"}).pretty()
 ```
+$inc 和 $mul 只能应用在数字字段上
 

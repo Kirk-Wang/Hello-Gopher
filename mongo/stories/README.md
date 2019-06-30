@@ -905,4 +905,30 @@ db.accounts.update(
 )
 db.accounts.find({name:"jack"}).pretty()
 ```
+如果$rename命令要重命名的字段并不存在，那么文档内容不会被改变
+```sh
+db.accounts.update(
+  { name: "jack" },
+  { $rename:
+      {
+        "notExist": "name"
+      } 
+  }
+)
+```
+如果新的字段名已经存在，那么原有的这个字段会被覆盖
+```sh
+db.accounts.find({name:"jack"}).pretty()
+db.accounts.update(
+  { name: "jack" },
+  { $rename:
+      {
+        "name": "contact"
+      } 
+  }
+)
+db.accounts.find({contact:"jack"}).pretty()
+```
+
+
 

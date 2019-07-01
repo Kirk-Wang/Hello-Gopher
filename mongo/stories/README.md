@@ -1139,3 +1139,11 @@ db.accounts.update(
 )
 db.accounts.find({name:"karen"},{name:1, contact: 1, _id:0}).pretty()
 ```
+
+"从 karen 的账户文档中删除最后一个联系方式"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $pop: { contact: 1 } }
+)
+```

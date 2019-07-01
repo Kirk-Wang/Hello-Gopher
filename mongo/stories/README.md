@@ -1147,3 +1147,44 @@ db.accounts.update(
   { $pop: { contact: 1 } }
 )
 ```
+
+"从 karen 的账户文档中删除联系方式"(内嵌数组操作)
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $pop: { "contact.5": -1 } }
+)
+```
+
+"继续从 karen 的账户文档中删除联系方式"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $pop: { "contact.5": -1 } }
+)
+```
+删除掉数组中的最后一个元素后，会留下空数组
+
+注意一点，$pop操作符只能应用在数组字段上
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $pop: { "contact.1": -1 } }
+)
+```
+
+从数组字段中删除特定元素
+
+"将 karen 的账户文档复制为 lawrence 的账户文档"
+```sh
+db.accounts.find(
+  { name: "karen" },
+  { _id: 0 }
+).forEach( function(doc) {
+    var newDoc = doc;
+    newDoc.name = "lawrence";
+    db.accounts.insert(newDoc)
+  }
+)
+db.accounts.find({name: "lawrence"}).pretty()
+```

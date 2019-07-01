@@ -1118,3 +1118,18 @@ db.accounts.update(
   }
 )
 ```
+
+"向 karen 的账户文档中添加多个联系方式"
+
+```sh
+db.accounts.update(
+  {
+    name: "karen"
+  },
+  {
+    $addToSet: {
+      contact: [ "contact1", "contact2" ]
+    }
+  }
+)
+```

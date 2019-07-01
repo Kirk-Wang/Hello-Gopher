@@ -1210,3 +1210,43 @@ db.accounts.update(
   }
 )
 ```
+$pullAll 命令只会删去字段和字段排列顺序都完全匹配的文档元素
+
+$pull 命令会删去包含指定的文档字段和字段值的文档元素，字段排列顺序不需要完全匹配
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  { 
+    $pull: {
+      contact: { "primaryEmail" : "xxx@gmail.com"}
+    } 
+  }
+)
+db.accounts.find({name: "lawrence"}).pretty()
+```
+
+向数组字段中添加元素
+
+$push 和 $addToSet 命令相似，但是 $push 命令的功能更强大
+
+和 $addToSet 命令一样，如果 $push 命令中指定的数组字段不存在，这个字段会被添加到原文档中
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  { $push: {
+      newArray: "new element"
+    } 
+  }
+)
+db.accounts.find({name: "lawrence"}, { name:1, newArray:1, _id:0 }).pretty()
+```
+和 $addToSet 相似，$push 操作符也可以和 $each 搭配使用
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  { $push: {
+      newArray: { $each: [ 2, 3, 4 ] }
+    } 
+  }
+)
+```

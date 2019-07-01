@@ -1188,3 +1188,25 @@ db.accounts.find(
 )
 db.accounts.find({name: "lawrence"}).pretty()
 ```
+
+"从 karen 的联系方式中删去包含 'hi' 字母的元素"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $pull: { contact: { $regex: /hi/ } } }
+)
+```
+"从 karen 的联系方式中删去电话号码 22222222"
+
+数组里面的整个内嵌数组全被干掉
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $pull: {
+      contact: {
+        $elemMatch: { $eq: "22222222" }
+      }
+    } 
+  }
+)
+```

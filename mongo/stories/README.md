@@ -1093,3 +1093,14 @@ db.accounts.update(
 ```sh
 db.accounts.find({name:"karen"},{name:1, contact: 1, _id:0}).pretty()
 ```
+
+"向 karen 的账户文档中添加联系方式"
+```sh
+db.accounts.update(
+  { name: "karen" },
+  { $addToSet: { contact: "China" } }
+)
+```
+
+如果要插入的值已经存在数组字段中，则 $addToSet 不会再添加重复值
+

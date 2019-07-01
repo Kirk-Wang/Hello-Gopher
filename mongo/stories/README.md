@@ -1082,8 +1082,14 @@ db.accounts.update(
 * Regular Expression (最大)
 
 数组更新操作符
+
 * $addToSet
 * $pop
 * $pull
 * $pullAll
 * $push
+
+"查看 karen 的银行账户文档"
+```sh
+db.accounts.find({name:"karen"},{name:1, contact: 1, _id:0}).pretty()
+```

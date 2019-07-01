@@ -1250,3 +1250,6 @@ db.accounts.update(
   }
 )
 ```
+$push 和 $each 操作符还可以和更多的操作符搭配使用，实现比 $addToSet 更复杂的操作
+
+使用 $position 操作符将元素插入到数组的指定位置

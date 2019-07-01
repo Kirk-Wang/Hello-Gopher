@@ -1123,15 +1123,18 @@ db.accounts.update(
 
 ```sh
 db.accounts.update(
-  {
-    name: "karen"
-  },
-  {
-    $addToSet: {
-      contact: [ "contact1", "contact2" ]
-    }
-  }
+  {name: "karen" },
+  { $addToSet: { contact: [ "contact1", "contact2" ] } }
 )
 ```
 
 $addToSet 会将数组插入被更新的数组字段中，成为内嵌数组
+
+如果想要将多个元素直接添加到数组字段中，则需要使用$each操作符
+
+```sh
+db.accounts.update(
+  {name: "karen" },
+  { $addToSet: { contact: { $each: [ "contact1", "contact2" ] } } }
+)
+```

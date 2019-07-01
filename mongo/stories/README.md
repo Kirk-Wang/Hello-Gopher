@@ -1133,3 +1133,5 @@ db.accounts.update(
   }
 )
 ```
+
+$addToSet 会将数组插入被更新的数组字段中，成为内嵌数组

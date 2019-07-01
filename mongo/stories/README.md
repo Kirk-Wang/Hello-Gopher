@@ -1137,4 +1137,5 @@ db.accounts.update(
   {name: "karen" },
   { $addToSet: { contact: { $each: [ "contact1", "contact2" ] } } }
 )
+db.accounts.find({name:"karen"},{name:1, contact: 1, _id:0}).pretty()
 ```

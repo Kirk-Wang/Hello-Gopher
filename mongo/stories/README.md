@@ -1325,3 +1325,20 @@ db.accounts.update(
   }
 )
 ```
+
+使用 $slice 来截取部分数组(到着数8个留下来)
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  { 
+    $push: {
+      newArray: {
+        $each: [ "slice1" ],
+        $slice: -8
+      }
+    } 
+  }
+)
+
+db.accounts.find({ name: "lawrence" }).pretty()
+```

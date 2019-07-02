@@ -1264,4 +1264,5 @@ db.accounts.update(
     } 
   }
 )
+db.accounts.find({ name: "lawrence" }).pretty()
 ```

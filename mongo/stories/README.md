@@ -1293,3 +1293,35 @@ db.accounts.update(
   }
 )
 ```
+
+如果插入的元素是内嵌文档，也可以根据内嵌文档的字段值排序
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  { 
+    $push: {
+      newArray: {
+        $each:  [
+          { key: "sort", value: 100 },
+          { key: "sort", value: 200 }
+        ],
+        $sort: { value: -1 }
+      },
+    } 
+  } 
+)
+```
+如果不想插入元素，只想对文档中的数组字段进行排序……
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  {
+    $push: {
+      newArray: {
+        $each: [],
+        $sort: -1
+      }
+    }
+  }
+)
+```

@@ -1276,4 +1276,20 @@ db.accounts.update(
   }
 )
 ```
+
 在上面这个例子中，$position: -1 和 $position: 5对应的位置是相同的
+
+使用 $sort 对数组进行排序
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  { 
+    $push: {
+      newArray: {
+        $each: [ "sort1" ],
+        $sort: 1
+      }
+    } 
+  }
+)
+```

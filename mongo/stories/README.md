@@ -1265,4 +1265,15 @@ db.accounts.update(
   }
 )
 db.accounts.find({ name: "lawrence" }).pretty()
+db.accounts.update(
+  { name: "lawrence" },
+  { $push: {
+      newArray: {
+        $each: [ "pos3", "pos4" ],
+        $position: -1
+      }
+    } 
+  }
+)
 ```
+在上面这个例子中，$position: -1 和 $position: 5对应的位置是相同的

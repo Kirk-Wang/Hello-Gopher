@@ -1342,3 +1342,18 @@ db.accounts.update(
 
 db.accounts.find({ name: "lawrence" }).pretty()
 ```
+
+如果不想插入元素，只想截取文档中的数组字段……
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  {
+    $push: {
+      newArray: {
+        $each: [],
+        $slice: 6
+      }
+    }
+  }
+)
+```

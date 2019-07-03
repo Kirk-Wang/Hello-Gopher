@@ -1533,3 +1533,18 @@ db.accounts.remove(
   { justOne: true }
 )
 ```
+"删除集合内的所有文档"
+```sh
+db.accounts.remove({})
+```
+"删除集合"
+
+drop 命令可以删除整个集合，包括集合中的所有文档，以及集合的索引
+
+```sh
+show collections
+db.accounts.drop()
+show collections
+```
+
+如果集合中的文档数量很多，使用 remove 命令删除所有文档的效率不高。这种情况下，更加有效率的方法，是使用 drop 命令删除集合，然后再创建空集合并创建索引

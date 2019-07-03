@@ -1548,3 +1548,7 @@ show collections
 ```
 
 如果集合中的文档数量很多，使用 remove 命令删除所有文档的效率不高。这种情况下，更加有效率的方法，是使用 drop 命令删除集合，然后再创建空集合并创建索引
+
+总结一下
+* 使用 db.collection.remove() 命令删除文档
+* 使用 db.collection.drop() 命令删除集合

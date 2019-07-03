@@ -1552,3 +1552,6 @@ show collections
 总结一下
 * 使用 db.collection.remove() 命令删除文档
 * 使用 db.collection.drop() 命令删除集合
+
+### 聚合操作
+

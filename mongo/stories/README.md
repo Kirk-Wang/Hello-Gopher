@@ -1448,5 +1448,27 @@ db.accounts.update(
   { multi: true }
 )
 ```
+注意，MongoDB 只能保证*单个*文档操作的原子性，不能保证*多个*文档操作的原子性
+
+更新多个文档的操作虽然在单一线程中执行，但是线程在执行过程中可能被挂起，以便其他线程也有机会对数据进行操作
+
+如果需要保证多个文档操作时的原子性，就需要使用 MongoDB 4.0 版本引入的实物功能进行操作
+
+在默认情况下，如果 update 命令中的筛选条件没有匹配任何文档，则不会进行任何操作
+
+将 upsert 选项设置为 true，如果 update 命令中的筛选条件没有匹配任何文档，则会创建新文档
+
+“查看 maggie 的银行账户文档”
+```sh
+db.accounts.find({name: "maggie"}, {name: 1, balance: 1, _id: 0})
+
+db.accounts.update(
+  { name: "maggie" },
+  {
+    $set: { balance: 700}
+  },
+  { upsert: true }
+)
+```
 
 

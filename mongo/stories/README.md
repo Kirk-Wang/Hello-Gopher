@@ -1525,4 +1525,11 @@ db.accounts.remove({balance: 50})
 
 如果只想删除满足筛选条件的*第一篇*文档，可以使用 justOne 选项
 
+"删除一篇余额小于100的银行账户文档"
 
+```sh
+db.accounts.remove(
+  { balance: { $lt: 100 } },
+  { justOne: true }
+)
+```

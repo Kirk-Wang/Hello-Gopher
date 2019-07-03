@@ -1494,6 +1494,7 @@ db.accounts.find({name: "alice"})
 db.accounts.save(
   { _id: "account2", name: "oliver", balance: 100 }
 )
+db.accounts.find({name: "oliver"})
 ```
 
 

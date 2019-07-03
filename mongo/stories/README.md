@@ -1427,6 +1427,15 @@ db.accounts.update(
 到目前为止，我们在 update 命令中使用的筛选条件只对应于一篇文档
 
 在默认情况下，即使筛选条件对应了多篇文档，update 命令仍然只会更新*一篇*文档
+```sh
+# 更新的始终只有一篇
 
+db.accounts.update(
+  {},
+  {
+    $set: { currency: "USD" }
+  }
+)
+```
 
 

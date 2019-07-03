@@ -1497,4 +1497,13 @@ db.accounts.save(
 db.accounts.find({name: "oliver"})
 ```
 
+总结一下
+* 使用 db.collection.update() 命令更新整篇文档
+* 使用 db.collection.update() 命令更新文档中的特定字段
+* 文档更新操作符
+* 数组更新操作符
+* 使用 db.collection.update() 命令更新多篇文档
+* 使用 db.collection.update() 命令更新或者创建文档
+* 使用 db.collection.save() 命令更新文档
+
 

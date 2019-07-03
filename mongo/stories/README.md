@@ -1404,3 +1404,21 @@ db.accounts.update(
   }
 )
 ```
+更新数组中的所有元素
+
+搭配更新操作符使用，可以对数组中所有的元素进行更新
+
+```sh
+db.accounts.find(
+  { name: "lawrence" },
+  { name: 1, contact: 1, _id:0 }
+).pretty()
+
+db.accounts.update(
+  { name: "lawrence" },
+  {
+    $set: { "contact.0.$[]": "88888888" }
+  }
+)
+```
+

@@ -1506,4 +1506,9 @@ db.accounts.find({name: "oliver"})
 * 使用 db.collection.update() 命令更新或者创建文档
 * 使用 db.collection.save() 命令更新文档
 
+#### 删除文档
+* 删除集合
+* 删除特定文档
+* db.collection.remove()
+
 

@@ -1438,4 +1438,15 @@ db.accounts.update(
 )
 ```
 
+使用 multi 选项来更新多个符合筛选条件的文档
+```sh
+db.accounts.update(
+  {},
+  {
+    $set: { currency: "USD" }
+  },
+  { multi: true }
+)
+```
+
 

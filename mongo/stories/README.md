@@ -1391,4 +1391,16 @@ $是数组中第一个符合筛选条件的数组元素的占位符
 搭配更新操作符使用，可以对满足筛选条件的数组元素进行更新
 ```sh
 db.accounts.find({ name: "lawrence" }, { name: 1, newArray: 1, _id: 0 }).pretty()
+
+db.accounts.update(
+  {
+    name: "lawrence",
+    newArray: "pos2"
+  },
+  {
+    $set: {
+      "newArray.$": "updated"
+    }
+  }
+)
 ```

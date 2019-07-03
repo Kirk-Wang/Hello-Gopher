@@ -1511,4 +1511,18 @@ db.accounts.find({name: "oliver"})
 * 删除特定文档
 * db.collection.remove()
 
+```sh
+# 查看银行账户文档
+db.accounts.find(
+  {},
+  { name:1, balance: 1, _id: 0 }
+).sort( { balance: 1 } )
+
+# 删除余额为50的银行账户文档
+db.accounts.remove({balance: 50})
+```
+在默认情况下，remove 命令会删除所有符合筛选条件的文档
+
+如果只想删除满足筛选条件的*第一篇*文档，可以使用 justOne 选项
+
 

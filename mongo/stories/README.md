@@ -1471,4 +1471,26 @@ db.accounts.update(
 )
 ```
 
+不过，如果无法从筛选条件中推断出确定的字段值，新创建的文档将不会包含筛选条件涉及的字段
+```sh
+db.accounts.update(
+  { balance: { $gt: 20000 } },
+  { $set: { name: "nick" } },
+  { upsert: true }
+)
+```
+"查看 nick 的银行账户文档"
+```sh
+db.accounts.find({ name: "nick" }, {_id: 0})
+{ "name" : "nick" } ### 只有一个字段
+```
+
+如果 document 文档中包含了 _id 字段，save() 命令将会调用 db.collection.update() 命令(upsert: true)
+```sh
+db.accounts.save(
+  { _id: "account1", name: "alice", balance: 100 }
+)
+db.accounts.find({name: "alice"})
+```
+
 

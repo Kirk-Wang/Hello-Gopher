@@ -1357,3 +1357,35 @@ db.accounts.update(
   }
 )
 ```
+
+向数组字段中添加元素
+
+$position, $sort, $slice 可以一起使用
+
+这三个操作符的执行顺序是：
+* $position
+* $sort
+* $slice
+
+写在命令中的操作符顺序并不重要，并不会影响命令的执行顺序
+```sh
+db.accounts.update(
+  { name: "lawrence" },
+  {
+    $push: {
+      newArray: {
+        $each: [ "push1", "push2" ],
+        $position: 2,
+        $sort: -1,
+        $slice: 5
+      }
+    }
+  }
+)
+```
+
+更新数组中的特定元素
+
+$是数组中第一个符合筛选条件的数组元素的占位符
+
+搭配更新操作符使用，可以对满足筛选条件的数组元素进行更新

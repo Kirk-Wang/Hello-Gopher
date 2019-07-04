@@ -1968,3 +1968,18 @@ db.transactions.aggregate([
 ```
 
 不使用聚合操作符的情况下，$group可以返回管道文档中某一字段的所有（不重复的）值
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$currency",
+      totalQty: { $sum: "$qty" },
+      totalNotional: { $sum: { $multiply: [ "$price", "$qty" ] } },
+      avgPrice: { $avg: "$price" },
+      count: { $sum: 1 },
+      maxNotional: { $max: { $multiply: [ "$price", "$qty" ] } },
+      minNotional: { $min: { $multiply: [ "$price", "$qty" ] } }
+    }
+  }
+])
+```

@@ -2061,3 +2061,44 @@ db.output.find()
 ```
 
 如果聚合管道操作遇到错误，管道阶段不会创建新集合或是覆盖已存在的集合内容
+
+allowDiskUse
+
+每个聚合管道阶段使用的内存不能超过 100MB 
+
+如果数据量较大，为了防止聚合管道阶段超出内存上限并且抛出错误，可以启用allowDiskUse 选项
+
+allowDisUse 启用之后，聚合阶段可以在内存容量不足时，将操作数据写入临时文件中，临时文件会被写入 dbPath 下的 _tmp 文件夹，dbPath的默认值为 /data/db
+
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$currency",
+      symbols: { $push: "$symbol" }
+    }
+  }],
+  { allowDiskUse: true }
+)
+```
+
+#### 聚合操作的优化
+
+聚合阶段顺序优化
+
+$project + $match
+* $match 阶段会在 $project 阶段之前运行
+
+$sort + $match
+* $match 阶段会在 $sort 阶段之前运行
+
+$project + $skip
+* $skip 阶段会在 $project 阶段之前运行
+
+聚合阶段合并优化
+
+$sort + $limit
+
+如果两者之间没有夹杂着会改变文档数量的聚合阶段，$sort和$limit阶段可以合并
+
+

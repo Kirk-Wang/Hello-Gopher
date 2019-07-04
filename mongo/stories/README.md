@@ -2189,4 +2189,9 @@ db.accountsWithIndex.insertMany([
 ])
 ```
 
+"创建一个单键索引"
+```sh
+db.accountsWithIndex.createIndex({name: 1})
+```
+
 

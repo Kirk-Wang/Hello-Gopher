@@ -2203,3 +2203,8 @@ db.accountsWithIndex.createIndex({name: 1})
 ```sh
 db.accountsWithIndex.getIndexes()
 ```
+
+"创建一个复合键索引"
+```sh
+db.accountsWithIndex.createIndex({ name:1, balance: -1 })
+```

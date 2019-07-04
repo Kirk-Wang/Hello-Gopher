@@ -2180,5 +2180,13 @@ $lookup + $unwind
 #### 创建索引
 db.collection.createIndex()
 
+"创建一个新集合"
+```sh
+db.accountsWithIndex.insertMany([
+  { name: "alice", balance: 50, currency: ["GBP", "USD"] },
+  { name: "bob", balance: 20, currency: ["AUD", "USD"] },
+  { name: "bob", balance: 300, currency: ["CNY"] },
+])
+```
 
 

@@ -1983,3 +1983,31 @@ db.transactions.aggregate([
   }
 ])
 ```
+
+"使用聚合操作符计算所有文档聚合值"(没分组，但是进行了聚合运算)
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalQty: { $sum: "$qty" },
+      totalNotional: { $sum: { $multiply: [ "$price", "$qty" ] } },
+      avgPrice: { $avg: "$price" },
+      count: { $sum: 1 },
+      maxNotional: { $max: { $multiply: [ "$price", "$qty" ] } },
+      minNotional: { $min: { $multiply: [ "$price", "$qty" ] } }
+    }
+  }
+])
+```
+"使用聚合操作符创建数组字段"
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$currency",
+      symbols: { $push: "$symbol" }
+    }
+  }
+])
+```

@@ -2109,3 +2109,18 @@ $match + $match
 
 连续的 $limit，$skip 或 $match 阶段排列在一起时，可以合并为一个阶段
 
+$lookup + $unwind
+
+连续排列在一起的 $lookup 和 $unwind 阶段，如果 $unwind 应用在 $lookup 阶段创建的 as 字段上，则两者合并
+
+总结一下
+
+使用 db.collection.aggregate() 命令进行聚合操作
+
+使用聚合表达式
+
+常用的聚合管道阶段
+
+常用的聚合操作符
+
+聚合操作的局限和优化

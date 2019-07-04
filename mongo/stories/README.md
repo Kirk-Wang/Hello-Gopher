@@ -1774,6 +1774,39 @@ db.accounts.aggregate([
 ])
 ```
 
+"再添加几个文档"
+```sh
+db.accounts.insertMany([
+  {
+    name: { firstName: "charlie", lastName: "gordon" },
+    balance: 100
+  },
+  {
+    name: { firstName: "david", lastName: "wu" },
+    balance: 200,
+    currency: []
+  },
+  {
+    name: { firstName: "charlie", lastName: "kim" },
+    balance: 20,
+    currency: null
+  }
+])
+```
+"将文档中的货币种类数组展开"
+```sh
+db.accounts.aggregate([
+  {
+    $unwind: {
+      path: "$currency"
+    }
+  }
+])
+```
+发现上面的文档剔除掉了
+
+
+
 
 
 

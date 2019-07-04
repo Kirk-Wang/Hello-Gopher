@@ -2059,3 +2059,5 @@ db.transactions.aggregate([
 ```sh
 db.output.find()
 ```
+
+如果聚合管道操作遇到错误，管道阶段不会创建新集合或是覆盖已存在的集合内容

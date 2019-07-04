@@ -1926,3 +1926,43 @@ db.accounts.aggregate([
 ])
 ```
 
+$group
+
+定义分组规则
+
+可以使用聚合操作符来定义新字段
+
+"增加一个集合用来储存股票交易记录"
+```sh
+db.transactions.insertMany([
+  {
+    symbol: "600519",
+    qty: 100,
+    price: 567.4,
+    currency: "CNY"
+  },
+  {
+    symbol: "AMZN",
+    qty: 1,
+    price: 1377.5,
+    currency: "USD"
+  },
+  {
+    symbol: "AAPL",
+    qty: 2,
+    price: 150.7,
+    currency: "USD"
+  }
+])
+```
+
+"按照交易货币来分组交易记录"
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$currency"
+    }
+  }
+])
+```

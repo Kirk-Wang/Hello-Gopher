@@ -1829,6 +1829,19 @@ db.accounts.aggregate([
 ])
 ```
 
+$lookup
+
+使用单一字段值进行查询
+
+"增加一个集合用来储存外汇数据"
+```sh
+db.forex.insertMany([
+  { ccy: "USD", rate: 6.91, date: new Date("2018-12-21") },
+  { ccy: "GBP", rate: 8.72, date: new Date("2018-08-21") },
+  { ccy: "CNY", rate: 1.0, date: new Date("2018-12-21") }
+])
+```
+
 
 
 

@@ -2178,6 +2178,7 @@ $lookup + $unwind
 * 索引对数据库的写入操作的影响
 
 #### 创建索引
+db.collection.createIndex()
 
 
 

@@ -1608,6 +1608,62 @@ show collections
 * $group - 对输入文档进行分组
 * $out - 将管道中的文档输出
 
+$poject
+
+"先创建几个文档"
+```sh
+db.accounts.insertMany([
+  {
+    name: { firstName: "alice", lastName: "wong" },
+    balance: 50
+  },
+  {
+    name: { firstName: "bob", lastName: "yang" },
+    balance: 20
+  }
+])
+```
+"对银行账户文档进行重新投影"
+```sh
+db.accounts.aggregate([
+  {
+    $project: {
+      _id: 0,
+      balance: 1,
+      clientName: "$name.firstName"
+    }
+  }
+])
+
+db.accounts.aggregate([
+  {
+    $project: {
+      _id: 0,
+      balance: 1,
+      clientName: "$name.firstName"
+    }
+  }
+])
+
+db.accounts.aggregate([
+  {
+    $project: {
+      _id: 0,
+      balance: 1,
+      nameArray: [
+        "$name.firstName",
+        "$name.middleName",
+        "$name.lastName"
+      ]
+    }
+  }
+])
+```
+
+$project 是一个很常用的聚合阶段
+可以用来灵活地控制输出文档的格式
+也可以用来剔除不相关的字段，以优化聚合管道操作的性能
+
 
 
 

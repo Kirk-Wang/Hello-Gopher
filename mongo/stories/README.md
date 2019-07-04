@@ -1679,6 +1679,17 @@ db.accounts.aggregate([
     }
   }
 ])
+
+db.accounts.aggregate([
+  {
+    $match: {
+      $or: [
+        { balance: { $gt: 40, $lt: 80 } },
+        { "name.lastName": "yang" }
+      ]
+    }
+  }
+])
 ```
 
 

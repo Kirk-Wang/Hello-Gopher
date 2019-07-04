@@ -2152,3 +2152,4 @@ $lookup + $unwind
 #### 索引操作
 * db.collection.getIndexes()
 * db.collection.createIndex()
+* db.collection.dropIndex()

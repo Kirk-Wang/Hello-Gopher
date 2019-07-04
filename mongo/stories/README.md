@@ -1805,6 +1805,17 @@ db.accounts.aggregate([
 ```
 发现上面的文档剔除掉了
 
+"展开数组时保留空数组或不存在数组的文档"
+```sh
+db.accounts.aggregate([
+  {
+    $unwind: {
+      path: "$currency",
+      preserveNullAndEmptyArrays: true
+    }
+  }
+])
+```
 
 
 

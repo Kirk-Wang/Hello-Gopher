@@ -1661,8 +1661,25 @@ db.accounts.aggregate([
 ```
 
 $project 是一个很常用的聚合阶段
+
 可以用来灵活地控制输出文档的格式
+
 也可以用来剔除不相关的字段，以优化聚合管道操作的性能
+
+$match
+
+$match 中使用的文档筛选语法和读取文档是的筛选语法相同
+
+"对银行账户文档进行筛选"
+```sh
+db.accounts.aggregate([
+  {
+    $match: {
+      "name.firstName": "alice"
+    }
+  }
+])
+```
 
 
 

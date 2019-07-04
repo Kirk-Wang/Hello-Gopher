@@ -1692,6 +1692,25 @@ db.accounts.aggregate([
 ])
 ```
 
+"将筛选和投影阶段结合在一起"
+```sh
+db.accounts.aggregate([
+  {
+    $match: {
+      $or: [
+        { balance: { $gt: 40, $lt: 80 } },
+        { "name.lastName": "yang" }
+      ]
+    }
+  },
+  {
+    $project: {
+      _id: 0
+    }
+  }
+])
+```
+
 
 
 

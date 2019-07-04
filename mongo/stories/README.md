@@ -2011,3 +2011,44 @@ db.transactions.aggregate([
   }
 ])
 ```
+
+$out 
+
+"将聚合管道中的文档写入一个新集合"
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$currency",
+      symbols: { $push: "$symbol" }
+    }
+  },
+  {
+    $out: "output"
+  }
+])
+```
+
+"查看 output 集合"
+```sh
+db.output.find()
+```
+
+"将聚合管道中的文档写入一个已存在的集合"
+```sh
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$symbol",
+      totalNotional: { 
+        $sum: {
+          $multiply: [ "$price", "$qty" ]
+        }
+      }
+    }
+  },
+  {
+    $out: "output"
+  }
+])
+```

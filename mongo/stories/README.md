@@ -1586,3 +1586,14 @@ show collections
 * $<field>.<sub-field> - 使用 $ 和 . 来指示内嵌文档字段路径
 * $name - 指示银行账户文档中客户姓名的字段
 * $info.dateOpened - 指示银行账户文档中开户日期的字段
+
+系统变量表达式
+* $$<variable> - 使用$$来指示系统变量
+* $$CURRENT - 指示管道中当前操作的文档
+  * - $$CURRENT.<field>和$<field>是等效的
+
+常量表达式
+* $literal: <value> - 指示常量<value>
+* $literal: "$name" - 指示常量字符串"$name"
+  * 这里的 $ 被当作常量处理，而不是字段路径表达式
+

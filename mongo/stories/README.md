@@ -1903,6 +1903,26 @@ db.accounts.aggregate([
 
 "将特定日期外汇汇率写入余额大于 100 的银行账户文档"
 ```sh
-
+db.accounts.aggregate([
+  {
+    $lookup: {
+      from: "forex",
+      let: { bal: "$balance" },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $and: [
+                { $eq: [ "$date", new Date("2018-12-21") ] },
+                { $gt: [ "$$bal", 100 ] }
+              ]
+            }
+          }
+        }
+      ],
+      as: "forexData"
+    }
+  }
+])
 ```
 

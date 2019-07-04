@@ -1854,6 +1854,24 @@ db.accounts.aggregate([
   }
 ])
 ```
+如果 localField 是一个数组字段……
+```sh
+db.accounts.aggregate([
+  {
+    $unwind: {
+      path: "$currency"
+    }
+  },
+  {
+    $lookup: {
+      from: "forex",
+      localField: "currency",
+      foreignField: "ccy",
+      as: "forexData"
+    }
+  }
+])
+```
 
 
 

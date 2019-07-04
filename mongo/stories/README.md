@@ -1711,6 +1711,47 @@ db.accounts.aggregate([
 ])
 ```
 
+$match 也是一个很常用的聚合阶段
+
+应该尽量在聚合管道的开始阶段应用$match
+
+这样可以减少后续阶段中需要处理的文档数量，优化聚合操作的性能
+
+$limit & $skip
+
+"筛选第一篇银行账户文档"
+```sh
+db.accounts.aggregate([
+  { $limit: 1 }
+])
+```
+
+"跳过第一篇银行账户文档"
+```sh
+db.accounts.aggregate([
+  { $skip: 1 }
+])
+```
+$unwind
+
+"向现有的银行账户文档中加入数组字段"
+```sh
+db.accounts.update(
+  { "name.firstName": "alice" },
+  { 
+    $set: {
+      currency: [ "CNY", "USD" ]
+    }
+  }
+)
+db.accounts.update(
+  { "name.firstName": "bob" },
+  { 
+    $set: { currency: "GBP" }
+  }
+)
+```
+
 
 
 

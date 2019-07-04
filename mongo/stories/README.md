@@ -2084,6 +2084,8 @@ db.transactions.aggregate([
 
 #### 聚合操作的优化
 
+MongoDB 内部的一些优化
+
 聚合阶段顺序优化
 
 $project + $match
@@ -2101,4 +2103,9 @@ $sort + $limit
 
 如果两者之间没有夹杂着会改变文档数量的聚合阶段，$sort和$limit阶段可以合并
 
+$limit + $limit
+$skip + $skip
+$match + $match
+
+连续的 $limit，$skip 或 $match 阶段排列在一起时，可以合并为一个阶段
 

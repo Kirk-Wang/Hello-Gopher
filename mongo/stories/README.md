@@ -2197,4 +2197,8 @@ db.accountsWithIndex.insertMany([
 db.accountsWithIndex.createIndex({name: 1})
 ```
 
+"列出集合中已存在的索引"
 
+```sh
+
+```

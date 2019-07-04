@@ -2169,5 +2169,6 @@ $lookup + $unwind
 
 查询分析
 
-* 
+* 检视索引的效果
+* explain()
 

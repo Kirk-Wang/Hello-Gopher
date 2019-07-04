@@ -2149,7 +2149,25 @@ $lookup + $unwind
 * 加快文档查询和文档排序的速度
 * 复合键索引只能支持前缀子查询
 
-#### 索引操作
+索引操作
+
 * db.collection.getIndexes()
 * db.collection.createIndex()
 * db.collection.dropIndex()
+
+索引的类型
+
+* 单键索引
+* 复合键索引
+* 多键索引
+
+索引的特性
+
+* 唯一性
+* 稀疏性
+* 生存时间
+
+查询分析
+
+* 
+

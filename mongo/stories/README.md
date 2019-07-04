@@ -2035,6 +2035,8 @@ db.output.find()
 ```
 
 "将聚合管道中的文档写入一个已存在的集合"
+
+会覆盖已存在集合的内容
 ```sh
 db.transactions.aggregate([
   {
@@ -2051,4 +2053,9 @@ db.transactions.aggregate([
     $out: "output"
   }
 ])
+```
+
+"查看 output 集合"
+```sh
+db.output.find()
 ```

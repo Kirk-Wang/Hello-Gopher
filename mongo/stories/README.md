@@ -1752,6 +1752,28 @@ db.accounts.update(
 )
 ```
 
+"将文档中的货币种类数组展开"
+```sh
+db.accounts.aggregate([
+  {
+    $unwind: {
+      path: "$currency"
+    }
+  }
+])
+```
+"展开数组时添加元素位置"
+```sh
+db.accounts.aggregate([
+  {
+    $unwind: {
+      path: "$currency",
+      includeArrayIndex: "ccyIndex"
+    }
+  }
+])
+```
+
 
 
 

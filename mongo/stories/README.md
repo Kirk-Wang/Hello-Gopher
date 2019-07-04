@@ -1841,6 +1841,19 @@ db.forex.insertMany([
   { ccy: "CNY", rate: 1.0, date: new Date("2018-12-21") }
 ])
 ```
+"将查询到的外汇汇率写入银行账户文档"
+```sh
+db.accounts.aggregate([
+  {
+    $lookup: {
+      from: "forex",
+      localField: "currency",
+      foreignField: "ccy",
+      as: "forexData"
+    }
+  }
+])
+```
 
 
 

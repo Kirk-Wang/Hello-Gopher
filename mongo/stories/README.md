@@ -1817,6 +1817,18 @@ db.accounts.aggregate([
 ])
 ```
 
+"对银行账户文档进行排序"
+```sh
+db.accounts.aggregate([
+  { 
+    $sort: {
+      balance: 1,
+      "name.lastName": -1
+    } 
+  }
+])
+```
+
 
 
 

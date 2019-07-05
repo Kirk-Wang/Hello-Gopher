@@ -2364,3 +2364,11 @@ db.collection.createIndex()
 ```sh
 db.accountsWithIndex.find()
 ```
+"在 lastAccess 字段上创建一个生存时间是20秒的索引"
+```sh
+db.accountsWithIndex.createIndex(
+  { lastAccess: 1 },
+  { expireAfterSeconds: 20 }
+)
+db.accountsWithIndex.find()
+```

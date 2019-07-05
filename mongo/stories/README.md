@@ -2265,8 +2265,9 @@ db.accountsWithIndex.explain().find().sort({ name: 1, balance: 1 })
 
 db.collection.dropIndex()
 
-如果需要更改某些字段上已经创建的索引
+如果需要更改某些字段上已经创建的索引。
+必须首先删除原有索引，再重新创建新的索引。
 
-必须首先删除原有索引，再重新创建新的索引
+否则，新索引不会包含原有文档
 
 

@@ -2372,3 +2372,24 @@ db.accountsWithIndex.createIndex(
 )
 db.accountsWithIndex.find()
 ```
+"再插入一篇新文档"
+```sh
+db.accountsWithIndex.insert({
+  name: "eddie",
+  lastAccess: new Date()
+})
+db.accountsWithIndex.find()
+```
+
+复合键索引*不*具备生存时间特性
+
+当索引键是包含日期元素的数组字段是，数组*最小*的日期
+将被用来计算文档是否已经过期
+
+数据库使用一个后台线程来监测和删除过期的文档，删除操作
+可能有一定的延迟
+
+"查看所有文档"
+```sh
+db.accountsWithIndex.find()
+```

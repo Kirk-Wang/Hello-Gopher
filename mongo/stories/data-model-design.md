@@ -36,4 +36,7 @@
   * parent
   * children
   * ancestors 所有前辈
+  * DFS
+    * left
+    * right
 

@@ -2205,6 +2205,17 @@ db.accountsWithIndex.getIndexes()
 ```
 
 "创建一个复合键索引"
+
+只支持前缀子查询
+
 ```sh
 db.accountsWithIndex.createIndex({ name:1, balance: -1 })
+
+db.accountsWithIndex.getIndexes()
 ```
+
+"创建一个多键索引"（针对数组）
+```sh
+db.accountsWithIndex.createIndex({ currency: 1 })
+```
+数组字段中的每一个元素，都会在多键索引中创建一个键

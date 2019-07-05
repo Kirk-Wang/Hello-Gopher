@@ -2243,3 +2243,20 @@ db.accountsWithIndex.explain().find({ balance: 100 })
 db.accountsWithIndex.explain().find({ name: "alice" })
 # IXSCAN
 ```
+
+"仅仅返回创建了索引的字段"
+```sh
+db.accountsWithIndex.explain().find({ name: "alice" }, { _id: 0, name: 1})
+# FETCH 都不需要了，最大程度提升了查询效果
+```
+
+"使用已经创建索引的字段进行排序"
+```sh
+db.accountsWithIndex.explain().find().sort({ name: 1, balance: -1 })
+```
+
+"使用未创建索引的字段进行排序"
+```sh
+db.accountsWithIndex.explain().find().sort({ name: 1, balance: 1 })
+# SORT -> 提示排序效率并不高
+```

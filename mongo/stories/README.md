@@ -2219,3 +2219,9 @@ db.accountsWithIndex.getIndexes()
 db.accountsWithIndex.createIndex({ currency: 1 })
 ```
 数组字段中的每一个元素，都会在多键索引中创建一个键
+
+* "AUD" --> {"bob"}
+* "CNY" --> {"bob"}
+* "GBP" --> {"alice"}
+* "USD" --> {"alice"}
+* "USD" --> {"bob"}

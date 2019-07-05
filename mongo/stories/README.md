@@ -2319,3 +2319,10 @@ db.accountsWithIndex.insert({
 })
 # 失败
 ```
+
+"复合键索引也可以具有唯一性，在这种情况下，*不同的*文档之间，其所包含的复合键字段值的组合，不可以重复"
+
+"为了接下来的演示，我们删除掉刚刚创建的唯一性索引"
+```sh
+db.accountsWithIndex.dropIndex("balance_1")
+```

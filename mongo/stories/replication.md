@@ -54,3 +54,12 @@
 * 多个线程分批次使用日志纪录
 * 写库日志的大小和文档大小不一定成正比
 
+### 创建复制集
+
+* 创建 docker network
+```sh
+docker network create mynetwork
+
+docker network ls
+```
+

@@ -2284,3 +2284,10 @@ db.accountsWithIndex.dropIndex("name_1")
 ```sh
 db.accountsWithIndex.dropIndex({ "name": 1, "balance": -1 })
 ```
+
+索引的唯一性
+
+db.collection.createIndex()
+
+"文档主键上创建的默认索引"
+

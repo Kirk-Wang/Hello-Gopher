@@ -7,3 +7,5 @@ router.post("/create", positionController.createPosition)
 router.post("/:account", positionController.queryPosition)
 router.post("/:id/update", positionController.updatePosition)
 router.post("/:id/delete", positionController.deletePosition)
+
+module.exports = router;

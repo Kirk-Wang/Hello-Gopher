@@ -1,0 +1,9 @@
+### create
+POST http://localhost:8888/position/create
+
+{
+  account: 001,
+  stock: "AMZN",
+  quantity: 1,
+  price: 1650
+}

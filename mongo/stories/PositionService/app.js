@@ -3,8 +3,16 @@ var app = express()
 
 //MongoDB
 var mongoose = require("mongoose")
+// >use demo
+// >db.createUser( { user: "demo", pwd: "demo123456", roles: [ "readWrite" ] } )
 // mongodb://<user>:<pwd>@<host>:<port>/<database>
-mongoose.connect('mongodb://localhost:27017/demo', {useNewUrlParser: true});
+mongoose.connect(
+  'mongodb://localhost:27017/demo', 
+  {
+    useNewUrlParser: true, 
+    auth: { user: "demo", password: "demo123456" }
+  }
+);
 var db = mongoose.connection;
 
 db.on('error', () => {

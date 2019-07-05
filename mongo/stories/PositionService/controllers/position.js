@@ -1,4 +1,4 @@
-var Postion = require("../models/position")
+var Position = require("../models/position")
 
 // Create
 exports.createPosition = function(req, res, next) {

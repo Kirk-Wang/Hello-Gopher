@@ -2237,3 +2237,9 @@ db.collection.explain()
 db.accountsWithIndex.explain().find({ balance: 100 })
 # COLLSCAN -> 效果最差的搜索方式
 ```
+
+"使用已经创建索引的字段进行搜索"
+```sh
+db.accountsWithIndex.explain().find({ name: "alice" })
+# IXSCAN
+```

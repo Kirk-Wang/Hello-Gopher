@@ -1,4 +1,4 @@
-var mongoose = require("mongose")
+var mongoose = require("mongoose")
 var Schema = mongoose.Schema;
 
 var PositionSchema = new Schema({

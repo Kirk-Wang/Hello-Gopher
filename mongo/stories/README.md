@@ -2225,3 +2225,9 @@ db.accountsWithIndex.createIndex({ currency: 1 })
 * "GBP" --> {"alice"}
 * "USD" --> {"alice"}
 * "USD" --> {"bob"}
+
+#### 索引的效果
+
+db.collection.explain()
+
+可以使用 explain 进行分析的命令包括 aggregate(), count(), distinct(), find(), group(), remove(), update()

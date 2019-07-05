@@ -11,3 +11,19 @@ Content-Type: application/json
 
 ### query
 GET http://localhost:8888/position/001
+
+### update
+PUT http://localhost:8888/position/5d1f168a99e65529315b23db/update
+Content-Type: application/json
+
+{
+  "account": "001",
+  "stock": "AMZN",
+  "quantity": 2,
+  "price": 1600
+}
+
+### delete
+
+DELETE http://localhost:8888/position/5d1f168a99e65529315b23db/delete
+

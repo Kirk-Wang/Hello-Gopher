@@ -2260,3 +2260,13 @@ db.accountsWithIndex.explain().find().sort({ name: 1, balance: -1 })
 db.accountsWithIndex.explain().find().sort({ name: 1, balance: 1 })
 # SORT -> 提示排序效率并不高
 ```
+
+删除索引
+
+db.collection.dropIndex()
+
+如果需要更改某些字段上已经创建的索引
+
+必须首先删除原有索引，再重新创建新的索引
+
+

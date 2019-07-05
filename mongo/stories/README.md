@@ -2326,3 +2326,15 @@ db.accountsWithIndex.insert({
 ```sh
 db.accountsWithIndex.dropIndex("balance_1")
 ```
+
+索引的稀疏性
+
+db.collection.createIndex()
+
+"只将包含索引键字段的文档加入到索引中（即使索引键字段值为null）"
+```sh
+db.accountsWithIndex.createIndex(
+  { balance: 1 },
+  { sparse: true }
+)
+```

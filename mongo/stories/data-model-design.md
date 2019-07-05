@@ -33,4 +33,7 @@
   * 数组元素极多时，重新设计文档结构
 
 文档关系：树形结构
+  * parent
+  * children
+  * ancestors 所有前辈
 

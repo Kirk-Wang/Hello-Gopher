@@ -2299,3 +2299,23 @@ db.accountsWithIndex.getIndexes()
 # 要求balance 的值必须是唯一的
 db.accountsWithIndex.createIndex({ balance: 1 }, { unique: true })
 ```
+
+"如果已有文档中的某个字段出现了重复值，就不可以在这个字段上创建唯一性索引"
+```sh
+db.accountsWithIndex.createIndex({ name: 1 }, { unique: true })
+# 会报错
+```
+"如果新增的文档不包含唯一性索引字段，只有*第一篇*缺失该字段的文档可以被写入数据库，索引中该文档的键值被默认为null"
+```sh
+# balance 唯一索引的存在
+db.accountsWithIndex.insert({
+  name: "charlie",
+  lastAccess: new Date()
+})
+# 成功
+db.accountsWithIndex.insert({
+  name: "charlie",
+  lastAccess: new Date()
+})
+# 失败
+```

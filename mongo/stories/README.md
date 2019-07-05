@@ -2314,7 +2314,7 @@ db.accountsWithIndex.insert({
 })
 # 成功
 db.accountsWithIndex.insert({
-  name: "charlie",
+  name: "david",
   lastAccess: new Date()
 })
 # 失败
@@ -2338,3 +2338,18 @@ db.accountsWithIndex.createIndex(
   { sparse: true }
 )
 ```
+"如果同一个索引即具有唯一性，又具有稀疏性，就可以保存*多篇*缺失索引键值的文档了"
+```sh
+db.accountsWithIndex.dropIndex("balance_1")
+db.accountsWithIndex.createIndex(
+  { balance: 1 },
+  { unique: true, sparse: true }
+)
+
+db.accountsWithIndex.insert({
+  name: "david",
+  lastAccess: new Date()
+})
+```
+
+"复合键索引也可以具有稀疏性，在这种情况下，只有在缺失复合键所包含的所有字段的情况下，文档才不会被加入到索引中"

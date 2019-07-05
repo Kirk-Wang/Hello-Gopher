@@ -2275,4 +2275,12 @@ db.collection.dropIndex()
 db.accountsWithIndex.getIndexes()
 ```
 
+"使用索引名称删除索引"
+```sh
+db.accountsWithIndex.dropIndex("name_1")
+```
 
+"使用索引定义删除索引"
+```sh
+db.accountsWithIndex.dropIndex({ "name": 1, "balance": -1 })
+```

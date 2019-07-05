@@ -19,7 +19,7 @@ exports.createPosition = function(req, res, next) {
 }
 
 // Read
-exports.queryPosition = function(req, res, next) {
+exports.readPosition = function(req, res, next) {
   Postion.find({
     account: req.params.account
   }, function(err, position) {
@@ -31,7 +31,7 @@ exports.queryPosition = function(req, res, next) {
 }
 
 //Update
-exports.queryPosition = function(req, res, next) {
+exports.updatePosition = function(req, res, next) {
   Postion.findByIdAndUpdate(req.params.id, {
     $set: req.body
   }, function(err) {
@@ -39,5 +39,15 @@ exports.queryPosition = function(req, res, next) {
       return next(err)
     }
     res.send('仓位纪录更新成功')
+  })
+}
+
+//Delete
+exports.deletePosition = function(req, res, next) {
+  Postion.findByIdAndRemove(req.params.id, function(err) {
+    if (err) {
+      return next(err)
+    }
+    res.send('仓位纪录删除成功')
   })
 }

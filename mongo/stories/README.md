@@ -2232,4 +2232,8 @@ db.collection.explain()
 
 可以使用 explain 进行分析的命令包括 aggregate(), count(), distinct(), find(), group(), remove(), update()
 
-
+"使用没有创建索引的字段进行搜索"
+```sh
+db.accountsWithIndex.explain().find({ balance: 100 })
+# COLLSCAN -> 效果最差的搜索方式
+```

@@ -64,10 +64,14 @@ docker network ls
 
 运行 3 个mongod节点
 ```sh
-docker run --net mynetwork --name mongo1 -v /mymongo/data1:/data/db -p 27017:27017 -d mongo:4 --replSet myset --port 27017
+docker run --net mynetwork --name mongo1 -v /Users/zoot/mstack/replset:/data/db -p 27018:27018 -d mongo:4 --replSet myset --port 27018
 
-docker run --net mynetwork --name mongo2 -v /mymongo/data2:/data/db -p 27018:27018 -d mongo:4 --replSet myset --port 27018
+docker run --net mynetwork --name mongo2 -v /Users/zoot/mstack/replset:/data/db -p 27019:27019 -d mongo:4 --replSet myset --port 27019
 
-docker run --net mynetwork --name mongo3 -v /mymongo/data3:/data/db -p 27019:27019 -d mongo:4 --replSet myset --port 27019
+docker run --net mynetwork --name mongo3 -v /Users/zoot/mstack/replset:/data/db -p 27020:27020 -d mongo:4 --replSet myset --port 27020
+```
+
+```sh
+docker exec -it mongo1 mongo
 ```
 

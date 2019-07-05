@@ -2270,4 +2270,9 @@ db.collection.dropIndex()
 
 否则，新索引不会包含原有文档
 
+"列出集合中已存在的索引"
+```sh
+db.accountsWithIndex.getIndexes()
+```
+
 

@@ -2231,3 +2231,5 @@ db.accountsWithIndex.createIndex({ currency: 1 })
 db.collection.explain()
 
 可以使用 explain 进行分析的命令包括 aggregate(), count(), distinct(), find(), group(), remove(), update()
+
+

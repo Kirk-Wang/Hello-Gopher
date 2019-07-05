@@ -2393,3 +2393,11 @@ db.accountsWithIndex.find()
 ```sh
 db.accountsWithIndex.find()
 ```
+
+### 搭建仓位纪录控制服务
+
+每一条仓位纪录包含了以下信息
+* 交易账号
+* 股票代码
+* 交易数量
+* 交易价格

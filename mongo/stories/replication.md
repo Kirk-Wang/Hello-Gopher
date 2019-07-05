@@ -58,20 +58,75 @@
 
 * 创建 docker network
 ```sh
-docker network create mynetwork
+docker network create web
 docker network ls
 ```
 
-运行 3 个mongod节点
-```sh
-docker run --net mynetwork --name mongo1 -v /Users/zoot/mstack/replset:/data/db -p 27018:27018 -d mongo:4 --replSet myset --port 27018
+docker-compose.yml
 
-docker run --net mynetwork --name mongo2 -v /Users/zoot/mstack/replset:/data/db -p 27019:27019 -d mongo:4 --replSet myset --port 27019
+```yml
+version: '3.1'
 
-docker run --net mynetwork --name mongo3 -v /Users/zoot/mstack/replset:/data/db -p 27020:27020 -d mongo:4 --replSet myset --port 27020
+services:
+
+  mongo:
+    image: mongo:4.0.6
+    restart: always
+    networks:
+      - web
+    ports:
+      - 27017:27017
+    command: mongod --replSet rs
+    volumes:
+      - ./data:/data/db
+
+  mongo2:
+    image: mongo:4.0.6
+    restart: always
+    networks:
+      - web
+    ports:
+      - 27018:27017
+    command: mongod --replSet rs
+    volumes:
+      - ./data2:/data/db
+  
+  mongo3:
+    image: mongo:4.0.6
+    restart: always
+    networks:
+      - web
+    ports:
+      - 27019:27017
+    command: mongod --replSet rs
+    volumes:
+      - ./data3:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    networks:
+      - web
+    ports:
+      - 8081:8081
+
+networks:
+  web:
+    external: true
 ```
 
 ```sh
-docker exec -it mongo1 mongo
+docker exec -it f202f6ae60f4 mongo
+
+rs.initiate(
+  {
+    _id: "rs",
+    members: [
+      { _id: 0, host: "mongo:27017" },
+      { _id: 1, host: "mongo2:27017" },
+      { _id: 2, host: "mongo3:27017" },
+    ]
+  }
+)
 ```
 

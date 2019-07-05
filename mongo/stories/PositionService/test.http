@@ -1,9 +1,13 @@
 ### create
 POST http://localhost:8888/position/create
+Content-Type: application/json
 
 {
-  account: 001,
-  stock: "AMZN",
-  quantity: 1,
-  price: 1650
+  "account": "001",
+  "stock": "AMZN",
+  "quantity": 1,
+  "price": 1650
 }
+
+### query
+GET http://localhost:8888/position/001

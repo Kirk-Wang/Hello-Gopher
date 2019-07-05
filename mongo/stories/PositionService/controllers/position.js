@@ -20,7 +20,7 @@ exports.createPosition = function(req, res, next) {
 
 // Read
 exports.queryPosition = function(req, res, next) {
-  Postion.find({
+  Position.find({
     account: req.params.account
   }, function(err, position) {
     if (err) {
@@ -32,7 +32,7 @@ exports.queryPosition = function(req, res, next) {
 
 //Update
 exports.updatePosition = function(req, res, next) {
-  Postion.findByIdAndUpdate(req.params.id, {
+  Position.findByIdAndUpdate(req.params.id, {
     $set: req.body
   }, function(err) {
     if (err) {
@@ -44,7 +44,7 @@ exports.updatePosition = function(req, res, next) {
 
 //Delete
 exports.deletePosition = function(req, res, next) {
-  Postion.findByIdAndRemove(req.params.id, function(err) {
+  Position.findByIdAndRemove(req.params.id, function(err) {
     if (err) {
       return next(err)
     }

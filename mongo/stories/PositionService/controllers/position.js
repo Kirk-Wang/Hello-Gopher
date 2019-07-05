@@ -19,7 +19,7 @@ exports.createPosition = function(req, res, next) {
 }
 
 // Read
-exports.readPosition = function(req, res, next) {
+exports.queryPosition = function(req, res, next) {
   Postion.find({
     account: req.params.account
   }, function(err, position) {

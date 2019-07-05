@@ -2290,4 +2290,12 @@ db.accountsWithIndex.dropIndex({ "name": 1, "balance": -1 })
 db.collection.createIndex()
 
 "文档主键上创建的默认索引"
+```sh
+db.accountsWithIndex.getIndexes()
+```
 
+"创建一个具有唯一性的索引"
+```sh
+# 要求balance 的值必须是唯一的
+db.accountsWithIndex.createIndex({ balance: 1 }, { unique: true })
+```

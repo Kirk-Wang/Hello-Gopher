@@ -43,3 +43,31 @@ mongostat --host localhost --port 27017 -o "command,dirty,used,vsize,res,conn,ti
 连接失败
 
 默认情况下，mongod 进程可以支持多达 65536 个连接
+
+不恰当的配置可能限制连接数
+
+查看支持的连接数
+```sh
+docker exec -it ffb49ad941e9 mongo
+> db.serverStatus().connections
+{ "current" : 5, "available" : 838855, "totalCreated" : 6 }
+```
+
+查看数据库服务器配置文件（如：mongo.conf）
+```sh
+net:
+  maxIncomingConnections: 200
+storage:
+  dbPath: /data/db
+  wiredTiger:
+    engineConfig:
+      cacheSizeGB: 0.25
+```
+
+第二种情况：查看 ulimit 配置
+```sh
+docker exec -it ffb49ad941e9 mongo
+
+ulimit -a
+#open files -> 提升mongo.conf已无用，可提升它
+```

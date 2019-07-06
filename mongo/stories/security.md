@@ -41,3 +41,13 @@ Error: error: {
 # 有管理的权限，但并没有读取的权限
 ```
 
+使用 db.auth() 进行身份验证
+```sh
+docker exec -it a811efa08b1d mongo
+> db
+test
+> use admin;
+switched to db admin
+> db.auth("myUserAdmin","passwd")
+1
+```

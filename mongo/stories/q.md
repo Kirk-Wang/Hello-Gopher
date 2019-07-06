@@ -20,3 +20,14 @@ storage:
     engineConfig:
       cacheSizeGB: 0.25
 ```
+
+docker-compose.yml
+
+```sh
+command: mongod -f /data/db/mongo.conf
+```
+
+导入大量数据
+```sh
+/data/db/scripts/load-large-dataset.sh
+```

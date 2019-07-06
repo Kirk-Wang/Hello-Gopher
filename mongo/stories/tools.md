@@ -64,3 +64,10 @@ mongoexport --db test --collection accounts --type=json --out opt/backups/accoun
 cat opt/backups/accounts.json
 ```
 
+使用查询语句筛选导出文档
+```sh
+mongoexport --db test --collection accounts --type=json --fields name.firstName,name.lastName,balance --out opt/backups/accounts.json -u readUser -p passwd --authenticationDatabase admin --query '{balance:{$gte: 100}}'
+
+cat opt/backups/accounts.json
+```
+

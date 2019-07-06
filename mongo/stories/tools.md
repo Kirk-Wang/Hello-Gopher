@@ -147,3 +147,10 @@ mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.im
 # 根据我们指定的字段进行对比
 mongoimport --db test --collection importAccounts --type csv --headerline --file /opt/backups/accounts.csv -u writeUser -p passwd --authenticationDatabase admin --upsertFields name.firstName,balance
 ```
+
+导入json文件
+```sh
+mongoimport --db test --collection importAccounts --type json --file /opt/backups/accounts.json -u writeUser -p passwd --authenticationDatabase admin --upsertFields name.firstName,balance
+
+mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
+```

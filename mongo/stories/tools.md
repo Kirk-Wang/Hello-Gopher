@@ -85,7 +85,7 @@ mongoexport --db test --collection accounts --type=json --fields name.firstName,
 cat opt/backups/accounts.json
 ```
 
-mongoimport
+### mongoimport
 
 将数据由 json 或 csv 格式文件导入
 
@@ -159,3 +159,10 @@ mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.im
 ```sh
 mongoimport --db test --collection importAccounts --type json --file /opt/backups/accounts.json -u writeUser -p passwd --authenticationDatabase admin --upsertFields name.firstName,balance --stopOnError --maintainInsertionOrder
 ```
+
+
+### mongostat
+
+显示数据库服务器进程状态
+
+需要对操作的数据库具备 clusterMonitor 角色的权限

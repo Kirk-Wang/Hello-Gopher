@@ -124,6 +124,8 @@ WriteCommandError({
 
 注意，在执行创建用户和创建角色的时候，要使用一个具备用户管理权限的用户
 ```sh
+docker exec -it a811efa08b1d mongo -u myUserAdmin -p passwd --authenticationDatabase admin
+
 use test
 db.createRole({
   role: "readAccounts",
@@ -138,4 +140,21 @@ db.createRole({
   ],
   roles: []
 })
+
+use test
+db.createUser(
+  {
+    user: "accountsReader",
+    pwd: "passwd",
+    roles: [ "readAccounts" ]
+  }
+)
+```
+
+验证
+```sh
+docker exec -it a811efa08b1d mongo -u accountsReader -p passwd --authenticationDatabase test
+> show collections
+accounts
+# 它只看到 accounts 集合
 ```

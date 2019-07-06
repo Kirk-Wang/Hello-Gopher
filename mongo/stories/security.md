@@ -17,6 +17,11 @@ db.createUser({
 ```
 
 启用身份认证
+```sh
+docker-compose down
+# command: mongod --auth 加入 docker-compose.yml
+docker-compose up -d
+```
 
 使用用户名和密码进行身份验证
 ```sh

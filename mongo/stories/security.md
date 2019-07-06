@@ -89,5 +89,16 @@ switched to db admin
 * read/readWrite/dbAdmin/userAdminAnyDatabase - 对所有数据库执行操作（只在admin数据库中提供）
 
 授权
+* 将角色赋予用户
 
-将角色赋予用户
+"创建一个只能读取test数据库的用户"
+```sh
+use test
+db.createUser(
+  {
+    user: "testReader",
+    pwd: "passwd",
+    roles: [ { role: "read", db: "test" } ]
+  }
+)
+```

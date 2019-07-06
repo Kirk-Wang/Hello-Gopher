@@ -117,3 +117,23 @@ WriteCommandError({
         "codeName" : "Unauthorized"
 })
 ```
+
+自定义角色(更加精细的控制)
+
+"创建一个只能读取 accounts 集合的用户"
+```sh
+use test
+db.createRole({
+  role: "readAccounts",
+  privileges: [
+    {
+      resource: {
+        db: "test",
+        collection: "accounts"
+      },
+      actions: ["find"]
+    }
+  ],
+  roles: []
+})
+```

@@ -68,4 +68,19 @@ switched to db admin
   ]
 }
 # 在test数库，你可以进行 find & update
+
+{
+  resource: {
+    cluster: true
+  },
+  actions: [
+    "shutdown"
+  ]
+}
+# 可以停止整个集群
 ```
+
+角色
+* 角色 = 一组权限的集合
+* read - 读取当前数据库中所有非系统集合
+* readWrite - 读写当前数据库中所有非系统集合 

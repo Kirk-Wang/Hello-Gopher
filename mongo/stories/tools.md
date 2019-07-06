@@ -18,6 +18,26 @@ db.createUser(
     roles: [ "readAnyDatabase" ]
   }
 )
+# readAnyDatabase 只在 admin 数据库中才提供
 ```
 
+导出 csv 文件
+```sh
+mongoexport --db test --collection accounts --type=csv --fields name,balance --out opt/backups/accounts.csv -u readUser -p passwd --authenticationDatabase admin
+```
+
+查看导出文件
+```sh
+cat opt/backups/accounts.csv
+```
+
+导出内嵌文档字段
+```sh
+mongoexport --db test --collection accounts --type=csv --fields name.firstName,name.lastName,balance --out opt/backups/accounts.csv -u readUser -p passwd --authenticationDatabase admin
+```
+
+查看导出文件
+```sh
+cat opt/backups/accounts.csv
+```
 

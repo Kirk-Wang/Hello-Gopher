@@ -83,4 +83,7 @@ switched to db admin
 角色
 * 角色 = 一组权限的集合
 * read - 读取当前数据库中所有非系统集合
-* readWrite - 读写当前数据库中所有非系统集合 
+* readWrite - 读写当前数据库中所有非系统集合
+* dbAdmin - 管理当前数据库
+* userAdmin - 管理当前数据库中的用户和角色
+* read/readWrite/dbAdmin/userAdminAnyDatabase - 对所有数据库执行操作（只在admin数据库中提供）

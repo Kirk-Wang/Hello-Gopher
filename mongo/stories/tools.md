@@ -23,6 +23,8 @@ db.createUser(
 
 导出 csv 文件
 ```sh
+docker exec -it a811efa08b1d bash
+
 mongoexport --db test --collection accounts --type=csv --fields name,balance --out opt/backups/accounts.csv -u readUser -p passwd --authenticationDatabase admin
 ```
 
@@ -39,5 +41,15 @@ mongoexport --db test --collection accounts --type=csv --fields name.firstName,n
 查看导出文件
 ```sh
 cat opt/backups/accounts.csv
+```
+
+导出 json 文件
+```sh
+mongoexport --db test --collection accounts --type=json --fields name.firstName,name.lastName,balance --out opt/backups/accounts.json -u readUser -p passwd --authenticationDatabase admin
+```
+
+查看导出文件
+```sh
+cat opt/backups/accounts.json
 ```
 

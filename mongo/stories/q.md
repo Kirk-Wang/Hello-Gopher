@@ -11,3 +11,12 @@
 * 使用 mongostat 查看服务器状态
 
 模拟缓存不足的情镜
+
+mongo.conf
+```sh
+storage:
+  dbPath: /data/db
+  wiredTiger:
+    engineConfig:
+      cacheSizeGB: 0.25
+```

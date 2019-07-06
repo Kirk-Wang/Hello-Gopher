@@ -127,3 +127,23 @@ mongoimport --db test --collection importAccounts --type csv --headerline --file
 
 mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
 ```
+
+自定义字段名称
+```sh
+mongoimport --db test --collection importAccounts --type csv --fields firstName,lastName,balance --file /opt/backups/accounts.csv --drop -u writeUser -p passwd --authenticationDatabase admin
+
+mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
+```
+
+再导入一次
+```sh
+mongoimport --db test --collection importAccounts --type csv --headerline --file /opt/backups/accounts.csv --drop -u writeUser -p passwd --authenticationDatabase admin
+
+mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
+```
+
+更新旧文档
+```sh
+# 根据我们指定的字段进行对比
+mongoimport --db test --collection importAccounts --type csv --headerline --file /opt/backups/accounts.csv -u writeUser -p passwd --authenticationDatabase admin --upsertFields name.firstName,balance
+```

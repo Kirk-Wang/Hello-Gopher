@@ -87,3 +87,7 @@ switched to db admin
 * dbAdmin - 管理当前数据库
 * userAdmin - 管理当前数据库中的用户和角色
 * read/readWrite/dbAdmin/userAdminAnyDatabase - 对所有数据库执行操作（只在admin数据库中提供）
+
+授权
+
+将角色赋予用户

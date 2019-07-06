@@ -200,3 +200,8 @@ mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticatio
 ```sh
 mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin -o "command,dirty,used,vsize,res,conn,time"
 ```
+* command - 每秒执行的命令数
+* dirty,used - 数据库引擎缓存的使用百分比
+* vsize - 虚拟内存使用量(MB)
+* res - 常驻内存使用量(MB)
+* conn - 连接数

@@ -205,3 +205,23 @@ mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticatio
 * vsize - 虚拟内存使用量(MB)
 * res - 常驻内存使用量(MB)
 * conn - 连接数
+
+
+### mongotop
+
+显示各个集合上的读写时间
+
+需要对操作的数据库具备 clusterMonitor 角色的权限
+```sh
+mongotop --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin
+```
+
+每隔3秒报告一次状态
+```sh
+mongotop --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin 3
+```
+
+限制报告状态的次数
+```sh
+mongotop --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin --rowcount 5 3
+```

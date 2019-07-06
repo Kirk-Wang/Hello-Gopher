@@ -15,3 +15,13 @@ db.createUser({
   roles: [ "userAdminAnyDatabase" ]
 })
 ```
+
+启用身份认证
+
+使用用户名和密码进行身份验证
+```sh
+# authenticationDatabase
+# 对应的验证数据库
+mongo -u "myUserAdmin" -p "passwd" --authenticationDatabase "admin"
+```
+

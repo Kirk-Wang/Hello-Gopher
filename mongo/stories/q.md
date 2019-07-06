@@ -29,11 +29,13 @@ command: mongod -f /data/db/mongo.conf
 
 导入大量数据
 ```sh
-docker exec -it a811efa08b1d bash
+docker exec -it fe1bb8f3934b bash
 /data/db/scripts/load-large-dataset.sh
 ```
 
 使用 mongostat 监控服务器进程状态
 ```sh
 mongostat --host localhost --port 27017 -o "command,dirty,used,vsize,res,conn,time"
+
+# 如果 used 远远大于 dirty ,就要看看工作集大小了
 ```

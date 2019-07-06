@@ -166,3 +166,32 @@ mongoimport --db test --collection importAccounts --type json --file /opt/backup
 显示数据库服务器进程状态
 
 需要对操作的数据库具备 clusterMonitor 角色的权限
+```sh
+docker exec -it a811efa08b1d mongo -u myUserAdmin -p passwd --authenticationDatabase admin
+use admin
+db.createUser(
+  {
+    user: "monitorUser",
+    pwd: "passwd",
+    roles: [ "clusterMonitor" ]
+  }
+)
+exit
+# 登录
+docker exec -it a811efa08b1d bash
+```
+
+显示数据库进程状态
+```sh
+mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin
+```
+
+每隔3秒报告一次状态
+```sh
+mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin 3
+```
+
+限制报告状态的次数
+```sh
+mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin --rowcount 5 3
+```

@@ -53,3 +53,14 @@ mongoexport --db test --collection accounts --type=json --fields name.firstName,
 cat opt/backups/accounts.json
 ```
 
+
+导出 json 文件时，--fields选项是可选的
+```sh
+mongoexport --db test --collection accounts --type=json --out opt/backups/accounts.json -u readUser -p passwd --authenticationDatabase admin
+```
+
+查看导出文件
+```sh
+cat opt/backups/accounts.json
+```
+

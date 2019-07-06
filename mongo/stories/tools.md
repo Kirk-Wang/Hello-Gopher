@@ -154,3 +154,8 @@ mongoimport --db test --collection importAccounts --type json --file /opt/backup
 
 mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
 ```
+
+使用 --stopOnError, --maintainInsertionOrder 选项
+```sh
+mongoimport --db test --collection importAccounts --type json --file /opt/backups/accounts.json -u writeUser -p passwd --authenticationDatabase admin --upsertFields name.firstName,balance --stopOnError --maintainInsertionOrder
+```

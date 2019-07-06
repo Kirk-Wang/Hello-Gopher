@@ -84,3 +84,24 @@ mongoexport --db test --collection accounts --type=json --fields name.firstName,
 
 cat opt/backups/accounts.json
 ```
+
+mongoimport
+
+将数据由 json 或 csv 格式文件导入
+
+需要对操作的数据库具备 readWrite 权限
+```sh
+docker exec -it a811efa08b1d mongo -u myUserAdmin -p passwd --authenticationDatabase admin
+use admin
+db.createUser(
+  {
+    user: "writeUser",
+    pwd: "passwd",
+    roles: [ "readWriteAnyDatabase" ]
+  }
+)
+exit
+# 登录
+docker exec -it a811efa08b1d mongo -u writeUser -p passwd --authenticationDatabase admin
+
+```

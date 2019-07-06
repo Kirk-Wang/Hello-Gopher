@@ -51,3 +51,20 @@ switched to db admin
 > db.auth("myUserAdmin","passwd")
 1
 ```
+
+授权
+
+权限
+* = 在哪里 + 做什么
+```sh
+{
+  resource: {
+    db: "test",
+    collection: ""
+  },
+  actions: [
+    "find",
+    "update"
+  ]
+}
+```

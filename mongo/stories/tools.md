@@ -195,3 +195,8 @@ mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticatio
 ```sh
 mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin --rowcount 5 3
 ```
+
+有选择地显示状态
+```sh
+mongostat --host localhost --port 27017 -u monitorUser -p passwd --authenticationDatabase admin -o "command,dirty,used,vsize,res,conn,time"
+```

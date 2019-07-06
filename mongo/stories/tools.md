@@ -77,3 +77,10 @@ mongoexport --db test --collection accounts --type=json --out opt/backups/accoun
 
 cat opt/backups/accounts.json
 ```
+
+使用 --limit, --skip, --sort 选项
+```sh
+mongoexport --db test --collection accounts --type=json --fields name.firstName,name.lastName,balance --out opt/backups/accounts.json -u readUser -p passwd --authenticationDatabase admin --sort '{balance:1}' --limit 3 --skip 1
+
+cat opt/backups/accounts.json
+```

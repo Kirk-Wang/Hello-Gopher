@@ -39,3 +39,7 @@ mongostat --host localhost --port 27017 -o "command,dirty,used,vsize,res,conn,ti
 
 # 如果 used 远远大于 dirty ,就要看看工作集大小了
 ```
+
+连接失败
+
+默认情况下，mongod 进程可以支持多达 65536 个连接

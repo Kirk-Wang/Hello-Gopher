@@ -71,3 +71,9 @@ mongoexport --db test --collection accounts --type=json --fields name.firstName,
 cat opt/backups/accounts.json
 ```
 
+使用 --host, --port 选项
+```sh
+mongoexport --db test --collection accounts --type=json --out opt/backups/accounts.json -u readUser -p passwd --authenticationDatabase admin --host localhost --port 27017
+
+cat opt/backups/accounts.json
+```

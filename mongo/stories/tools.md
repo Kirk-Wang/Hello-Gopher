@@ -124,4 +124,6 @@ mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.im
 在导入前drop集合
 ```sh
 mongoimport --db test --collection importAccounts --type csv --headerline --file /opt/backups/accounts.csv --drop -u writeUser -p passwd --authenticationDatabase admin
+
+mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
 ```

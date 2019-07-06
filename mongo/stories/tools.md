@@ -102,6 +102,21 @@ db.createUser(
 )
 exit
 # 登录
-docker exec -it a811efa08b1d mongo -u writeUser -p passwd --authenticationDatabase admin
+docker exec -it a811efa08b1d bash
+```
 
+查看导入文件
+```sh
+cat opt/backups/accounts.csv
+```
+
+导入csv文件
+```sh
+# headerline,告诉mongodb第一行不是数据
+mongoimport --db test --collection importAccounts --type csv --headerline --file /opt/backups/accounts.csv -u writeUser -p passwd --authenticationDatabase admin
+```
+
+查看导入文档
+```sh
+mongo -u readUser -p passwd --authenticationDatabase admin --quiet --eval 'db.importAccounts.find()'
 ```

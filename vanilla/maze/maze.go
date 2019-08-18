@@ -23,6 +23,10 @@ func readMaze(filename string) [][]int {
 	return maze
 }
 
+func walk(maze [][]int, start, end) {
+
+}
+
 func main() {
 	maze := readMaze("maze.in")
 	for _, row := range maze {

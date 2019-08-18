@@ -82,7 +82,7 @@ func walk(maze [][]int, start, end point) [][]int {
 			}
 
 			val, ok = next.at(steps)
-			if !ok || val != 1 {
+			if !ok || val != 0 {
 				continue
 			}
 
@@ -91,7 +91,6 @@ func walk(maze [][]int, start, end point) [][]int {
 			}
 			curSteps, _ := cur.at(steps)
 			steps[next.i][next.j] = curSteps + 1
-
 			Q = append(Q, next)
 		}
 	}
@@ -102,17 +101,18 @@ func main() {
 	maze := readMaze("maze.in")
 	for _, row := range maze {
 		for _, val := range row {
-			fmt.Printf("%d ", val)
+			fmt.Printf("%3d", val)
 		}
 		fmt.Println()
 	}
-
+	fmt.Println()
 	steps := walk(maze, point{0, 0},
 		point{len(maze) - 1, len(maze[0]) - 1})
 
 	for _, row := range steps {
 		for _, val := range row {
-			fmt.Printf("%d ", val)
+			// 3d -> 3位对齐
+			fmt.Printf("%3d", val)
 		}
 		fmt.Println()
 	}

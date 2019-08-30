@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/15.6/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/15.6/crawler/scheduler"
-	"github.com/Kirk-Wang/Hello-Gopher/15.6/crawler/zhenai/parser"
+	"github.com/Kirk-Wang/Hello-Gopher/history/15.6/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/15.6/crawler/scheduler"
+	"github.com/Kirk-Wang/Hello-Gopher/history/15.6/crawler/zhenai/parser"
 )
 
 func main() {

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/16.1/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/16.1/crawler/persist"
-	"github.com/Kirk-Wang/Hello-Gopher/16.1/crawler/scheduler"
-	"github.com/Kirk-Wang/Hello-Gopher/16.1/crawler/zhenai/parser"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.1/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.1/crawler/persist"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.1/crawler/scheduler"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.1/crawler/zhenai/parser"
 )
 
 func main() {

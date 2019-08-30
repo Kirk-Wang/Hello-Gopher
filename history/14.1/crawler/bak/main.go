@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
 
@@ -25,17 +26,10 @@ func main() {
 		fmt.Println("Error: status code", resp.StatusCode)
 		return
 	}
-	/*
-	 * bufio.Reader的Peek，的确是会影响下面的resp.Body的。
-	 * 我们用bufio.Reader包装后，针对bufio.Reader的Peek不会影响bufio.Reader的Read
-	 * 但是bufio.Reader肚子里的那个io.Reader，就没法保证了。
-	 */
-	bodyReader := bufio.NewReader(resp.Body)
 	// 确认编码
-	e := determineEncoding(bodyReader)
+	e := determineEncoding(resp.Body)
 	// 转换编码
-	// utf8Reader := transform.NewReader(resp.Body, e.NewDecoder())
-	utf8Reader := transform.NewReader(bodyReader, e.NewDecoder())
+	utf8Reader := transform.NewReader(resp.Body, e.NewDecoder())
 	all, err := ioutil.ReadAll(utf8Reader)
 	if err != nil {
 		panic(err)
@@ -46,9 +40,9 @@ func main() {
 }
 
 // 确认页面编码
-func determineEncoding(r *bufio.Reader) encoding.Encoding {
+func determineEncoding(r io.Reader) encoding.Encoding {
 	// 拿到前 1024 个 bytes
-	bytes, err := r.Peek(1024)
+	bytes, err := bufio.NewReader(r).Peek(1024)
 	if err != nil {
 		panic(err)
 	}

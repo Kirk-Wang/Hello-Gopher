@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/16.5/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.5/crawler/engine"
 )
 
 type QueuedScheduler struct {

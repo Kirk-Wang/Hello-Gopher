@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/15.1/crawler/fetcher"
+	"github.com/Kirk-Wang/Hello-Gopher/history/15.1/crawler/fetcher"
 	"log"
 )
 

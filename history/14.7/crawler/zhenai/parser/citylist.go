@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/14.7/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/14.7/crawler/engine"
 	"regexp"
 )
 

@@ -2,16 +2,28 @@ package main
 
 import (
 	"fmt"
+	"os"
 
-	pipleline "github.com/Kirk-Wang/Hello-Gopher/history/go-sort/re/5-pipleline"
+	pipeline "github.com/Kirk-Wang/Hello-Gopher/history/go-sort/re/5-pipeline"
 )
 
 func main() {
-	p := pipleline.Merge(
-		pipleline.InMemSort(
-			pipleline.ArraySource(3, 2, 6, 7, 4)),
-		pipleline.InMemSort(
-			pipleline.ArraySource(7, 4, 0, 3, 2, 13, 8)))
+	file, err := os.Create("small.in")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	p := pipeline.RandomSource(50)
+	pipeline.WriterSink(file, p)
+}
+
+func mergeDemo() {
+	p := pipeline.Merge(
+		pipeline.InMemSort(
+			pipeline.ArraySource(3, 2, 6, 7, 4)),
+		pipeline.InMemSort(
+			pipeline.ArraySource(7, 4, 0, 3, 2, 13, 8)))
 	// for {
 	// 	if num, ok := <-p; ok {
 	// 		fmt.Println(num)

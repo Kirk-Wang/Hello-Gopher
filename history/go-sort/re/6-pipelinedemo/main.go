@@ -17,7 +17,7 @@ func main() {
 	// 	}
 	// }
 	for v := range p {
-		// 发送方一定要 close
+		// 发送方一定要 close，不然就一直输出 0
 		fmt.Println(v)
 	}
 }

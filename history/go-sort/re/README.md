@@ -52,3 +52,7 @@
 * 运行环境：编译成机器代码直接运行
 * 编程范式：面向接口，函数式编程，并发编程
 
+### Go 语言并发编程
+* 采用CSP(Communication Sequential Process)模型
+* 不需要锁，不需要callback
+

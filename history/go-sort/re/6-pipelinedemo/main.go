@@ -7,7 +7,11 @@ import (
 )
 
 func main() {
-	p := pipleline.ArraySource(3, 2, 6, 7, 4)
+	p := pipleline.Merge(
+		pipleline.InMemSort(
+			pipleline.ArraySource(3, 2, 6, 7, 4)),
+		pipleline.InMemSort(
+			pipleline.ArraySource(7, 4, 0, 3, 2, 13, 8)))
 	// for {
 	// 	if num, ok := <-p; ok {
 	// 		fmt.Println(num)
@@ -17,7 +21,10 @@ func main() {
 	// 	}
 	// }
 	for v := range p {
-		// 发送方一定要 close，不然就一直输出 0
+		// 注意：
+		// fatal error: all goroutines are asleep - deadlock!
+		// goroutine 1 [chan receive]:
+		// 记得发送方要 close 掉
 		fmt.Println(v)
 	}
 }

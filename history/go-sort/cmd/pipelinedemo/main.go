@@ -63,7 +63,7 @@ func main() {
 
 	// p = pipeline.ReaderSource(file)
 	p = pipeline.ReaderSource(bufio.NewReader(file), -1)
-	count := 0
+	count := 0 // 让它只打印前 100 个
 	for v := range p {
 		fmt.Println(v)
 		count++

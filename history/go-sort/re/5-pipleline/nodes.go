@@ -1,6 +1,9 @@
 package pipleline
 
-import "sort"
+import (
+	"io"
+	"sort"
+)
 
 func ArraySource(a ...int) <-chan int {
 	// <-chan int: 表示用它的人只能从里面拿东西
@@ -65,5 +68,12 @@ func Merge(in1, in2 <-chan int) <-chan int {
 		}
 		close(out)
 	}()
+	return out
+}
+
+func ReaderSource(reader io.Reader) <-chan int {
+	// go 语言的 int 有多大呢？
+	// 它是根据系统来的
+	out := make(chan int)
 	return out
 }

@@ -20,7 +20,7 @@ func main() {
 
 func printHelloWorld(i int, ch chan string) {
 	for {
-		// 5000 个人不断的抢这个 channnel
+		// 5000 个人不断的抢这个 channel
 		ch <- fmt.Sprintf("Hello world from goroutine %d!\n", i)
 	}
 }

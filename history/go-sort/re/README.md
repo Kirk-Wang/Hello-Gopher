@@ -3,6 +3,7 @@
 慕课网视频：[搭建并行处理管道，感受 Go 语言的魅力](https://www.imooc.com/learn/927)
 * CCMOUSE(Google资深工程师) 大佬讲解，个人感觉非常经典
 * 随手撸**网络版外部排序**，培养自己的基本编码素质
+* PPT 文字脱敏⬇️
 
 大部分 Go 语言的重心都放在语法的特点与小细节上面
 
@@ -29,4 +30,10 @@
 
 ### Go 语言在中国
 * [https://trends.google.com/trends/explore?q=%2Fm%2F09gbxjr](https://trends.google.com/trends/explore?q=%2Fm%2F09gbxjr)
+
+### Google 内部的 “标准” 编程语言
+* C++：必须有性能保障的部分，如搜索引擎
+* Java：复杂业务逻辑，如 adwords, google docs
+* Python：大量内部工具
+* Go：新的内部工具，及其他业务模块，如dl.google.com
 

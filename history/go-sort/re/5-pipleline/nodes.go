@@ -6,6 +6,7 @@ func ArraySource(a ...int) chan int {
 		for _, v := range a {
 			out <- v
 		}
+		// 送完数据，直接关掉通道
 		close(out)
 	}()
 	return out

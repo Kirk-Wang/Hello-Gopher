@@ -25,4 +25,5 @@
 
 ### Go 语言的发展趋势
 [https://octoverse.github.com/](https://octoverse.github.com/)
+[https://www.indeed.com/jobtrends/q-golang.html](https://www.indeed.com/jobtrends/q-golang.html)
 

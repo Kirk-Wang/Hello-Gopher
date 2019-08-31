@@ -27,3 +27,6 @@
 * [https://octoverse.github.com/](https://octoverse.github.com/)
 * [https://www.indeed.com/jobtrends/q-golang.html](https://www.indeed.com/jobtrends/q-golang.html)
 
+### Go 语言在中国
+* [https://trends.google.com/trends/explore?q=%2Fm%2F09gbxjr](https://trends.google.com/trends/explore?q=%2Fm%2F09gbxjr)
+

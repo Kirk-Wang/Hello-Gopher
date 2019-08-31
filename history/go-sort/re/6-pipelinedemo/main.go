@@ -12,7 +12,7 @@ func main() {
 		if num, ok := <-p; ok {
 			fmt.Println(num)
 		} else {
-			// chanel 关闭了
+			// channel 关闭了
 			break
 		}
 	}

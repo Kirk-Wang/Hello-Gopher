@@ -8,12 +8,16 @@ import (
 
 func main() {
 	p := pipleline.ArraySource(3, 2, 6, 7, 4)
-	for {
-		if num, ok := <-p; ok {
-			fmt.Println(num)
-		} else {
-			// channel 关闭了
-			break
-		}
+	// for {
+	// 	if num, ok := <-p; ok {
+	// 		fmt.Println(num)
+	// 	} else {
+	// 		// channel 关闭了
+	// 		break
+	// 	}
+	// }
+	for v := range p {
+		// 发送方一定要 close
+		fmt.Println(v)
 	}
 }

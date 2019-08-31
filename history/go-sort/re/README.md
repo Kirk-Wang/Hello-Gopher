@@ -79,3 +79,8 @@
 * 并发 Hello World - 初识 goroutine 与 channel
 * 一个简单的排序
   * 直接调用库函数 -->> sort.Ints(args) 
+
+### 外部排序
+**归并排序回顾**
+
+

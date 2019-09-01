@@ -37,7 +37,7 @@ func ArraySource(a ...int) <-chan int {
 // in <-chan int::只进不出的 channel
 // 返回的是  <-chan int：只出不进的 channel
 func InMemSort(in <-chan int) <-chan int {
-	out := make(chan int)
+	out := make(chan int, 1024)
 	go func() {
 		// Read into Memory
 		a := []int{}
@@ -59,7 +59,7 @@ func InMemSort(in <-chan int) <-chan int {
 }
 
 func Merge(in1, in2 <-chan int) <-chan int {
-	out := make(chan int)
+	out := make(chan int, 1024)
 	go func() {
 		// 同时从两个 channel 获得数据，然后比较他们的大小
 		// 而且我们获得的数据不一定有
@@ -102,7 +102,8 @@ func ReaderSource(reader io.Reader, chunkSize int) <-chan int {
 	// go 语言的 int 有多大呢？
 	// 它是根据系统来的
 	// 64 位机，就是 64 位
-	out := make(chan int)
+	// 给加上buffer，不要发一个收一个
+	out := make(chan int, 1024)
 	go func() {
 		buffer := make([]byte, 8) //8个字节==64 bit
 		bytesRead := 0

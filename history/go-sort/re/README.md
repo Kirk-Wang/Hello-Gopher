@@ -122,6 +122,11 @@
 * WriterSink节点
 * 测试数据生成
 
+### 单机版外部排序 pipeline
+* ReadSource节点-支持分块
+* MergeN - 搭建归并节点
+* pipeline 的搭建及运行 - CPU 及线程数量的观测
+
 
 
 

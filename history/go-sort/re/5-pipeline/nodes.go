@@ -2,10 +2,18 @@ package pipleline
 
 import (
 	"encoding/binary"
+	"fmt"
 	"io"
 	"math/rand"
 	"sort"
+	"time"
 )
+
+var startTime time.Time
+
+func Init() {
+	startTime = time.Now()
+}
 
 func ArraySource(a ...int) <-chan int {
 	// <-chan int: 表示用它的人只能从里面拿东西
@@ -36,8 +44,10 @@ func InMemSort(in <-chan int) <-chan int {
 		for v := range in {
 			a = append(a, v)
 		}
+		fmt.Println("Read done:", time.Now().Sub(startTime))
 		// Sort
 		sort.Ints(a)
+		fmt.Println("InMemSort done:", time.Now().Sub(startTime))
 
 		// Output
 		for _, v := range a {
@@ -69,6 +79,7 @@ func Merge(in1, in2 <-chan int) <-chan int {
 			}
 		}
 		close(out)
+		fmt.Println("Merge done:", time.Now().Sub(startTime))
 	}()
 	return out
 }
@@ -87,20 +98,23 @@ func MergeN(inputs ...<-chan int) <-chan int {
 		MergeN(inputs[m:]...))
 }
 
-func ReaderSource(reader io.Reader) <-chan int {
+func ReaderSource(reader io.Reader, chunkSize int) <-chan int {
 	// go 语言的 int 有多大呢？
 	// 它是根据系统来的
 	// 64 位机，就是 64 位
 	out := make(chan int)
 	go func() {
 		buffer := make([]byte, 8) //8个字节==64 bit
+		bytesRead := 0
 		for {
 			n, err := reader.Read(buffer)
+			bytesRead += n
 			if n > 0 {
 				v := int(binary.BigEndian.Uint64(buffer))
 				out <- v
 			}
-			if err != nil {
+			// -1 表示全部读
+			if err != nil || (chunkSize != -1 && bytesRead >= chunkSize) {
 				break
 			}
 		}

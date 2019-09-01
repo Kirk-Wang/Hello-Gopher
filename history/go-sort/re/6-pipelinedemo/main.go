@@ -13,6 +13,8 @@ func main() {
 	// 我的机器：1 个 int = 64 bit = 8 byte
 	// 100000000 * 8 = 800000000 byte = 800000 KB = 800 MB 数据文件
 	const n = 100000000
+	// const filename = "small.in"
+	// const n = 64
 	file, err := os.Create(filename)
 	if err != nil {
 		panic(err)
@@ -30,7 +32,7 @@ func main() {
 	}
 	defer file.Close()
 
-	p = pipeline.ReaderSource(bufio.NewReader(file))
+	p = pipeline.ReaderSource(bufio.NewReader(file), -1)
 	count := 0
 	for v := range p {
 		fmt.Println(v)

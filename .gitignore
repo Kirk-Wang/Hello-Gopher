@@ -15,3 +15,7 @@
 fib2.txt
 *.log
 node_modules
+large.in
+large.out
+small.in
+small.out

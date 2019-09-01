@@ -73,6 +73,20 @@ func Merge(in1, in2 <-chan int) <-chan int {
 	return out
 }
 
+// N 个节点反复两两归并
+// 注意：这里只有两路
+func MergeN(inputs ...<-chan int) <-chan int {
+	// 处理 1 的情况
+	if len(inputs) == 1 {
+		return inputs[0]
+	}
+	m := len(inputs) / 2
+	// merge inputs[0..m) and inputs[m..end)
+	return Merge(
+		MergeN(inputs[:m]...),
+		MergeN(inputs[m:]...))
+}
+
 func ReaderSource(reader io.Reader) <-chan int {
 	// go 语言的 int 有多大呢？
 	// 它是根据系统来的

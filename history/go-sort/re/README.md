@@ -128,6 +128,8 @@
 * pipeline 的搭建及运行 - CPU 及线程数量的观测
 
 ### 集群版外部排序
+* NetworkSink
+* NetworkSource
 
 ### go 语言三大特色
 * 面向接口-Reader/Writer 接口的使用

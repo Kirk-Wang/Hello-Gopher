@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler/scheduler"
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler/zhenai/parser"
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler_distributed/config"
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler_distributed/persist/client"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler/scheduler"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler/zhenai/parser"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler_distributed/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler_distributed/persist/client"
 )
 
 func main() {

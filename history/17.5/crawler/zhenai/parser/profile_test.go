@@ -1,8 +1,8 @@
 package parser
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler/model"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler/model"
 	"io/ioutil"
 	"testing"
 )

@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/17.5/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.5/crawler/engine"
 )
 
 type SimpleScheduler struct {

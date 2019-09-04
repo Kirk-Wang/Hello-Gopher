@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Gopher/17.3/rpc"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.3/rpc"
 	"net"
 	"net/rpc/jsonrpc"
 )

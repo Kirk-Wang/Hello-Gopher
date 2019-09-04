@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/17.3/rpc"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.3/rpc"
 	"log"
 	"net"
 	"net/rpc"

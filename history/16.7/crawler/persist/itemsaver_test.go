@@ -3,8 +3,8 @@ package persist
 import (
 	"context"
 	"encoding/json"
-	"github.com/Kirk-Wang/Hello-Gopher/16.7/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/16.7/crawler/model"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.7/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.7/crawler/model"
 	"github.com/olivere/elastic"
 	"testing"
 )

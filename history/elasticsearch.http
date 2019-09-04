@@ -13,6 +13,9 @@ content-type: application/json
     "instructor": "ccmouse"
 }
 
+### 删除一条记录(DELETE)
+DELETE http://localhost:9200/dating_profile/zhenai/_b-H-2wBwgIU2N3h58M8 HTTP/1.1
+
 ### 添加一条记录(POST)
 
 POST http://localhost:9200/gopher/course/2 HTTP/1.1
@@ -82,5 +85,5 @@ content-type: application/json
 
 ### 本项目搜索2
 
-GET http://localhost:9200/dating_profile/_search?pretty=&size=100&q=Gender:男士 House:已购房 Car:已买车 Age:<30 HTTP/1.1
+GET http://localhost:9200/dating_profile/_search?pretty=&size=100&q='Gender:男士 House:已购房 Car:已买车 Age:<30' HTTP/1.1
 content-type: application/json

@@ -12,7 +12,7 @@ type ParseResult struct {
 
 type Item struct {
 	Url     string
-	Type    string
+	Type    string // 表名
 	Id      string
 	Payload interface{}
 }

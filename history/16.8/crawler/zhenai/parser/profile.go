@@ -1,8 +1,8 @@
 package parser
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/16.8/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/16.8/crawler/model"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.8/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.8/crawler/model"
 	"regexp"
 	"strconv"
 )

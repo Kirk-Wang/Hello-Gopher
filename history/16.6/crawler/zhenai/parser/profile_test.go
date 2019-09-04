@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/16.6/crawler/model"
+	"github.com/Kirk-Wang/Hello-Gopher/history/16.6/crawler/model"
 	"io/ioutil"
 	"testing"
 )

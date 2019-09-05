@@ -26,7 +26,7 @@ import (
  ...N
 
  主程序,调度服务器
- go run history/17.9/crawler_distributed/main.go -itemsaver_host :8900 -worker_hosts :8905,:8906,:8907
+ go run history/17.9/crawler_distributed/main.go -itemsaver_host :8900 -worker_hosts :8905,:8906,:8907,:8908
 */
 var (
 	itemSaverHost = flag.String("itemsaver_host", "", "itemsaver host")

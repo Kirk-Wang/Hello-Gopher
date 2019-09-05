@@ -2,8 +2,8 @@ package parser
 
 import (
 	"encoding/json"
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler_distributed/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler_distributed/config"
 	"regexp"
 )
 

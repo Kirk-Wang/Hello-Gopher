@@ -1,8 +1,8 @@
 package persist
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler/persist"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler/persist"
 	"github.com/olivere/elastic"
 	"log"
 )

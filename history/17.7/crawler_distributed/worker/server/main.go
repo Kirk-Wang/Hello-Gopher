@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler_distributed/config"
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler_distributed/rpcsupport"
-	"github.com/Kirk-Wang/Hello-Gopher/17.7/crawler_distributed/worker"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler_distributed/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler_distributed/rpcsupport"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.7/crawler_distributed/worker"
 	"log"
 )
 

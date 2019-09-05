@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/17.8/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/17.8/crawler/model"
-	"github.com/Kirk-Wang/Hello-Gopher/17.8/crawler_distributed/config"
-	"github.com/Kirk-Wang/Hello-Gopher/17.8/crawler_distributed/rpcsupport"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.8/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.8/crawler/model"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.8/crawler_distributed/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.8/crawler_distributed/rpcsupport"
 	"testing"
 	"time"
 )

@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler_distributed/config"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler_distributed/persist"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler_distributed/rpcsupport"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/persist"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/rpcsupport"
 	"github.com/olivere/elastic"
 	"log"
 )

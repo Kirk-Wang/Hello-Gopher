@@ -2,12 +2,12 @@ package main
 
 import (
 	"flag"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler/scheduler"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler/zhenai/parser"
-	itemsaver "github.com/Kirk-Wang/Hello-Gopher/17.9/crawler_distributed/persist/client"
-	"github.com/Kirk-Wang/Hello-Gopher/17.9/crawler_distributed/rpcsupport"
-	worker "github.com/Kirk-Wang/Hello-Gopher/17.9/crawler_distributed/worker/client"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/engine"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/scheduler"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/zhenai/parser"
+	itemsaver "github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/persist/client"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/rpcsupport"
+	worker "github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/worker/client"
 	"log"
 	"net/rpc"
 	"strings"

@@ -3,22 +3,24 @@ package fetcher
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"time"
+
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/config"
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
-	"io/ioutil"
-	"log"
-	"net/http"
-	// "time"
 )
 
 // 反爬，控制下速度，100ms 一个 tick
-// var rateLimiter = time.Tick(time.Second / config.Qps)
+var rateLimiter = time.Tick(time.Second / config.Qps)
 
 func Fetch(url string) ([]byte, error) {
 	// resp, err := http.Get()
-	// <-rateLimiter // 100 个人会抢同一个
+	<-rateLimiter // 100 个人会抢同一个
 	log.Printf("Fetching url %s", url)
 	request, err := http.NewRequest(
 		http.MethodGet,

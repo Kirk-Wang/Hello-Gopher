@@ -1,9 +1,10 @@
 package parser
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
 	"regexp"
+
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/engine"
 )
 
 const cityListRe = `<a href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)"[^>]*>([^<]+)</a>`

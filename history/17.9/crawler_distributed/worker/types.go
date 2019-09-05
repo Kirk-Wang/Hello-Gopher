@@ -4,10 +4,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
+
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/config"
 	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/engine"
 	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/zhenai/parser"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
-	"log"
 )
 
 type SerializedParser struct {

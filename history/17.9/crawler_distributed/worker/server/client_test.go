@@ -1,11 +1,14 @@
 package main
 
 import (
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/rpcsupport"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/worker"
 	"testing"
 	"time"
+
+	config "github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/config"
+	config2 "github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
+
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/rpcsupport"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/worker"
 )
 
 func TestCrawlService(t *testing.T) {
@@ -27,7 +30,7 @@ func TestCrawlService(t *testing.T) {
 	}
 
 	var result worker.ParseResult
-	err = client.Call(config.CrawlServiceRpc, req, &result)
+	err = client.Call(config2.CrawlServiceRpc, req, &result)
 
 	if err != nil {
 		t.Error(err)

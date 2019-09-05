@@ -2,9 +2,10 @@ package parser
 
 import (
 	"encoding/json"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/engine"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
 	"regexp"
+
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/config"
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/engine"
 )
 
 var profileRe = regexp.MustCompile(`<a href="(http://album.zhenai.com/u/[0-9]+)" target="_blank">([^<]+)</a></th></tr> <tr><td width="180"><span class="grayL">性别：</span>([^<]+)</td>`)

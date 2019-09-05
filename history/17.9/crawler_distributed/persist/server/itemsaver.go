@@ -3,11 +3,12 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/config"
+	"log"
+
+	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler/config"
 	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/persist"
 	"github.com/Kirk-Wang/Hello-Gopher/history/17.9/crawler_distributed/rpcsupport"
 	"github.com/olivere/elastic"
-	"log"
 )
 
 var port = flag.Int("port", 0, "the port for me to listen on")

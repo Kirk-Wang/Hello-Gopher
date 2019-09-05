@@ -22,6 +22,7 @@ import (
  go run history/17.9/crawler_distributed/worker/server/worker.go -port 8905
  go run history/17.9/crawler_distributed/worker/server/worker.go -port 8906
  go run history/17.9/crawler_distributed/worker/server/worker.go -port 8907
+ go run history/17.9/crawler_distributed/worker/server/worker.go -port 8908
  ...N
 
  主程序,调度服务器

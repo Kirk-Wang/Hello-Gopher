@@ -1,6 +1,0 @@
-{"level":"INFO","timestamp":"2018-12-25 19:37:49.851","file":"api-06/main.go:59","msg":"Start to listening the incoming requests on http address: :8080"}
-{"level":"INFO","timestamp":"2018-12-25 19:37:49.853","file":"api-06/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"INFO","timestamp":"2018-12-25 19:40:26.474","file":"user/create.go:22","msg":"URL username: admin2"}
-{"level":"INFO","timestamp":"2018-12-25 19:40:26.474","file":"user/create.go:25","msg":"URL key param desc: test"}
-{"level":"INFO","timestamp":"2018-12-25 19:40:26.474","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
-{"level":"DEBUG","timestamp":"2018-12-25 19:40:26.474","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}

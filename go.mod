@@ -1,5 +1,7 @@
 module github.com/Kirk-Wang/Hello-Gopher
 
+go 1.14
+
 require (
 	github.com/Joker/jade v1.0.0 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect

@@ -18,7 +18,7 @@ func chanDemo() {
 	c <- 1
 	c <- 2
 
-	time.Sleep(time.Microsecond)
+	time.Sleep(time.Millisecond)
 }
 
 func main() {

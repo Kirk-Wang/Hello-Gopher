@@ -5,15 +5,17 @@ import (
 	"time"
 )
 
+func worker(id int, c chan int) {
+	for {
+		fmt.Printf("Worker %d received %d\n", id, <-c)
+	}
+}
+
 // 自己建 channel
 // 返回的 chanel 是干嘛用的呢，没错-->>是用来发数据的，送数据的
 func createWorker(id int) chan<- int {
 	c := make(chan int)
-	go func() {
-		for {
-			fmt.Printf("Worker %d received %c\n", id, <-c)
-		}
-	}()
+	go worker(id, c)
 	return c
 }
 
@@ -38,10 +40,24 @@ func chanDemo() {
 	time.Sleep(time.Millisecond)
 }
 
+func bufferedChannel() {
+
+	c := make(chan int, 3) // 加个缓冲区，对提升性能是有帮助的
+	go worker(0, c)
+
+	c <- 1
+	c <- 2
+	c <- 3
+	c <- 4
+
+	time.Sleep(time.Millisecond)
+}
+
 func main() {
-	chanDemo()
+	// chanDemo()
+	bufferedChannel()
 }
 
 /*
-go run 5/main.go
+go run 6/main.go
 */

@@ -18,7 +18,7 @@ func chanDemo() {
 	// 发了数据没人收，就会 deadlock
 	c <- 1
 	c <- 2
-	time.Sleep(time.Microsecond)
+	time.Sleep(time.Millisecond)
 }
 
 func main() {

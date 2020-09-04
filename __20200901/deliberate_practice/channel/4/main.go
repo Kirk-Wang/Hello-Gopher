@@ -32,7 +32,7 @@ func chanDemo() {
 		channels[i] <- 'A' + i
 	}
 
-	time.Sleep(time.Microsecond)
+	time.Sleep(time.Millisecond)
 }
 
 func main() {

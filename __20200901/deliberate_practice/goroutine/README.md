@@ -13,3 +13,24 @@ Subroutines are special cases of more general program
 components，called coroutines. In contrast to the unsymmetric
 * 子程序是协程的一个特例
 * Donnald Knuth "The Art of Computer Programming. Vol1"
+
+### goroutine 的定义
+
+* 任何函数只需加上 go 就能送给调度器运行
+* 不需要在定义时区分是否是异步函数
+* 调度器在合适的点进行切换
+* 使用 -race 来检测数据访问的冲突
+
+### goroutine 可能的切换点
+
+* I/O, select
+* channel
+* 等待锁
+* 只是参考，不能保证切换，不能保证在其它地方不切换
+
+### goroutine 开 1000 个，我们系统到低起了多少个线程
+
+```sh
+top
+```
+

@@ -46,6 +46,11 @@ func walk(maze [][]int, start point, end point) [][]int {
 		cur := Q[0] // 要探索的点
 		Q = Q[1:]   // 出队
 
+		// 已到终点
+		if cur == end {
+			break
+		}
+
 		// 四个方向探索
 		for _, d := range dirs {
 			// 下一点
